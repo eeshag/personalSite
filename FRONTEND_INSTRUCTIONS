@@ -1,0 +1,98 @@
+# Spotify-Inspired Personal Website — Styling & Layout Spec
+
+## Overall Design Language
+- Visual inspiration: Spotify desktop home UI
+- Theme: Dark mode only
+- Background: Deep charcoal / near-black gradient
+- Accent color: Spotify green (#1DB954) for highlights, hovers, and focus states
+- Typography:
+  - Primary font: Spotify Circular (or closest fallback like Inter / Helvetica)
+  - Headings: Bold, large, high letter-spacing
+  - Body text: Regular weight, muted gray
+
+The site should feel minimal, modern, and content-first, with subtle motion and hover feedback.
+
+---
+
+## Page Layout Overview
+The page is split into two main sections:
+1. Left vertical navigation bar (fixed)
+2. Main content area (scrollable)
+
+---
+
+## Left Navigation Menu (Sidebar)
+
+### Structure
+- Fixed vertical sidebar aligned to the left
+- Width: narrow (icon-focused)
+- Background: slightly darker than main content
+- Icons centered vertically with consistent spacing
+
+### Icons (Top → Bottom)
+1. Home icon (always at the top)
+2. Square album-style icons:
+   - Email
+   - YouTube
+   - Spotify
+   - Blog
+   - One icon per project
+
+### Hover Interaction
+- Icon slightly enlarges
+- Subtle glow or highlight
+- Tooltip popup appears to the right
+- Tooltip style:
+  - Rounded rectangle
+  - Dark gray background
+  - White text
+
+---
+
+## Main Content Area
+
+### Top Header Section
+- Large name text in Spotify-style font
+- Smaller bio line underneath
+
+**Default Bio:**
+Freshman from Fremont interested in Tech and ML
+
+---
+
+## Quick Links Section
+- Wide rectangular cards linking to:
+  - YouTube
+  - Email
+  - Spotify
+  - Blog
+  - Projects
+
+- Hover effects:
+  - Card lifts slightly
+  - Background brightens
+
+---
+
+## Content Carousel Section
+
+### Header
+Currently Consuming
+
+### Carousel
+- Horizontal scrolling
+- Square cards for books/media
+- Rounded corners and subtle shadow
+- Hover overlay with title/description
+
+---
+
+## Animations & Responsiveness
+- Smooth 200–300ms transitions
+- Sidebar collapses on mobile
+- Carousel swipeable on touch devices
+
+---
+
+## Overall Vibe
+Feels like Spotify — but for a person.

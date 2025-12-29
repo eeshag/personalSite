@@ -1,0 +1,280 @@
+.home {
+  padding: 40px 60px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1a0f2e 0%, #0a0a0a 100%);
+  color: #ffffff;
+}
+
+/* Header Section */
+.home-header {
+  margin-bottom: 60px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  background: linear-gradient(135deg, rgba(10, 10, 10, 1) 0%, rgba(10, 10, 10, 0.6) 50%, transparent 100%);
+  border-radius: 12px;
+}
+
+.header-icon-wrapper {
+  flex-shrink: 0;
+}
+
+.header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 160px;
+  background-color: #6366F1;
+  border-radius: 8px;
+  font-size: 96px;
+  line-height: 1;
+}
+
+.header-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.name-title {
+  font-size: 72px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin: 0 0 12px 0;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.bio-text {
+  font-size: 18px;
+  color: #b3b3b3;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+/* Quick Links Section */
+.quick-links-section {
+  margin-bottom: 60px;
+}
+
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.quick-link-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 0;
+  min-height: 64px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.quick-link-card:hover {
+  transform: translateY(-4px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #1DB954;
+  box-shadow: 0 8px 24px rgba(29, 185, 84, 0.2);
+}
+
+.link-icon {
+  font-size: 24px;
+  width: 64px;
+  height: 100%;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.link-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  flex: 1;
+}
+
+/* Content Carousel Section */
+.content-carousel-section {
+  margin-bottom: 60px;
+}
+
+.carousel-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 16px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.carousel {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 8px;
+}
+
+.carousel-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+  width: 200px;
+}
+
+.carousel-card {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.carousel-card:hover {
+  transform: scale(1.05);
+}
+
+.carousel-card-cover {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  background: linear-gradient(135deg, rgba(29, 185, 84, 0.2) 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.carousel-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.carousel-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.carousel-card-author {
+  font-size: 14px;
+  color: #b3b3b3;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .home {
+    padding: 24px 20px;
+  }
+
+  .home-header {
+    gap: 16px;
+  }
+
+  .header-icon {
+    width: 100px;
+    height: 100px;
+    font-size: 64px;
+    border-radius: 6px;
+  }
+
+  .name-title {
+    font-size: 48px;
+  }
+
+  .bio-text {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .quick-links-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .quick-link-card {
+    padding: 0;
+    min-height: 56px;
+  }
+
+  .link-icon {
+    font-size: 20px;
+    width: 56px;
+    height: 100%;
+    min-height: 56px;
+    border-radius: 6px;
+  }
+
+  .link-label {
+    padding: 0 16px;
+  }
+
+  .link-label {
+    padding: 0 16px;
+  }
+
+  .carousel-item-wrapper {
+    width: 160px;
+  }
+
+  .carousel-card {
+    width: 160px;
+    height: 160px;
+  }
+
+  .carousel-card-cover {
+    font-size: 60px;
+  }
+
+  .carousel-card-title {
+    font-size: 14px;
+  }
+
+  .carousel-card-author {
+    font-size: 12px;
+  }
+}
+
