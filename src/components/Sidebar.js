@@ -9,6 +9,7 @@ const Sidebar = () => {
     { id: 'email', label: 'Email', icon: '✉️', color: '#A78BFA' },
     { id: 'youtube', label: 'YouTube', icon: '▶️', color: '#3B82F6' },
     { id: 'spotify', label: 'Spotify', icon: '🎼', color: '#7C3AED' },
+    { id: 'about', label: 'All About Me', icon: '👤', color: '#9333EA' },
     { id: 'blog', label: 'Blog', icon: '📝', color: '#60A5FA' },
     { id: 'projects', label: 'Projects', icon: '💻', color: '#818CF8' },
   ];
@@ -17,11 +18,17 @@ const Sidebar = () => {
     if (id === 'home') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (id === 'email') {
-      window.location.href = 'mailto:your.email@example.com';
+      window.open('https://mail.google.com/mail/u/0/?fs=1&to=eeshag50@gmail.com&tf=cm', '_blank');
     } else if (id === 'youtube') {
-      window.open('https://youtube.com', '_blank');
+      window.open('https://youtube.com/@incredgirl678?si=akOgxelHdVx3eZDz', '_blank');
     } else if (id === 'spotify') {
-      window.open('https://spotify.com', '_blank');
+      window.open('https://open.spotify.com/user/312mixbngb3jlmrulyzl4lq3x6ui?si=57c245e47328410f', '_blank');
+    } else if (id === 'about') {
+      // Navigate to about section
+      const aboutSection = document.getElementById('about-section');
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+      }
     } else if (id === 'blog') {
       // Navigate to blog section or page
       const blogSection = document.getElementById('blog-section');

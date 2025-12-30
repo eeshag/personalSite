@@ -1,7 +1,6 @@
 .home {
   padding: 40px 60px;
   min-height: 100vh;
-  background: linear-gradient(180deg, #1a0f2e 0%, #0a0a0a 100%);
   color: #ffffff;
 }
 
@@ -79,7 +78,7 @@
 }
 
 .quick-link-card {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   padding: 0;
   min-height: 64px;
@@ -90,14 +89,13 @@
   gap: 0;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid transparent;
   overflow: hidden;
 }
 
 .quick-link-card:hover {
-  transform: translateY(-4px);
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: #1DB954;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid #1DB954;
   box-shadow: 0 8px 24px rgba(29, 185, 84, 0.2);
 }
 
@@ -115,7 +113,7 @@
 
 .link-label {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -209,6 +207,8 @@
 
   .home-header {
     gap: 16px;
+    padding-top: 30px;
+    padding-bottom: 20px;
   }
 
   .header-icon {
@@ -246,10 +246,6 @@
     height: 100%;
     min-height: 56px;
     border-radius: 6px;
-  }
-
-  .link-label {
-    padding: 0 16px;
   }
 
   .link-label {

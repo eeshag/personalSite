@@ -29,3 +29,19 @@ html {
 ::-webkit-scrollbar {
   display: none;
 }
+
+/* Text selection color */
+::selection {
+  background-color: #1DB954;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #1DB954;
+  color: #ffffff;
+}
+
+/* Caret color for input fields */
+input, textarea {
+  caret-color: #1DB954;
+}
