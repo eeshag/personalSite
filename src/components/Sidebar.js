@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
 
-const Sidebar = () => {
+const Sidebar = ({ onNavigate, currentPage }) => {
   const [hoveredIcon, setHoveredIcon] = useState(null);
 
   const navItems = [
@@ -16,7 +16,11 @@ const Sidebar = () => {
 
   const handleIconClick = (id, url) => {
     if (id === 'home') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (onNavigate) {
+        onNavigate('home');
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     } else if (id === 'email') {
       window.open('https://mail.google.com/mail/u/0/?fs=1&to=eeshag50@gmail.com&tf=cm', '_blank');
     } else if (id === 'youtube') {
@@ -24,10 +28,14 @@ const Sidebar = () => {
     } else if (id === 'spotify') {
       window.open('https://open.spotify.com/user/312mixbngb3jlmrulyzl4lq3x6ui?si=57c245e47328410f', '_blank');
     } else if (id === 'about') {
-      // Navigate to about section
-      const aboutSection = document.getElementById('about-section');
-      if (aboutSection) {
-        aboutSection.scrollIntoView({ behavior: 'smooth' });
+      // Navigate to All About Me page
+      if (onNavigate) {
+        onNavigate('about');
+      } else {
+        const aboutSection = document.getElementById('about-section');
+        if (aboutSection) {
+          aboutSection.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     } else if (id === 'blog') {
       // Navigate to blog section or page
@@ -59,7 +67,7 @@ const Sidebar = () => {
       {navItems.map((item) => (
         <div
           key={item.id}
-          className="sidebar-icon"
+          className={`sidebar-icon ${currentPage === item.id ? 'active' : ''}`}
           style={{ backgroundColor: item.color }}
           onMouseEnter={() => setHoveredIcon(item.id)}
           onMouseLeave={() => setHoveredIcon(null)}

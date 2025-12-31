@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { currentlyConsuming } from '../data/content';
 import './Home.css';
 
-const Home = () => {
+const Home = ({ onNavigate }) => {
   const [hoveredColor, setHoveredColor] = useState(null);
   const timeoutRef = useRef(null);
   
@@ -12,7 +12,7 @@ const Home = () => {
     { id: 'youtube', label: 'YouTube', icon: '▶️', url: 'https://youtube.com/@incredgirl678?si=akOgxelHdVx3eZDz', color: '#3B82F6' },
     { id: 'spotify', label: 'Spotify', icon: '🎼', url: 'https://open.spotify.com/user/312mixbngb3jlmrulyzl4lq3x6ui?si=57c245e47328410f', color: '#7C3AED' },
     // Second row
-    { id: 'about', label: 'All About Me', icon: '👤', url: '#about-section', color: '#9333EA' },
+    { id: 'about', label: 'All About Me', icon: '👤', url: 'about', color: '#9333EA', isPage: true },
     { id: 'blog', label: 'Blog', icon: '📝', url: '#blog-section', color: '#60A5FA' },
     { id: 'projects', label: 'Projects', icon: '💻', url: '#projects-section', color: '#818CF8' },
   ];
@@ -47,14 +47,19 @@ const Home = () => {
     ? mixColors(darkenColor(hoveredColor, 0.4), defaultGradientColor, 0.25)
     : defaultGradientColor;
 
-  const handleLinkClick = (url) => {
-    if (url.startsWith('#')) {
-      const element = document.querySelector(url);
+  const handleLinkClick = (link) => {
+    if (link.isPage && onNavigate) {
+      // Navigate to a page
+      onNavigate(link.url);
+    } else if (link.url.startsWith('#')) {
+      // Scroll to section
+      const element = document.querySelector(link.url);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      window.open(url, url.startsWith('mailto:') ? '_self' : '_blank');
+      // Open external link
+      window.open(link.url, link.url.startsWith('mailto:') ? '_self' : '_blank');
     }
   };
 
@@ -102,7 +107,7 @@ const Home = () => {
             <div
               key={link.id}
               className="quick-link-card"
-              onClick={() => handleLinkClick(link.url)}
+              onClick={() => handleLinkClick(link)}
               onMouseEnter={() => handleMouseEnter(link.color)}
               onMouseLeave={handleMouseLeave}
             >

@@ -1,0 +1,407 @@
+.all-about-me {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1a0f2e 0%, #0a0a0a 100%);
+  color: #ffffff;
+  padding: 0 0 90px 0;
+}
+
+/* Banner Section */
+.banner-section {
+  padding: 32px 32px 48px 32px;
+  background: linear-gradient(180deg, rgba(196, 181, 253, 0.4) 0%, rgba(147, 51, 234, 0.6) 100%);
+}
+
+.banner-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 24px;
+  padding-bottom: 16px;
+}
+
+.cover-square {
+  width: 232px;
+  height: 232px;
+  background-color: #9333EA;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.cover-icon {
+  font-size: 120px;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.banner-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 8px;
+  flex: 1;
+}
+
+.banner-title {
+  font-size: 96px;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  letter-spacing: -2px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.1;
+}
+
+.banner-metadata {
+  font-size: 14px;
+  color: #b3b3b3;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Content Section */
+.content-section {
+  padding: 24px 32px 40px 32px;
+}
+
+.content-header {
+  display: grid;
+  grid-template-columns: 48px 1fr 180px;
+  gap: 16px;
+  padding: 8px 0;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 400;
+  color: #b3b3b3;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 0;
+}
+
+.header-number {
+  text-align: center;
+}
+
+.header-title {
+  padding-left: 16px;
+}
+
+.header-date {
+  text-align: left;
+  padding-right: 16px;
+  white-space: nowrap;
+}
+
+.header-divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-bottom: 0;
+}
+
+/* Writing Area */
+.writing-area {
+  padding-top: 24px;
+}
+
+.writing-row {
+  display: grid;
+  grid-template-columns: 48px 1fr 180px;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.writing-row:last-child {
+  margin-bottom: 0;
+}
+
+.row-number {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #b3b3b3;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-top: 4px;
+  line-height: 1.75;
+}
+
+.row-content {
+  padding-left: 16px;
+  max-width: 800px;
+}
+
+.row-date {
+  /* Empty column to match header layout */
+}
+
+.content-paragraph {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #b3b3b3;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Player Bar */
+.player-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background-color: #181818;
+  border-top: 1px solid #282828;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 1000;
+}
+
+.player-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.player-cover {
+  width: 56px;
+  height: 56px;
+  background-color: #9333EA;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.player-icon {
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.player-title {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-artist {
+  font-size: 11px;
+  font-weight: 400;
+  color: #b3b3b3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-center {
+  flex: 1;
+  max-width: 722px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+}
+
+.player-progress-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.player-time {
+  font-size: 11px;
+  color: #b3b3b3;
+  font-weight: 400;
+  min-width: 40px;
+  text-align: center;
+}
+
+.player-time-left {
+  text-align: right;
+}
+
+.player-time-right {
+  text-align: left;
+}
+
+.player-progress-bar {
+  flex: 1;
+  height: 4px;
+  background-color: #535353;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+.player-progress-bar:hover {
+  background-color: #5a5a5a;
+}
+
+.player-progress-fill {
+  height: 100%;
+  background-color: #b3b3b3;
+  border-radius: 2px;
+  transition: width 0.1s ease;
+}
+
+.player-progress-bar:hover .player-progress-fill {
+  background-color: #1DB954;
+}
+
+.player-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 180px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .banner-section {
+    padding: 24px 20px 20px 20px;
+  }
+
+  .banner-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .cover-square {
+    width: 180px;
+    height: 180px;
+  }
+
+  .cover-icon {
+    font-size: 96px;
+  }
+
+  .banner-title {
+    font-size: 64px;
+  }
+
+  .banner-metadata {
+    font-size: 13px;
+  }
+
+  .content-section {
+    padding: 0 20px 32px 20px;
+  }
+
+  .content-header {
+    grid-template-columns: 32px 1fr 100px;
+    gap: 8px;
+    font-size: 11px;
+  }
+
+  .header-title {
+    padding-left: 8px;
+  }
+
+  .header-date {
+    padding-right: 8px;
+  }
+
+  .writing-area {
+    padding-top: 20px;
+  }
+
+  .writing-row {
+    grid-template-columns: 32px 1fr 100px;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .row-number {
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-top: 3px;
+    line-height: 1.7;
+  }
+
+  .row-content {
+    padding-left: 8px;
+  }
+
+  .content-paragraph {
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .all-about-me {
+    padding-bottom: 90px;
+  }
+
+  .player-bar {
+    height: 80px;
+    padding: 0 12px;
+  }
+
+  .player-left {
+    min-width: 140px;
+    gap: 12px;
+  }
+
+  .player-cover {
+    width: 48px;
+    height: 48px;
+  }
+
+  .player-icon {
+    font-size: 28px;
+  }
+
+  .player-title {
+    font-size: 13px;
+  }
+
+  .player-artist {
+    font-size: 10px;
+  }
+
+  .player-center {
+    max-width: 100%;
+    padding: 0 8px;
+  }
+
+  .player-time {
+    font-size: 10px;
+    min-width: 35px;
+  }
+
+  .player-progress-bar {
+    height: 3px;
+  }
+
+  .player-right {
+    min-width: 0;
+    display: none;
+  }
+}
+
