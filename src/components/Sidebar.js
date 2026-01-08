@@ -44,10 +44,14 @@ const Sidebar = ({ onNavigate, currentPage }) => {
         blogSection.scrollIntoView({ behavior: 'smooth' });
       }
     } else if (id === 'projects') {
-      // Navigate to projects section
-      const projectsSection = document.getElementById('projects-section');
-      if (projectsSection) {
-        projectsSection.scrollIntoView({ behavior: 'smooth' });
+      // Navigate to projects page
+      if (onNavigate) {
+        onNavigate('projects');
+      } else {
+        const projectsSection = document.getElementById('projects-section');
+        if (projectsSection) {
+          projectsSection.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     } else if (url) {
       // Handle project URLs

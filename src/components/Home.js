@@ -14,7 +14,7 @@ const Home = ({ onNavigate }) => {
     // Second row
     { id: 'about', label: 'All About Me', icon: '👤', url: 'about', color: '#9333EA', isPage: true },
     { id: 'blog', label: 'Blog', icon: '📝', url: '#blog-section', color: '#60A5FA' },
-    { id: 'projects', label: 'Projects', icon: '💻', url: '#projects-section', color: '#818CF8' },
+    { id: 'projects', label: 'Projects', icon: '💻', url: 'projects', color: '#818CF8', isPage: true },
   ];
 
   // Function to darken a hex color for subtle gradient
