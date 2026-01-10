@@ -60,7 +60,7 @@ const Projects = ({ onNavigate }) => {
   const totalTime = readingTime * 60;
 
   return (
-    <div className="projects-page" ref={contentRef}>
+    <div className="projects-page projects-list-page" ref={contentRef}>
       {/* Top Banner Section */}
       <div className="banner-section">
         <div className="banner-content">

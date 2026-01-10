@@ -5,6 +5,10 @@
   padding: 0 0 90px 0;
 }
 
+.projects-list-page {
+  background: linear-gradient(180deg, #1a0f2e 0%, #0a0a0a 100%);
+}
+
 /* Banner Section */
 .banner-section {
   padding: 32px 32px 48px 32px;
@@ -117,6 +121,10 @@
   padding: 0;
   border-radius: 4px;
   transition: background-color 0.2s ease;
+}
+
+.project-row {
+  padding: 8px 0;
 }
 
 .project-row:hover {
@@ -329,6 +337,10 @@
     background: #121212;
   }
 
+  .projects-list-page {
+    background: linear-gradient(180deg, #1a0f2e 0%, #0a0a0a 100%);
+  }
+
   .banner-section {
     padding: 24px 20px 40px 20px;
     background: linear-gradient(180deg, rgba(129, 140, 248, 0.6) 0%, #121212 100%);
@@ -390,7 +402,17 @@
     padding-top: 20px;
   }
 
-  .writing-row,
+  .projects-list-page .writing-area {
+    padding-top: 20px;
+  }
+
+  .writing-row {
+    grid-template-columns: 32px 1fr;
+    gap: 4px;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
   .project-row {
     grid-template-columns: 32px 1fr;
     gap: 4px;

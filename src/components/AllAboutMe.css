@@ -8,7 +8,7 @@
 /* Banner Section */
 .banner-section {
   padding: 32px 32px 48px 32px;
-  background: linear-gradient(180deg, rgba(196, 181, 253, 0.4) 0%, rgba(147, 51, 234, 0.6) 100%);
+  background: linear-gradient(180deg, #1a0f2e 0%, #0a0a0a 100%);
 }
 
 .banner-content {
@@ -22,7 +22,7 @@
 .cover-square {
   width: 232px;
   height: 232px;
-  background-color: #9333EA;
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -175,7 +175,7 @@
 .player-cover {
   width: 56px;
   height: 56px;
-  background-color: #9333EA;
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -286,7 +286,7 @@
 
   .banner-section {
     padding: 24px 20px 40px 20px;
-    background: linear-gradient(180deg, #4c1d95 0%, #0a0a0a 100%);
+    background: transparent;
   }
 
   .banner-content {
