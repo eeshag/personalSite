@@ -1,6 +1,6 @@
 .projects-page {
   min-height: 100vh;
-  background: linear-gradient(180deg, #1a0f2e 0%, #0a0a0a 100%);
+  background: #121212;
   color: #ffffff;
   padding: 0 0 90px 0;
 }
@@ -105,7 +105,7 @@
 
 /* Writing Area */
 .writing-area {
-  padding-top: 24px;
+  padding-top: 8px;
 }
 
 .writing-row,
@@ -114,7 +114,7 @@
   grid-template-columns: 48px 1fr 180px;
   gap: 16px;
   align-items: center;
-  padding: 8px 0;
+  padding: 0;
   border-radius: 4px;
   transition: background-color 0.2s ease;
 }
@@ -326,12 +326,12 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .projects-page {
-    background: linear-gradient(180deg, #1a0f2e 0%, #0a0a0a 100%);
+    background: #121212;
   }
 
   .banner-section {
     padding: 24px 20px 40px 20px;
-    background: linear-gradient(180deg, rgba(129, 140, 248, 0.6) 0%, #0a0a0a 100%);
+    background: linear-gradient(180deg, rgba(129, 140, 248, 0.6) 0%, #121212 100%);
   }
 
   .banner-content {
