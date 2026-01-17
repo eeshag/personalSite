@@ -153,6 +153,21 @@
   /* Empty column to match header layout */
 }
 
+.blog-date-images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.blog-date-image {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
 .content-paragraph {
   font-size: 16px;
   line-height: 1.75;

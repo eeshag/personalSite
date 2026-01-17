@@ -13,7 +13,7 @@ const Home = ({ onNavigate }) => {
     { id: 'spotify', label: 'Spotify', icon: '🎼', url: 'https://open.spotify.com/user/312mixbngb3jlmrulyzl4lq3x6ui?si=57c245e47328410f', color: '#7C3AED' },
     // Second row
     { id: 'about', label: 'All About Me', icon: '👤', url: 'about', color: '#9333EA', isPage: true },
-    { id: 'blog', label: 'Blog', icon: '📝', url: '#blog-section', color: '#60A5FA' },
+    { id: 'blogs', label: 'Blogs', icon: '📝', url: 'blogs', color: '#60A5FA', isPage: true },
     { id: 'projects', label: 'Projects', icon: '💻', url: 'projects', color: '#818CF8', isPage: true },
   ];
 

@@ -10,7 +10,7 @@ const Sidebar = ({ onNavigate, currentPage }) => {
     { id: 'youtube', label: 'YouTube', icon: '▶️', color: '#3B82F6' },
     { id: 'spotify', label: 'Spotify', icon: '🎼', color: '#7C3AED' },
     { id: 'about', label: 'All About Me', icon: '👤', color: '#9333EA' },
-    { id: 'blog', label: 'Blog', icon: '📝', color: '#60A5FA' },
+    { id: 'blogs', label: 'Blogs', icon: '📝', color: '#60A5FA' },
     { id: 'projects', label: 'Projects', icon: '💻', color: '#818CF8' },
   ];
 
@@ -37,11 +37,10 @@ const Sidebar = ({ onNavigate, currentPage }) => {
           aboutSection.scrollIntoView({ behavior: 'smooth' });
         }
       }
-    } else if (id === 'blog') {
-      // Navigate to blog section or page
-      const blogSection = document.getElementById('blog-section');
-      if (blogSection) {
-        blogSection.scrollIntoView({ behavior: 'smooth' });
+    } else if (id === 'blogs') {
+      // Navigate to blogs page
+      if (onNavigate) {
+        onNavigate('blogs');
       }
     } else if (id === 'projects') {
       // Navigate to projects page
