@@ -125,7 +125,7 @@ const BlogDetail = ({ blog }) => {
   };
 
   return (
-    <div className="projects-page" ref={contentRef}>
+    <div className="projects-page blog-detail-page" ref={contentRef}>
       <div
         className="banner-section"
         style={{
@@ -162,10 +162,22 @@ const BlogDetail = ({ blog }) => {
             const isHeader = item.type === 'header';
             const isFirstInSection = prevItem && prevItem.type === 'header';
             const isLastInSection = nextItem && nextItem.type === 'header';
-            const showImages = blogImages.length > 0 && index === 0;
-
+            const nextNextItem = index < blogContent.length - 2 ? blogContent[index + 2] : null;
+            const hasImagePairWrap =
+              blog &&
+              blog.id === 1 &&
+              item.type === 'paragraph' &&
+              index === 2 &&
+              nextItem &&
+              nextItem.type === 'paragraph' &&
+              nextNextItem &&
+              nextNextItem.type === 'paragraph';
             const rowPaddingTop = isHeader ? (index === 0 ? '0px' : '16px') : isFirstInSection ? '2px' : '1px';
             const rowPaddingBottom = isLastInSection ? '0px' : '0px';
+
+            if (blog && blog.id === 1 && (index === 3 || index === 4) && prevItem && prevItem.type === 'paragraph') {
+              return null;
+            }
 
             if (item.type === 'header') {
               return (
@@ -183,20 +195,39 @@ const BlogDetail = ({ blog }) => {
                       {item.content}
                     </h2>
                   </div>
-                  <div className="row-date">
-                    {showImages && (
-                      <div className="blog-date-images">
-                        {blogImages.map((imageSrc) => (
-                          <img
-                            key={imageSrc}
-                            className="blog-date-image"
-                            src={imageSrc}
-                            alt="Cats blog"
-                          />
-                        ))}
+                  <div className="row-date"></div>
+                </div>
+              );
+            }
+
+            if (hasImagePairWrap) {
+              return (
+                <div
+                  key={index}
+                  className="writing-row"
+                  style={{ paddingTop: rowPaddingTop, paddingBottom: rowPaddingBottom }}
+                >
+                  <div className="row-number">{index + 1}</div>
+                  <div className="row-content">
+                    <div className="blog-intro-row">
+                      <div className="blog-intro-images">
+                        <img className="blog-intro-image" src={blogImages[0]} alt="Cats blog" />
+                        <img className="blog-intro-image" src={blogImages[1]} alt="Cats blog" />
                       </div>
-                    )}
+                      <div className="blog-intro-text">
+                        <p className="content-paragraph" style={{ margin: '0 0 10px 0' }}>
+                          {item.content}
+                        </p>
+                        <p className="content-paragraph" style={{ margin: '0 0 10px 0' }}>
+                          {nextItem.content}
+                        </p>
+                        <p className="content-paragraph" style={{ margin: '0' }}>
+                          {nextNextItem.content}
+                        </p>
+                      </div>
+                    </div>
                   </div>
+                  <div className="row-date"></div>
                 </div>
               );
             }
@@ -222,20 +253,7 @@ const BlogDetail = ({ blog }) => {
                       ))}
                     </ul>
                   </div>
-                  <div className="row-date">
-                    {showImages && (
-                      <div className="blog-date-images">
-                        {blogImages.map((imageSrc) => (
-                          <img
-                            key={imageSrc}
-                            className="blog-date-image"
-                            src={imageSrc}
-                            alt="Cats blog"
-                          />
-                        ))}
-                      </div>
-                    )}
-                  </div>
+                  <div className="row-date"></div>
                 </div>
               );
             }
@@ -252,20 +270,7 @@ const BlogDetail = ({ blog }) => {
                     {item.content}
                   </p>
                 </div>
-                <div className="row-date">
-                  {showImages && (
-                    <div className="blog-date-images">
-                      {blogImages.map((imageSrc) => (
-                        <img
-                          key={imageSrc}
-                          className="blog-date-image"
-                          src={imageSrc}
-                          alt="Cats blog"
-                        />
-                      ))}
-                    </div>
-                  )}
-                </div>
+                <div className="row-date"></div>
               </div>
             );
           })}
