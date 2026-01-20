@@ -259,10 +259,14 @@ const ProjectDetail = ({ project, onNavigate }) => {
     return `rgba(${r}, ${g}, ${b}, ${alpha})`;
   };
 
+  const bannerBackground = project.id === 3
+    ? 'linear-gradient(180deg, rgba(247, 218, 76, 0.45) 0%, rgba(245, 158, 11, 0.65) 100%)'
+    : `linear-gradient(180deg, ${hexToRgba(project.color, 0.4)} 0%, ${hexToRgba(project.color, 0.6)} 100%)`;
+
   return (
     <div className="projects-page" ref={contentRef}>
       {/* Top Banner Section */}
-      <div className="banner-section" style={{ background: `linear-gradient(180deg, ${hexToRgba(project.color, 0.4)} 0%, ${hexToRgba(project.color, 0.6)} 100%)` }}>
+      <div className="banner-section" style={{ background: bannerBackground }}>
         <div className="banner-content">
           {/* Left Square Cover */}
           <div className="cover-square" style={{ backgroundColor: project.color }}>

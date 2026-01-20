@@ -19,6 +19,12 @@ const Projects = ({ onNavigate }) => {
       icon: '📊',
       color: '#A78BFA',
     },
+    {
+      id: 3,
+      name: 'People vs. Pavement',
+      icon: '🚗',
+      color: '#D9C3F0',
+    },
   ];
 
   const handleProjectClick = (project) => {
