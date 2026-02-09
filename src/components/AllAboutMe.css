@@ -148,6 +148,10 @@
   letter-spacing: 0.01em;
 }
 
+.favorite-paragraph {
+  padding-left: 24px;
+}
+
 /* Player Bar */
 .player-bar {
   position: fixed;

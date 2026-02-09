@@ -38,6 +38,41 @@ const BlogDetail = ({ blog }) => {
       ];
     }
 
+    if (blog.id === 2 && blog.title === 'My First Scratch Project') {
+      return [
+        {
+          type: 'paragraph',
+          content:
+            'I was first introduced to scratch when I took class for it with a local nonprofit called NoCal Robotics. Honestly, I didn’t think I would find it fun, as I never thought coding was that appealing, but I was completely wrong. I got so hooked, I was constantly creating projects and posting about them on google classroom, since it was the online year. I have also had a passion for teaching since I was young. I have videos of me on my family’s old ipad, where I was filming tutorials of how to create random origamis I came up with, everything you need to know about beyblades, my “lego sorter”, the thought process behind it and how someone could film their own, and so on. So, it only seemed right I started a youtube channel, where I could share tutorials and projects.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'If you want to check out my youtube channel, feel free to, it’s linked on this website haha, all of my videos are still up. I’ll definitely talk more about my youtube channel some day, but for today I want to talk about my first scratch project that I made on my own. If you want to see for yourself here’s the link to my scratch account: https://scratch.mit.edu/users/Incredgirl/.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'As you can see, my first project here is a game called catching stars. The premise of the game is like the title suggests, catching stars. You are the dog character, and using the arrow keys, you have to catch the stars, touching the starFISH makes you lose 1 life and touching the sun results in an automatic death.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'Even though this project looks simple, it took my little fourth grade stuff a lot of time to reach this. One of the problems I remember facing was that the dog could literally be out of view if the user went too down, too up, too left or too right. I discovered this when my brother used it to cheat the system and I got so mad, and knew I had to patch it. I patched it using the “If on edge, bounce” block, so if the dog ever touched the edge, it would just bounce back in.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'Another thing I remember is spending so long placid with all the stars and obstacles to make this game as hard as possible. I wouldn’t say I did the best job at that, but I would give myself a pat on the back. Another thing I remember was that when the lives counter, I wanted it to go down 1 each time, but for the life of me, somehow, couldn’t figure out how to do that. My brother did come in clutch though by saying “why don’t you just make it change by -1”, and that worked, so I was really overthinking it.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'Of course, now that I am older and have more experience, this project seems really easy to me and I can nit pick it and think about how many things could have been better. But when I think about my fourth grade self who finally found something she really enjoyed, thought of this idea and was so determined to make it a reality, and actually did, I can’t help but be proud. It’s a great reminder that things don’t have to be perfect to count for something, because as long as you start, it can totally change your life. If it wasn’t for my fourth grade self who decided to take what I learned from the Norcal Robotics classes and make something on my own, I probably wouldn’t have been where I am today, still being a coder and still loving it too. So if there’s something you want to do, but are worried you won’t be able to get it perfect on the first try, just go and do it anyway, you might be grateful you did one day 😃'
+        }
+      ];
+    }
+
     return [
       {
         type: 'paragraph',

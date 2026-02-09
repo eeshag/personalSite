@@ -90,7 +90,7 @@ const Projects = ({ onNavigate }) => {
         <div className="content-header">
           <div className="header-number">#</div>
           <div className="header-title">Title</div>
-          <div className="header-date">Date added: Jan 7, 2026</div>
+          <div className="header-date">Date added: Jan 19, 2026</div>
         </div>
         <div className="header-divider"></div>
         

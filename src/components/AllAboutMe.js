@@ -4,18 +4,47 @@ import './AllAboutMe.css';
 const AllAboutMe = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const contentRef = useRef(null);
-  // Placeholder content - can be replaced with actual content later
-  const content = `Welcome to my personal space. This is where I share my thoughts, experiences, and journey through life.
+  const content = `Hi, I'm Eesha, a freshman (class of 2029) from Fremont, California.
 
-I'm a freshman from Fremont with a deep interest in technology and machine learning. The intersection of these fields fascinates me, and I'm constantly exploring new ways to apply what I learn.
+I hope this website reminds you of Spotify, because that's what it's based off of. I love listening to music on Spotify, so I decided to base my personal website off it.
 
-Throughout my journey, I've discovered that the best way to grow is through continuous learning and sharing. This page serves as a reflection of who I am, what I value, and where I'm heading.
+On my website, you will find info to contact me, my socials, blogs and my different projects I have made or am working on, if you have any questions feel free to reach out to me through my email :)
 
-Technology has always been a passion of mine. From building my first website to diving into machine learning algorithms, each project teaches me something new. I believe in the power of code to solve real-world problems and make a positive impact.
+Now, a bit about myself because this is an all about me page. As you can probably tell, I'm really into technology. I've been hooked ever since my brother taught me how to use google docs in first grade and I've loved coding ever since I touched scratch in second grade. With Covid, I spent more time coding projects, even sharing them along with tutorials on youtube, with my channel getting overall 30,000 views.
 
-Beyond technology, I enjoy exploring various forms of media - books, music, podcasts, and more. These experiences shape my perspective and inspire my work.
+Over time, I started learning new coding languages and getting a better understanding of computer science concepts, doing competitions like ACSL (American computer science league) and of course I've done all the math competitions, Math Olympiad, Math Kangaroo, AMC 8 and AMC 10, and I plan to continue doing more in the future.
 
-This is just the beginning of my story. As I continue to learn and grow, I'll keep updating this space with new insights, projects, and reflections.`;
+Outside of coding, I started learning more skills like working with AI and machine learning, and of course web design, one of my favorite hobbies. (You can see my work with these things on the project page haha)
+
+Outside of technology, I like reading murder mystery and self help books, watching bollywood movies, listening to music, writing, photography, and running. My favorite self-help book is Atomic Habitats, it's the first self-help book I read and convinced me to read more. In the past, I definitely did not like movies, but after my parents made me watch some classics, I can definitely say I enjoy them a lot more now. Running is a new hobby I picked up this year, and even though I can question why I ever run while actually running, I wouldn't say it's too bad when you run with other people, and it's a good way to clear your head and the sense of accomplishment after makes it all worth it. In the future, I definitely want to get more experience using a professional camera, and try other hobbies.
+
+Here are some of my favorites:
+
+Favorite color - pink
+
+Favorite animal - cats
+
+Favorite fruit - mangos
+
+Favorite food - tacos
+
+Favorite dessert - pizacookie
+
+Favorite Chocolate - Crunch Bars
+
+Favorite subject - math
+
+Favorite sport - track
+
+Favorite sport to watch - F1, Cricket
+
+Favorite place I've visited - New York City
+
+Favorite music artist - Frank Ocean
+
+Favorite song - Champagne Coast - Blood Orange
+
+Thanks so much for reading, please explore the rest of the website :))`;
 
   // Calculate approximate word count and reading time
   const wordCount = content.split(/\s+/).length;
@@ -77,15 +106,22 @@ This is just the beginning of my story. As I continue to learn and grow, I'll ke
 
         {/* Writing Area */}
         <div className="writing-area">
-          {content.split('\n\n').map((paragraph, index) => (
-            <div key={index} className="writing-row">
-              <div className="row-number">{index + 1}</div>
-              <div className="row-content">
-                <p className="content-paragraph">{paragraph}</p>
+          {content.split('\n\n').map((paragraph, index) => {
+            const isFavorite = paragraph.startsWith('Favorite ');
+            const paragraphClass = isFavorite
+              ? 'content-paragraph favorite-paragraph'
+              : 'content-paragraph';
+
+            return (
+              <div key={index} className="writing-row">
+                <div className="row-number">{index + 1}</div>
+                <div className="row-content">
+                  <p className={paragraphClass}>{paragraph}</p>
+                </div>
+                <div className="row-date"></div>
               </div>
-              <div className="row-date"></div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 

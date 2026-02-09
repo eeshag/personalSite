@@ -11,12 +11,12 @@ export const blogs = [
   },
   {
     id: 2,
-    title: "Building Modern Web Applications",
+    title: "My First Scratch Project",
     excerpt: "Exploring React, Next.js, and modern frontend frameworks",
-    date: "2024-02-10",
+    date: "2026-02-08",
     url: "#",
-    icon: "💻",
-    color: "#6366F1",
+    icon: "😃",
+    color: "#9B039A",
   },
   {
     id: 3,

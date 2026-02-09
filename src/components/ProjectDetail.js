@@ -260,7 +260,7 @@ const ProjectDetail = ({ project, onNavigate }) => {
   };
 
   const bannerBackground = project.id === 3
-    ? 'linear-gradient(180deg, rgba(247, 218, 76, 0.45) 0%, rgba(245, 158, 11, 0.65) 100%)'
+    ? 'linear-gradient(180deg, rgba(217, 195, 240, 0.45) 0%, rgba(160, 132, 214, 0.7) 100%)'
     : `linear-gradient(180deg, ${hexToRgba(project.color, 0.4)} 0%, ${hexToRgba(project.color, 0.6)} 100%)`;
 
   return (
@@ -288,7 +288,7 @@ const ProjectDetail = ({ project, onNavigate }) => {
         <div className="content-header">
           <div className="header-number">#</div>
           <div className="header-title">Title</div>
-          <div className="header-date">Date added: Jan 7, 2026</div>
+          <div className="header-date">Date added: Jan 19, 2026</div>
         </div>
         <div className="header-divider"></div>
         
