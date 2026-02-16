@@ -73,6 +73,50 @@ const BlogDetail = ({ blog }) => {
       ];
     }
 
+    if (blog.id === 5 && blog.title === 'Why Everyone Should Have a Blog') {
+      return [
+        {
+          type: 'paragraph',
+          content:
+            "In this blog post, as you can see, I am going to talk about why you should start a blog too. Honestly, the more I think about it, I realize how beneficial having a blog is, so I want to influence you to start one too."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "First off with the obvious, you get free writing practice and in fact you get to write about stuff that you actually care about, not being forced to write about something. You have some freedom, you can write short paragraphs or three essays worth of writing, and you can write as frequently as you want on something as random as you want. I know so many people that don’t like writing, but writing is such a crucial skill, so I think blogs would help people enjoy and become better at writing."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "Another benefit of blogs is you get to understand yourself better. In blogs, you can write about whatever you want, and a major part is actually finding things to write about. I’m sure for some people it's easier than others, like for me, I spend a lot of time brainstorming writing ideas, but some people probably have them off the top of their head. Having a blog forces you to think about what you believe in, what you feel so passionate about that you would actually want to write about and share your take on it with others. It forces you to explore your hobbies and skills, things that you enjoy or are confident in enough to write something about them. When I’m brainstorming, I’ve got a better clarity of the things I care about and essentially, the things that make me me."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "Of course, the most obvious benefit which I have already touched on is you get to write more, and in a world where so many people use ChatGPT to write things, this will definitely help with your writing skills."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "Another thing if you are a sentimental person, or someone that likes reflecting on the past, in the future you can go and look back on your past blogs, it is like an amazing time capsule. You can understand how your views, writing style, skills have changed and overall how you have changed as a person."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "So where to start. You don’t need to be a coder to design a website for a blog, you can find templates on websites like wix. For me, I love using my blog to share my thoughts on topics, things that I really feel passionately about. In addition, I love using these blogs to explore my random interests, things that I often push to the side because they aren’t school or extracurricular related. I also like using this blog to reflect on things I did in the past. You can use these blogs to share your skills, like maybe a baking recipe, a coding project, artwork. You can use them to share important stories in life, life lessons you have learned, your opinions on certain topics. You can use them to talk about your hobbies and extracurriculars and why you enjoy them. You can use it to talk about people in your life that you care about. The list goes on and on."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "This is all I am going to include in this blog post, maybe I will make a part 2 in the future if I feel there is more to add onto. These were my main points, but I think if you actually start one, you will find even more benefits too."
+        },
+        {
+          type: 'paragraph',
+          content: 'Have fun blogging everyone📝'
+        }
+      ];
+    }
+
     return [
       {
         type: 'paragraph',

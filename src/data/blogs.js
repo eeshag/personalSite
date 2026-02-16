@@ -19,22 +19,13 @@ export const blogs = [
     color: "#9B039A",
   },
   {
-    id: 3,
-    title: "Tech Industry Insights",
-    excerpt: "My thoughts on the latest trends in technology",
-    date: "2024-03-05",
+    id: 5,
+    title: "Why Everyone Should Have a Blog",
+    excerpt: "Reasons to start writing and sharing your thoughts online",
+    date: "2026-02-16",
     url: "#",
-    icon: "🌐",
-    color: "#60A5FA",
-  },
-  {
-    id: 4,
-    title: "Notes From My Learning Journal",
-    excerpt: "Small wins, lessons learned, and future goals",
-    date: "2024-04-02",
-    url: "#",
-    icon: "📓",
-    color: "#A78BFA",
+    icon: "📝",
+    color: "#F95C4B",
   },
 ];
 

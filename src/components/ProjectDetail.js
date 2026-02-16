@@ -171,6 +171,280 @@ const ProjectDetail = ({ project, onNavigate }) => {
       ];
     }
     
+    if (project.id === 2 && project.name === 'Poly Market Project') {
+      return [
+        {
+          type: 'paragraph',
+          content: (
+            <>
+              View project: <a href="https://pmindexr.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: '#6366F1', textDecoration: 'underline' }}>https://pmindexr.vercel.app/</a>
+            </>
+          ),
+          wordCount: 4
+        },
+        {
+          type: 'header',
+          content: 'What is Indexr'
+        },
+        {
+          type: 'paragraph',
+          content: "Tool used daily by Polymarket's news team to build their newsletter."
+        },
+        {
+          type: 'list',
+          items: [
+            'Helps track relevant markets, price movements, and notable activity',
+            'Newsletter reaches 250,000+ readers'
+          ]
+        },
+        {
+          type: 'header',
+          content: 'How I Got to Work on This Project'
+        },
+        {
+          type: 'list',
+          items: [
+            'Introduced to a member of the Polymarket team through a mentor from my robotics background',
+            'Brought on to design and build the frontend for Indexr',
+            "Project became a production tool used in the team's daily editorial process"
+          ]
+        },
+        {
+          type: 'header',
+          content: 'My Work on This Project'
+        },
+        {
+          type: 'list',
+          items: [
+            'Designed the full frontend UI and interaction flows',
+            'Translated loosely defined internal needs into a clear, usable interface',
+            'Structured information architecture for fast market discovery and selection',
+            'Built reusable UI components focused on speed, clarity, and low cognitive load',
+            'Optimized the interface for editors working under time pressure'
+          ]
+        },
+        {
+          type: 'header',
+          content: 'What I Learned from This Project'
+        },
+        {
+          type: 'list',
+          items: [
+            'How to design for real operational use rather than demos',
+            'The importance of reliability and speed in data-dense tools',
+            'How to work quickly based on user feedback and evolving requirements',
+            'How thoughtful UI design can materially improve workflow efficiency'
+          ]
+        }
+      ];
+    }
+    
+    if (project.id === 3 && project.name === 'People vs. Pavement') {
+      return [
+        {
+          type: 'paragraph',
+          content: (
+            <>
+              People vs. Pavement: <a href="https://people-vs-pavement.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: '#6366F1', textDecoration: 'underline' }}>https://people-vs-pavement.vercel.app/</a>
+            </>
+          ),
+          wordCount: 5
+        },
+        {
+          type: 'paragraph',
+          content: "People vs. Pavement is an interactive web project that demonstrates how car-dependent suburban design restricts people's daily routines, independence, and opportunities."
+        },
+        {
+          type: 'paragraph',
+          content: "Instead of relying on dense statistics or lectures, the site uses simulations, choices, and light humor to make the consequences of car-centric planning experiential."
+        },
+        {
+          type: 'paragraph',
+          content: "The project is designed to resonate with users by showing how urban design decisions quietly shape everyday life—often in ways people don't notice until alternatives are made visible."
+        },
+        {
+          type: 'header',
+          content: 'Why I Made This Project'
+        },
+        {
+          type: 'paragraph',
+          content: 'I grew up in a suburban environment and initially assumed that needing a car for nearly everything was normal.'
+        },
+        {
+          type: 'paragraph',
+          content: "After learning more about car-dependent suburbia from a video by NotJustBikes, I realized this design is not inevitable and has real consequences for accessibility, equity, and quality of life."
+        },
+        {
+          type: 'paragraph',
+          content: 'I wanted to use my web development skills to raise awareness in a way that people would actually engage and resonate with.'
+        },
+        {
+          type: 'paragraph',
+          content: 'I chose an interactive and slightly humorous approach so users could feel the constraints rather than just read about them.'
+        },
+        {
+          type: 'paragraph',
+          content: 'This project was my way of applying technical skills to a real societal issue I feel passionately about.'
+        },
+        {
+          type: 'header',
+          content: 'How I Built It'
+        },
+        {
+          type: 'paragraph',
+          content: (
+            <>
+              <strong>Frontend:</strong> React (single-page web application)
+            </>
+          ),
+          wordCount: 8
+        },
+        {
+          type: 'paragraph',
+          content: (
+            <>
+              <strong>Platform:</strong> Fully web-based, responsive on desktop and mobile
+            </>
+          ),
+          wordCount: 10
+        },
+        {
+          type: 'paragraph',
+          content: (
+            <>
+              <strong>Design focus:</strong> Clean, roads, slight danger
+            </>
+          ),
+          wordCount: 6
+        },
+        {
+          type: 'paragraph',
+          content: (
+            <>
+              <strong>Background:</strong> Off-white / light gray #F5F5F5
+            </>
+          ),
+          wordCount: 8
+        },
+        {
+          type: 'paragraph',
+          content: (
+            <>
+              <strong>Primary text:</strong> Charcoal #1F1F1F
+            </>
+          ),
+          wordCount: 6
+        },
+        {
+          type: 'paragraph',
+          content: (
+            <>
+              <strong>Accent:</strong> Construction orange #FF8C42
+            </>
+          ),
+          wordCount: 6
+        },
+        {
+          type: 'paragraph',
+          content: (
+            <>
+              <strong>Secondary accent:</strong> Crosswalk yellow #FFD23F
+            </>
+          ),
+          wordCount: 6
+        },
+        {
+          type: 'paragraph',
+          content: (
+            <>
+              <strong>Muted lines/borders:</strong> Concrete gray #CFCFCF
+            </>
+          ),
+          wordCount: 6
+        },
+        {
+          type: 'header',
+          content: 'How the Website Works'
+        },
+        {
+          type: 'paragraph',
+          content: 'The entire experience lives on one page, organized into tab-based sections.'
+        },
+        {
+          type: 'paragraph',
+          content: 'The bingo is a funny way to start off and the user can realize design choices that are made for cars are all around them.'
+        },
+        {
+          type: 'paragraph',
+          content: "The questions with the chatbot further emphasize how these design choices aren't made for people, they are made for cars and the responses add on to the illogical design."
+        },
+        {
+          type: 'paragraph',
+          content: 'The simulator shows just how impactful these design choices can be on people, especially those without cars, and possibly has the user resonating more with it if they can see parallels in what happens with the simulation and in their real life.'
+        },
+        {
+          type: 'paragraph',
+          content: 'The simulation also brings in more empathy as even if car dependent suburbia isn\'t affecting you like the simulation, you understand just how limiting car centric cities are for groups of people.'
+        },
+        {
+          type: 'paragraph',
+          content: "Once the user understands just how big of a problem this is, the excuses section shows the silly and nonsense reasons as to why there hasn't been any change."
+        },
+        {
+          type: 'paragraph',
+          content: "Finally, the why section is my personal touch and my thoughts on the section, I hope to resonate with the user and for the user to understand how big of an issue this truly is."
+        },
+        {
+          type: 'header',
+          content: 'What I Learned'
+        },
+        {
+          type: 'paragraph',
+          content: 'How to translate an issue into an interactive, user-driven experience.'
+        },
+        {
+          type: 'paragraph',
+          content: 'How interface design and structure can guide understanding without heavy text or explicit persuasion.'
+        },
+        {
+          type: 'paragraph',
+          content: 'Improved React skills, especially around component structure, state handling, and responsive layouts.'
+        },
+        {
+          type: 'paragraph',
+          content: 'How software can be used as a tool for public education and real world causes, not just productivity or entertainment.'
+        },
+        {
+          type: 'paragraph',
+          content: 'The importance of balancing humor and clarity when communicating serious topics to a broad audience.'
+        },
+        {
+          type: 'header',
+          content: 'Future Plans'
+        },
+        {
+          type: 'paragraph',
+          content: 'Add simulations for additional groups, such as low-income and disabled people.'
+        },
+        {
+          type: 'paragraph',
+          content: 'Create a section for users to share personal stories about how suburban design has affected their lives.'
+        },
+        {
+          type: 'paragraph',
+          content: 'Add before-and-after visualizations showing how car-oriented stroads can be redesigned into people-centered streets with clear explanations for each design change to connect urban design decisions with real human outcomes.'
+        },
+        {
+          type: 'paragraph',
+          content: 'Add an action plan at the end to take this from not only a website that informs the user of the issue, but also helps take action towards working on the problem.'
+        },
+        {
+          type: 'paragraph',
+          content: 'Add in ways to collect data.'
+        }
+      ];
+    }
+    
     // Default placeholder content for other projects
     return [
       {
