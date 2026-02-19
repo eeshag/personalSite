@@ -1,30 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Projects.css';
 
-const Projects = ({ onNavigate }) => {
+const Projects = ({ onNavigate, projects: projectsProp }) => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const contentRef = useRef(null);
-  
-  // Projects list
-  const projects = [
-    {
-      id: 1,
-      name: 'IHS Imposter',
-      icon: '🎭',
-      color: '#6366F1',
-    },
-    {
-      id: 2,
-      name: 'Poly Market Project',
-      icon: '📊',
-      color: '#A78BFA',
-    },
-    {
-      id: 3,
-      name: 'People vs. Pavement',
-      icon: '🚗',
-      color: '#D9C3F0',
-    },
+
+  // Projects list (from props so dates stay in sync with App.js)
+  const projects = projectsProp ?? [
+    { id: 2, name: 'Poly Market Project', icon: '📊', color: '#A78BFA', dateAdded: 'Jan 4, 2026' },
+    { id: 1, name: 'IHS Imposter', icon: '🎭', color: '#6366F1', dateAdded: 'Jan 7, 2026' },
+    { id: 3, name: 'People vs. Pavement', icon: '🚗', color: '#D9C3F0', dateAdded: 'Feb 5, 2026' },
+    { id: 4, name: 'Study Goblin', icon: '🧌', color: '#7C9A6E', dateAdded: 'Feb 12, 2026' },
   ];
 
   const handleProjectClick = (project) => {
@@ -90,7 +76,7 @@ const Projects = ({ onNavigate }) => {
         <div className="content-header">
           <div className="header-number">#</div>
           <div className="header-title">Title</div>
-          <div className="header-date">Date added: Jan 19, 2026</div>
+          <div className="header-date">Date added</div>
         </div>
         <div className="header-divider"></div>
         
@@ -114,7 +100,7 @@ const Projects = ({ onNavigate }) => {
                   </div>
                 </div>
               </div>
-              <div className="row-date"></div>
+              <div className="row-date">{project.dateAdded}</div>
             </div>
           ))}
         </div>

@@ -251,196 +251,208 @@ const ProjectDetail = ({ project, onNavigate }) => {
           wordCount: 5
         },
         {
-          type: 'paragraph',
-          content: "People vs. Pavement is an interactive web project that demonstrates how car-dependent suburban design restricts people's daily routines, independence, and opportunities."
-        },
-        {
-          type: 'paragraph',
-          content: "Instead of relying on dense statistics or lectures, the site uses simulations, choices, and light humor to make the consequences of car-centric planning experiential."
-        },
-        {
-          type: 'paragraph',
-          content: "The project is designed to resonate with users by showing how urban design decisions quietly shape everyday life—often in ways people don't notice until alternatives are made visible."
+          type: 'list',
+          items: [
+            "People vs. Pavement is an interactive web project that demonstrates how car-dependent suburban design restricts people's daily routines, independence, and opportunities.",
+            "Instead of relying on dense statistics or lectures, the site uses simulations, choices, and light humor to make the consequences of car-centric planning experiential.",
+            "The project is designed to resonate with users by showing how urban design decisions quietly shape everyday life—often in ways people don't notice until alternatives are made visible."
+          ]
         },
         {
           type: 'header',
           content: 'Why I Made This Project'
         },
         {
-          type: 'paragraph',
-          content: 'I grew up in a suburban environment and initially assumed that needing a car for nearly everything was normal.'
-        },
-        {
-          type: 'paragraph',
-          content: "After learning more about car-dependent suburbia from a video by NotJustBikes, I realized this design is not inevitable and has real consequences for accessibility, equity, and quality of life."
-        },
-        {
-          type: 'paragraph',
-          content: 'I wanted to use my web development skills to raise awareness in a way that people would actually engage and resonate with.'
-        },
-        {
-          type: 'paragraph',
-          content: 'I chose an interactive and slightly humorous approach so users could feel the constraints rather than just read about them.'
-        },
-        {
-          type: 'paragraph',
-          content: 'This project was my way of applying technical skills to a real societal issue I feel passionately about.'
+          type: 'list',
+          items: [
+            'I grew up in a suburban environment and initially assumed that needing a car for nearly everything was normal.',
+            "After learning more about car-dependent suburbia from a video by NotJustBikes, I realized this design is not inevitable and has real consequences for accessibility, equity, and quality of life.",
+            'I wanted to use my web development skills to raise awareness in a way that people would actually engage and resonate with.',
+            'I chose an interactive and slightly humorous approach so users could feel the constraints rather than just read about them.',
+            'This project was my way of applying technical skills to a real societal issue I feel passionately about.'
+          ]
         },
         {
           type: 'header',
           content: 'How I Built It'
         },
         {
-          type: 'paragraph',
-          content: (
-            <>
-              <strong>Frontend:</strong> React (single-page web application)
-            </>
-          ),
-          wordCount: 8
-        },
-        {
-          type: 'paragraph',
-          content: (
-            <>
-              <strong>Platform:</strong> Fully web-based, responsive on desktop and mobile
-            </>
-          ),
-          wordCount: 10
-        },
-        {
-          type: 'paragraph',
-          content: (
-            <>
-              <strong>Design focus:</strong> Clean, roads, slight danger
-            </>
-          ),
-          wordCount: 6
-        },
-        {
-          type: 'paragraph',
-          content: (
-            <>
-              <strong>Background:</strong> Off-white / light gray #F5F5F5
-            </>
-          ),
-          wordCount: 8
-        },
-        {
-          type: 'paragraph',
-          content: (
-            <>
-              <strong>Primary text:</strong> Charcoal #1F1F1F
-            </>
-          ),
-          wordCount: 6
-        },
-        {
-          type: 'paragraph',
-          content: (
-            <>
-              <strong>Accent:</strong> Construction orange #FF8C42
-            </>
-          ),
-          wordCount: 6
-        },
-        {
-          type: 'paragraph',
-          content: (
-            <>
-              <strong>Secondary accent:</strong> Crosswalk yellow #FFD23F
-            </>
-          ),
-          wordCount: 6
-        },
-        {
-          type: 'paragraph',
-          content: (
-            <>
-              <strong>Muted lines/borders:</strong> Concrete gray #CFCFCF
-            </>
-          ),
-          wordCount: 6
+          type: 'list',
+          items: [
+            'Frontend: React (single-page web application)',
+            'Platform: Fully web-based, responsive on desktop and mobile',
+            {
+              text: 'Design focus: Clean, roads, slight danger',
+              subItems: [
+                'Background: Off-white / light gray #F5F5F5',
+                'Primary text: Charcoal #1F1F1F',
+                'Accent: Construction orange #FF8C42',
+                'Secondary accent: Crosswalk yellow #FFD23F',
+                'Muted lines/borders: Concrete gray #CFCFCF'
+              ]
+            }
+          ]
         },
         {
           type: 'header',
           content: 'How the Website Works'
         },
         {
-          type: 'paragraph',
-          content: 'The entire experience lives on one page, organized into tab-based sections.'
-        },
-        {
-          type: 'paragraph',
-          content: 'The bingo is a funny way to start off and the user can realize design choices that are made for cars are all around them.'
-        },
-        {
-          type: 'paragraph',
-          content: "The questions with the chatbot further emphasize how these design choices aren't made for people, they are made for cars and the responses add on to the illogical design."
-        },
-        {
-          type: 'paragraph',
-          content: 'The simulator shows just how impactful these design choices can be on people, especially those without cars, and possibly has the user resonating more with it if they can see parallels in what happens with the simulation and in their real life.'
-        },
-        {
-          type: 'paragraph',
-          content: 'The simulation also brings in more empathy as even if car dependent suburbia isn\'t affecting you like the simulation, you understand just how limiting car centric cities are for groups of people.'
-        },
-        {
-          type: 'paragraph',
-          content: "Once the user understands just how big of a problem this is, the excuses section shows the silly and nonsense reasons as to why there hasn't been any change."
-        },
-        {
-          type: 'paragraph',
-          content: "Finally, the why section is my personal touch and my thoughts on the section, I hope to resonate with the user and for the user to understand how big of an issue this truly is."
+          type: 'list',
+          items: [
+            'The entire experience lives on one page, organized into tab-based sections.',
+            'The bingo is a funny way to start off and the user can realize design choices that are made for cars are all around them.',
+            "The questions with the chatbot further emphasize how these design choices aren't made for people, they are made for cars and the responses add on to the illogical design.",
+            'The simulator shows just how impactful these design choices can be on people, especially those without cars, and possibly has the user resonating more with it if they can see parallels in what happens with the simulation and in their real life.',
+            "The simulation also brings in more empathy as even if car dependent suburbia isn't affecting you like the simulation, you understand just how limiting car centric cities are for groups of people.",
+            "Once the user understands just how big of a problem this is, the excuses section shows the silly and nonsense reasons as to why there hasn't been any change.",
+            "Finally, the why section is my personal touch and my thoughts on the section, I hope to resonate with the user and for the user to understand how big of an issue this truly is."
+          ]
         },
         {
           type: 'header',
           content: 'What I Learned'
         },
         {
-          type: 'paragraph',
-          content: 'How to translate an issue into an interactive, user-driven experience.'
-        },
-        {
-          type: 'paragraph',
-          content: 'How interface design and structure can guide understanding without heavy text or explicit persuasion.'
-        },
-        {
-          type: 'paragraph',
-          content: 'Improved React skills, especially around component structure, state handling, and responsive layouts.'
-        },
-        {
-          type: 'paragraph',
-          content: 'How software can be used as a tool for public education and real world causes, not just productivity or entertainment.'
-        },
-        {
-          type: 'paragraph',
-          content: 'The importance of balancing humor and clarity when communicating serious topics to a broad audience.'
+          type: 'list',
+          items: [
+            'How to translate an issue into an interactive, user-driven experience.',
+            'How interface design and structure can guide understanding without heavy text or explicit persuasion.',
+            'Improved React skills, especially around component structure, state handling, and responsive layouts.',
+            'How software can be used as a tool for public education and real world causes, not just productivity or entertainment.',
+            'The importance of balancing humor and clarity when communicating serious topics to a broad audience.'
+          ]
         },
         {
           type: 'header',
           content: 'Future Plans'
         },
         {
-          type: 'paragraph',
-          content: 'Add simulations for additional groups, such as low-income and disabled people.'
+          type: 'list',
+          items: [
+            'Add simulations for additional groups, such as low-income and disabled people.',
+            'Create a section for users to share personal stories about how suburban design has affected their lives.',
+            'Add before-and-after visualizations showing how car-oriented stroads can be redesigned into people-centered streets with clear explanations for each design change to connect urban design decisions with real human outcomes.',
+            'Add an action plan at the end to take this from not only a website that informs the user of the issue, but also helps take action towards working on the problem.',
+            'Add in ways to collect data.'
+          ]
+        }
+      ];
+    }
+    
+    if (project.id === 4 && project.name === 'Study Goblin') {
+      return [
+        {
+          type: 'header',
+          content: 'Study Goblin'
         },
         {
-          type: 'paragraph',
-          content: 'Create a section for users to share personal stories about how suburban design has affected their lives.'
+          type: 'list',
+          items: [
+            <>View Project: <a href="https://study-goblin.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: '#6366F1', textDecoration: 'underline' }}>https://study-goblin.vercel.app/</a></>,
+            'Study Goblin is a fast, distraction-free study website designed to help students review UC Scout courses efficiently.',
+            'It provides condensed unit summaries, realistic practice exams, and detailed feedback to help students improve in a short amount of time.'
+          ]
         },
         {
-          type: 'paragraph',
-          content: 'Add before-and-after visualizations showing how car-oriented stroads can be redesigned into people-centered streets with clear explanations for each design change to connect urban design decisions with real human outcomes.'
+          type: 'header',
+          content: 'Why I Made This Project'
         },
         {
-          type: 'paragraph',
-          content: 'Add an action plan at the end to take this from not only a website that informs the user of the issue, but also helps take action towards working on the problem.'
+          type: 'list',
+          items: [
+            'I noticed many of my friends were extremely stressed about UC Scout exams, especially when they were short on time.',
+            'They had to jump between notes, Google searches, and random practice problems to study.',
+            'I wanted to create one clean, centralized platform with everything they need to review quickly and confidently.',
+            'The goal was to make studying simpler, faster, and less overwhelming.'
+          ]
         },
         {
-          type: 'paragraph',
-          content: 'Add in ways to collect data.'
+          type: 'header',
+          content: 'How I Built It'
+        },
+        {
+          type: 'list',
+          items: [
+            'I designed Study Goblin as a single-page web application to keep navigation fast and seamless.',
+            'All content is structured to mirror how UC Scout teaches and tests material.',
+            'I focused on keeping the site lightweight and responsive so it works well on both desktop and mobile.'
+          ]
+        },
+        {
+          type: 'header',
+          content: 'Technical Details'
+        },
+        {
+          type: 'list',
+          items: [
+            'Frontend: Built using React',
+            {
+              text: 'Platform: Fully web-based',
+              subItems: [
+                'Responsive on both desktop and mobile devices',
+                'No accounts or backend required, keeping the experience simple and fast'
+              ]
+            },
+            {
+              text: 'Design Focus',
+              subItems: [
+                'Minimal and sleek interface to reduce distractions',
+                'Dark mode enabled by default to reduce eye strain',
+                'Optional light mode toggle for user preference',
+                'Designed so users can immediately start studying with no friction'
+              ]
+            }
+          ]
+        },
+        {
+          type: 'header',
+          content: 'How the Website Works'
+        },
+        {
+          type: 'list',
+          items: [
+            'Users select their course and view condensed summaries for every unit.',
+            'Each unit includes optional read-aloud buttons for students who learn better by listening.',
+            'The site includes practice midterms and finals modeled after real UC Scout exams.',
+            'Practice tests match: Question format, Number of questions, Time for test',
+            'Users can choose whether to enable a timer, and can pause, resume, or cancel it.',
+            {
+              text: 'After submitting a test, users receive:',
+              subItems: [
+                'Their score using the UC Scout grading system',
+                'Percentage score',
+                'Time used or remaining',
+                'Personalized feedback on concepts they should review'
+              ]
+            },
+            'For every missed question, the correct answer is shown along with an explanation.'
+          ]
+        },
+        {
+          type: 'header',
+          content: 'What I Learned'
+        },
+        {
+          type: 'list',
+          items: [
+            'How to design an interface that prioritizes speed and usability over extra features.',
+            'How to structure educational content so it\'s easy to skim but still effective.',
+            'How to build a full web application that solves a real problem people actually have.'
+          ]
+        },
+        {
+          type: 'header',
+          content: 'Future Plans'
+        },
+        {
+          type: 'list',
+          items: [
+            'Expand Study Goblin to support more AP courses',
+            'Add a flashcard system for quick memorization and review.',
+            'Experiment with a more Kahoot-style, game-based practice mode to make studying more engaging.',
+            'Continue refining feedback to make recommendations even more personalized.'
+          ]
         }
       ];
     }
@@ -480,8 +492,13 @@ const ProjectDetail = ({ project, onNavigate }) => {
           count += 10; // Default estimate
         }
       } else if (item.type === 'list') {
-        item.items.forEach(itemText => {
-          count += itemText.split(/\s+/).length;
+        item.items.forEach(entry => {
+          if (typeof entry === 'object' && entry !== null && 'text' in entry) {
+            count += entry.text.split(/\s+/).length;
+            if (entry.subItems) entry.subItems.forEach(s => { count += s.split(/\s+/).length; });
+          } else {
+            count += String(entry).split(/\s+/).length;
+          }
         });
       } else if (item.type === 'header') {
         count += item.content.split(/\s+/).length;
@@ -562,7 +579,7 @@ const ProjectDetail = ({ project, onNavigate }) => {
         <div className="content-header">
           <div className="header-number">#</div>
           <div className="header-title">Title</div>
-          <div className="header-date">Date added: Jan 19, 2026</div>
+          <div className="header-date">Date added: {project.dateAdded ?? 'Feb 18, 2026'}</div>
         </div>
         <div className="header-divider"></div>
         
@@ -601,11 +618,25 @@ const ProjectDetail = ({ project, onNavigate }) => {
                   <div className="row-number">{index + 1}</div>
                   <div className="row-content">
                     <ul style={{ margin: '0', paddingLeft: '24px', color: '#b3b3b3' }}>
-                      {item.items.map((listItem, listIndex) => (
-                        <li key={listIndex} className="content-paragraph" style={{ marginBottom: listIndex < item.items.length - 1 ? '2px' : '0' }}>
-                          {listItem}
-                        </li>
-                      ))}
+                      {item.items.map((listItem, listIndex) => {
+                        const isNested = typeof listItem === 'object' && listItem !== null && 'text' in listItem;
+                        const text = isNested ? listItem.text : listItem;
+                        const subItems = isNested && listItem.subItems ? listItem.subItems : null;
+                        return (
+                          <li key={listIndex} className="content-paragraph" style={{ marginBottom: listIndex < item.items.length - 1 ? '2px' : '0' }}>
+                            {text}
+                            {subItems && subItems.length > 0 && (
+                              <ul style={{ margin: '4px 0 0', paddingLeft: '24px' }}>
+                                {subItems.map((sub, subIndex) => (
+                                  <li key={subIndex} className="content-paragraph" style={{ marginBottom: subIndex < subItems.length - 1 ? '2px' : '0' }}>
+                                    {sub}
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                   <div className="row-date"></div>

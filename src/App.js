@@ -30,22 +30,32 @@ function App() {
   // Projects data (should match Projects.js)
   const projects = [
     {
-      id: 1,
-      name: 'IHS Imposter',
-      icon: '🎭',
-      color: '#6366F1',
-    },
-    {
       id: 2,
       name: 'Poly Market Project',
       icon: '📊',
       color: '#A78BFA',
+      dateAdded: 'Jan 4, 2026',
+    },
+    {
+      id: 1,
+      name: 'IHS Imposter',
+      icon: '🎭',
+      color: '#6366F1',
+      dateAdded: 'Jan 7, 2026',
     },
     {
       id: 3,
       name: 'People vs. Pavement',
       icon: '🚗',
       color: '#D9C3F0',
+      dateAdded: 'Feb 5, 2026',
+    },
+    {
+      id: 4,
+      name: 'Study Goblin',
+      icon: '🧌',
+      color: '#7C9A6E',
+      dateAdded: 'Feb 12, 2026',
     },
   ];
 
@@ -58,7 +68,7 @@ function App() {
         ) : currentPage === 'about' ? (
           <AllAboutMe />
         ) : currentPage === 'projects' ? (
-          <Projects onNavigate={handleNavigate} />
+          <Projects onNavigate={handleNavigate} projects={projects} />
         ) : currentPage === 'blogs' ? (
           <Blogs onNavigate={handleNavigate} />
         ) : currentPage.startsWith('blog-') ? (
