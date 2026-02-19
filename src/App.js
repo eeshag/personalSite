@@ -30,11 +30,11 @@ function App() {
   // Projects data (should match Projects.js)
   const projects = [
     {
-      id: 2,
-      name: 'Poly Market Project',
-      icon: '📊',
-      color: '#A78BFA',
-      dateAdded: 'Jan 4, 2026',
+      id: 5,
+      name: 'Personal Website',
+      icon: '🤩',
+      color: '#9E17AB',
+      dateAdded: 'Dec 28, 2025',
     },
     {
       id: 1,
@@ -42,6 +42,13 @@ function App() {
       icon: '🎭',
       color: '#6366F1',
       dateAdded: 'Jan 7, 2026',
+    },
+    {
+      id: 2,
+      name: 'Poly Market Project',
+      icon: '📊',
+      color: '#A78BFA',
+      dateAdded: 'Jan 22, 2026',
     },
     {
       id: 3,

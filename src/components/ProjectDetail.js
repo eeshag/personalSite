@@ -456,6 +456,100 @@ const ProjectDetail = ({ project, onNavigate }) => {
         }
       ];
     }
+
+    if (project.id === 5 && project.name === 'Personal Website') {
+      return [
+        {
+          type: 'paragraph',
+          content: (
+            <>
+              Personal Website: <a href="https://eeshag.com" target="_blank" rel="noopener noreferrer" style={{ color: '#9E17AB', textDecoration: 'underline' }}>eeshag.com</a> (this website haha)
+            </>
+          ),
+          wordCount: 8
+        },
+        {
+          type: 'paragraph',
+          content: 'A personal, Spotify-inspired website that acts as a central hub for my projects, blogs, socials, and contact information.'
+        },
+        {
+          type: 'paragraph',
+          content: 'Blends creative writing, technical work, and personal interests into a single, cohesive interface that feels like browsing playlists and albums.'
+        },
+        {
+          type: 'header',
+          content: 'Why I Made This Project'
+        },
+        {
+          type: 'list',
+          items: [
+            'I wanted one place where people could learn about me, explore my projects, read my thoughts, and easily reach out.',
+            'I love both music and web design, and modeling the site after Spotify made the process more fun and personally meaningful.',
+            'This combines building something I would actually enjoy using and creating something functional.'
+          ]
+        },
+        {
+          type: 'header',
+          content: 'How I Built It'
+        },
+        {
+          type: 'list',
+          items: [
+            'Designed the entire site around the mental model of playlists, albums, and tracks to keep navigation intuitive.',
+            'Structured content so blogs, projects, and personal sections all feel consistent while serving different purposes.',
+            'Iterated continuously, adding new blogs, projects, and UI refinements over time.'
+          ]
+        },
+        {
+          type: 'list',
+          items: [
+            'Frontend: React, built as a single-page application for smooth navigation and fast transitions.',
+            'Platform: Fully web-based and responsive, designed to work cleanly on both desktop and mobile.',
+            'Design Focus: Spotify-inspired layout, dark-mode aesthetic, and familiar visual hierarchy.',
+            'Each page mimics a music experience: projects as songs, pages as playlists, blogs as albums.',
+            'Emphasis on clarity, personality, and a playful but polished feel.',
+            'Each "post" (blog, project page, all about me) has its own icon and background color, that serves as the cover of playlist/song/album, and at the bottom there is a song player, and as you scroll down more of the song/post finishes based on how much you have read (a favorite feature that I have added).'
+          ]
+        },
+        {
+          type: 'header',
+          content: 'How the Website Works'
+        },
+        {
+          type: 'list',
+          items: [
+            'Sidebar and quick links provide instant access to socials, contact methods, blogs, and projects.',
+            'Project pages function like playlists, with a banner at the top and each project listed like a track.',
+            'Blog pages resemble Spotify\'s search/browse view, with each post presented as its own album.',
+            'Includes a "currently consuming" section where I share media I\'m engaging with, along with ratings and thoughts.',
+            'Includes all about me page which shares quick facts about me and my journey of how I reached to where I am today.'
+          ]
+        },
+        {
+          type: 'header',
+          content: 'What I Learned'
+        },
+        {
+          type: 'list',
+          items: [
+            'Balancing creative expression with clean engineering and responsive design.',
+            'The value of continuously shipping and iterating, rather than treating a website as "finished."'
+          ]
+        },
+        {
+          type: 'header',
+          content: 'Future Plans'
+        },
+        {
+          type: 'list',
+          items: [
+            'Add more interactive elements to blogs and project pages.',
+            'Continue expanding content, especially long-form writing and more technical projects.',
+            'Further refine performance, animations, and personalization while keeping the Spotify-style identity intact.'
+          ]
+        }
+      ];
+    }
     
     // Default placeholder content for other projects
     return [

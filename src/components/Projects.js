@@ -7,8 +7,8 @@ const Projects = ({ onNavigate, projects: projectsProp }) => {
 
   // Projects list (from props so dates stay in sync with App.js)
   const projects = projectsProp ?? [
-    { id: 2, name: 'Poly Market Project', icon: '📊', color: '#A78BFA', dateAdded: 'Jan 4, 2026' },
     { id: 1, name: 'IHS Imposter', icon: '🎭', color: '#6366F1', dateAdded: 'Jan 7, 2026' },
+    { id: 2, name: 'Poly Market Project', icon: '📊', color: '#A78BFA', dateAdded: 'Jan 22, 2026' },
     { id: 3, name: 'People vs. Pavement', icon: '🚗', color: '#D9C3F0', dateAdded: 'Feb 5, 2026' },
     { id: 4, name: 'Study Goblin', icon: '🧌', color: '#7C9A6E', dateAdded: 'Feb 12, 2026' },
   ];
