@@ -1,20 +1,18 @@
 import React, { useState, useRef } from 'react';
 import { currentlyConsuming } from '../data/content';
+import { blogs } from '../data/blogs';
 import './Home.css';
 
-const Home = ({ onNavigate }) => {
+const Home = ({ onNavigate, projects = [] }) => {
   const [hoveredColor, setHoveredColor] = useState(null);
   const timeoutRef = useRef(null);
   
   const quickLinks = [
-    // First row
     { id: 'email', label: 'Email', icon: '✉️', url: 'https://mail.google.com/mail/u/0/?fs=1&to=eeshag50@gmail.com&tf=cm', color: '#A78BFA' },
     { id: 'youtube', label: 'YouTube', icon: '▶️', url: 'https://youtube.com/@incredgirl678?si=akOgxelHdVx3eZDz', color: '#3B82F6' },
+    { id: 'github', label: 'GitHub', icon: '🐙', url: 'https://github.com/eeshag', color: '#6e5494' },
     { id: 'spotify', label: 'Spotify', icon: '🎼', url: 'https://open.spotify.com/user/312mixbngb3jlmrulyzl4lq3x6ui?si=57c245e47328410f', color: '#7C3AED' },
-    // Second row
     { id: 'about', label: 'All About Me', icon: '👤', url: 'about', color: '#9333EA', isPage: true },
-    { id: 'blogs', label: 'Blogs', icon: '📝', url: 'blogs', color: '#60A5FA', isPage: true },
-    { id: 'projects', label: 'Projects', icon: '💻', url: 'projects', color: '#818CF8', isPage: true },
   ];
 
   // Function to darken a hex color for subtle gradient
@@ -118,22 +116,111 @@ const Home = ({ onNavigate }) => {
         </div>
       </div>
 
-      {/* Content Carousel Section */}
+      {/* Projects Carousel Section */}
+      <div className="content-carousel-section">
+        <h2 className="section-title">Projects</h2>
+        <div className="carousel-container">
+          <div className="carousel">
+            {projects.map((project) => (
+              <div
+                key={project.id}
+                className="carousel-item-wrapper carousel-item-clickable"
+                onClick={() => onNavigate && onNavigate(`project-${project.id}`, project)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if ((e.key === 'Enter' || e.key === ' ') && onNavigate) {
+                    e.preventDefault();
+                    onNavigate(`project-${project.id}`, project);
+                  }
+                }}
+              >
+                <div className="carousel-card">
+                  <div
+                    className="carousel-card-cover"
+                    style={{
+                      background: `linear-gradient(135deg, ${project.color}40 0%, rgba(0, 0, 0, 0.4) 100%)`,
+                    }}
+                  >
+                    {project.icon}
+                  </div>
+                </div>
+                <div className="carousel-card-info">
+                  <h3 className="carousel-card-title">{project.name}</h3>
+                  <p className="carousel-card-author">{project.dateAdded}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Blogs Carousel Section */}
+      <div className="content-carousel-section">
+        <h2 className="section-title">Blogs</h2>
+        <div className="carousel-container">
+          <div className="carousel">
+            {blogs.map((blog) => (
+              <div
+                key={blog.id}
+                className="carousel-item-wrapper carousel-item-clickable"
+                onClick={() => onNavigate && onNavigate(`blog-${blog.id}`, blog)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if ((e.key === 'Enter' || e.key === ' ') && onNavigate) {
+                    e.preventDefault();
+                    onNavigate(`blog-${blog.id}`, blog);
+                  }
+                }}
+              >
+                <div className="carousel-card">
+                  <div
+                    className="carousel-card-cover"
+                    style={{
+                      background: `linear-gradient(135deg, ${blog.color}40 0%, rgba(0, 0, 0, 0.4) 100%)`,
+                    }}
+                  >
+                    {blog.icon}
+                  </div>
+                </div>
+                <div className="carousel-card-info">
+                  <h3 className="carousel-card-title">{blog.title}</h3>
+                  <p className="carousel-card-author">{blog.date}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Currently Consuming Carousel Section */}
       <div className="content-carousel-section">
         <h2 className="section-title">Currently Consuming</h2>
         <div className="carousel-container">
           <div className="carousel">
-            {currentlyConsuming.map((item) => (
-              <div key={item.id} className="carousel-item-wrapper">
-                <div className="carousel-card">
-                  <div className="carousel-card-cover">{item.cover}</div>
+            {currentlyConsuming.map((item, index) => {
+              const consumingColors = ['#6366F1', '#8B5CF6', '#EC4899', '#06B6D4', '#10B981', '#F59E0B'];
+              const color = consumingColors[index % consumingColors.length];
+              return (
+                <div key={item.id} className="carousel-item-wrapper">
+                  <div className="carousel-card">
+                    <div
+                      className="carousel-card-cover"
+                      style={{
+                        background: `linear-gradient(135deg, ${color}40 0%, rgba(0, 0, 0, 0.4) 100%)`,
+                      }}
+                    >
+                      {item.cover}
+                    </div>
+                  </div>
+                  <div className="carousel-card-info">
+                    <h3 className="carousel-card-title">{item.title}</h3>
+                    {item.author && <p className="carousel-card-author">{item.author}</p>}
+                  </div>
                 </div>
-                <div className="carousel-card-info">
-                  <h3 className="carousel-card-title">{item.title}</h3>
-                  {item.author && <p className="carousel-card-author">{item.author}</p>}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

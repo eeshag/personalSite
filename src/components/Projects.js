@@ -11,6 +11,7 @@ const Projects = ({ onNavigate, projects: projectsProp }) => {
     { id: 2, name: 'Poly Market Project', icon: '📊', color: '#A78BFA', dateAdded: 'Jan 22, 2026' },
     { id: 3, name: 'People vs. Pavement', icon: '🚗', color: '#D9C3F0', dateAdded: 'Feb 5, 2026' },
     { id: 4, name: 'Study Goblin', icon: '🧌', color: '#7C9A6E', dateAdded: 'Feb 12, 2026' },
+    { id: 6, name: 'Fair Lens', icon: '🔎', color: '#06B6D4', dateAdded: 'Feb 19, 2026' },
   ];
 
   const handleProjectClick = (project) => {

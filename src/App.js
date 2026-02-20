@@ -64,6 +64,13 @@ function App() {
       color: '#7C9A6E',
       dateAdded: 'Feb 12, 2026',
     },
+    {
+      id: 6,
+      name: 'Fair Lens',
+      icon: '🔎',
+      color: '#06B6D4',
+      dateAdded: 'Feb 19, 2026',
+    },
   ];
 
   return (
@@ -71,7 +78,7 @@ function App() {
       <Sidebar onNavigate={handleNavigate} currentPage={currentPage} />
       <main className="main-content">
         {currentPage === 'home' ? (
-          <Home onNavigate={handleNavigate} />
+          <Home onNavigate={handleNavigate} projects={projects} />
         ) : currentPage === 'about' ? (
           <AllAboutMe />
         ) : currentPage === 'projects' ? (

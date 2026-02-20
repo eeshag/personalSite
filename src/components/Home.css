@@ -73,7 +73,7 @@
 
 .quick-links-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
 
@@ -151,6 +151,14 @@
   gap: 12px;
   flex-shrink: 0;
   width: 200px;
+}
+
+.carousel-item-wrapper.carousel-item-clickable {
+  cursor: pointer;
+}
+
+.carousel-item-clickable .carousel-card:hover {
+  transform: scale(1.05);
 }
 
 .carousel-card {

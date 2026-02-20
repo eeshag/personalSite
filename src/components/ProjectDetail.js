@@ -550,6 +550,105 @@ const ProjectDetail = ({ project, onNavigate }) => {
         }
       ];
     }
+
+    if (project.id === 6 && project.name === 'Fair Lens') {
+      return [
+        {
+          type: 'paragraph',
+          content: 'Status: In progress, writing + publishing research paper'
+        },
+        {
+          type: 'paragraph',
+          content: 'FairLens is an AI-powered educational tool that helps teachers and educators identify subtle bias and stereotypes in learning materials before they are used in the classroom.'
+        },
+        {
+          type: 'paragraph',
+          content: 'It analyzes text, images, and PDFs and generates clear reports explaining what types of bias—if any—are present.'
+        },
+        {
+          type: 'header',
+          content: 'Why I Made This Project'
+        },
+        {
+          type: 'list',
+          items: [
+            'Educational content plays a major role in shaping how students perceive gender, race, and culture, often in subtle ways that go unnoticed.',
+            'I wanted to help break the cycle of reinforcing harmful stereotypes by giving educators an easy way to review materials ahead of time.',
+            'The goal was to use AI not just for efficiency, but for awareness, fairness, and social good in education.'
+          ]
+        },
+        {
+          type: 'header',
+          content: 'How I Built It'
+        },
+        {
+          type: 'list',
+          items: [
+            'Designed the system around large language models to analyze tone, context, and patterns rather than relying on simple keyword matching.',
+            'Integrated text, image, and PDF analysis so a wide range of educational materials could be evaluated in one place.',
+            'Iteratively refined prompts and tested results to improve accuracy, especially for subtle, context-dependent bias.',
+            'Built a unified dataset for testing model accuracy.',
+            'Tested and compared several different models.',
+            {
+              text: 'Frontend',
+              subItems: [
+                'Built with Streamlit, focusing on simplicity and ease of use for teachers with varying technical backgrounds.'
+              ]
+            },
+            {
+              text: 'Platform',
+              subItems: [
+                'Fully web-based application with Google authentication to ensure secure and verified access.'
+              ]
+            },
+            {
+              text: 'Design Focus',
+              subItems: [
+                'Clear, intuitive interface that prioritizes trust, transparency, and ease of interpretation.',
+                'Concise AI-generated reports that explicitly state when no bias is found or when content is unrelated to education.'
+              ]
+            }
+          ]
+        },
+        {
+          type: 'header',
+          content: 'How the Website Works'
+        },
+        {
+          type: 'list',
+          items: [
+            'User logs in with Google authentication.',
+            'Users upload text, images, or PDFs, or paste content directly into the app.',
+            'FairLens processes the content using AI models and returns a structured report describing detected biases.',
+            'If no bias is detected, the system clearly communicates that result, giving users confidence in the analysis.'
+          ]
+        },
+        {
+          type: 'header',
+          content: 'What I Learned'
+        },
+        {
+          type: 'list',
+          items: [
+            'How to build and integrate an AI-powered web application from end to end, including authentication, file handling, and model evaluation.',
+            'The importance of prompt engineering and dataset validation, using confusion matrices to identify weaknesses and improve performance.',
+            'Building impactful AI requires ethical awareness and careful attention to context, not just technical skill.'
+          ]
+        },
+        {
+          type: 'header',
+          content: 'Future Plans'
+        },
+        {
+          type: 'list',
+          items: [
+            'Add video analysis to support modern classroom materials.',
+            'Expand FairLens to support multiple languages.',
+            'Work toward real-world adoption by partnering with schools and educators to integrate FairLens into lesson planning workflows.'
+          ]
+        }
+      ];
+    }
     
     // Default placeholder content for other projects
     return [
