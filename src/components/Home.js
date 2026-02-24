@@ -3,10 +3,17 @@ import { currentlyConsuming } from '../data/content';
 import { blogs } from '../data/blogs';
 import './Home.css';
 
+const formatBlogDate = (dateString) => {
+  const date = new Date(dateString);
+  if (Number.isNaN(date.getTime())) return dateString;
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+};
+
 const Home = ({ onNavigate, projects = [] }) => {
   const [hoveredColor, setHoveredColor] = useState(null);
   const timeoutRef = useRef(null);
-  
+  const blogsNewestFirst = [...blogs].sort((a, b) => new Date(b.date) - new Date(a.date));
+
   const quickLinks = [
     { id: 'email', label: 'Email', icon: '✉️', url: 'https://mail.google.com/mail/u/0/?fs=1&to=eeshag50@gmail.com&tf=cm', color: '#A78BFA' },
     { id: 'youtube', label: 'YouTube', icon: '▶️', url: 'https://youtube.com/@incredgirl678?si=akOgxelHdVx3eZDz', color: '#3B82F6' },
@@ -160,7 +167,7 @@ const Home = ({ onNavigate, projects = [] }) => {
         <h2 className="section-title">Blogs</h2>
         <div className="carousel-container">
           <div className="carousel">
-            {blogs.map((blog) => (
+            {blogsNewestFirst.map((blog) => (
               <div
                 key={blog.id}
                 className="carousel-item-wrapper carousel-item-clickable"
@@ -186,7 +193,7 @@ const Home = ({ onNavigate, projects = [] }) => {
                 </div>
                 <div className="carousel-card-info">
                   <h3 className="carousel-card-title">{blog.title}</h3>
-                  <p className="carousel-card-author">{blog.date}</p>
+                  <p className="carousel-card-author">{formatBlogDate(blog.date)}</p>
                 </div>
               </div>
             ))}

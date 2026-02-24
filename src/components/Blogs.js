@@ -3,6 +3,8 @@ import { blogs } from '../data/blogs';
 import './Blogs.css';
 
 const Blogs = ({ onNavigate }) => {
+  const blogsNewestFirst = [...blogs].sort((a, b) => new Date(b.date) - new Date(a.date));
+
   const handleBlogClick = (blog) => {
     if (onNavigate) {
       onNavigate(`blog-${blog.id}`, blog);
@@ -20,7 +22,7 @@ const Blogs = ({ onNavigate }) => {
       </div>
 
       <div className="blogs-grid">
-        {blogs.map((blog) => (
+        {blogsNewestFirst.map((blog) => (
           <div
             key={blog.id}
             className="blog-card"
