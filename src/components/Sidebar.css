@@ -27,6 +27,11 @@
   /* Background color will be set inline via style prop */
 }
 
+a.sidebar-icon {
+  text-decoration: none;
+  color: inherit;
+}
+
 .sidebar-icon:hover {
   filter: brightness(1.1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);

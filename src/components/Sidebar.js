@@ -1,93 +1,76 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Sidebar.css';
 
-const Sidebar = ({ onNavigate, currentPage }) => {
+const Sidebar = ({ currentPage }) => {
   const [hoveredIcon, setHoveredIcon] = useState(null);
 
   const navItems = [
-    { id: 'home', label: 'Home', icon: '🏠', color: '#6366F1' },
-    { id: 'email', label: 'Email', icon: '✉️', color: '#A78BFA' },
-    { id: 'youtube', label: 'YouTube', icon: '▶️', color: '#3B82F6' },
-    { id: 'github', label: 'GitHub', icon: '🐙', color: '#6e5494' },
-    { id: 'spotify', label: 'Spotify', icon: '🎼', color: '#7C3AED' },
-    { id: 'about', label: 'All About Me', icon: '👤', color: '#9333EA' },
-    { id: 'projects', label: 'Projects', icon: '💻', color: '#818CF8' },
-    { id: 'blogs', label: 'Blogs', icon: '📝', color: '#60A5FA' },
+    { id: 'home', label: 'Home', icon: '🏠', color: '#6366F1', to: '/' },
+    { id: 'email', label: 'Email', icon: '✉️', color: '#A78BFA', href: 'https://mail.google.com/mail/u/0/?fs=1&to=eeshag50@gmail.com&tf=cm', external: true },
+    { id: 'youtube', label: 'YouTube', icon: '▶️', color: '#3B82F6', href: 'https://youtube.com/@incredgirl678?si=akOgxelHdVx3eZDz', external: true },
+    { id: 'github', label: 'GitHub', icon: '🐙', color: '#6e5494', href: 'https://github.com/eeshag', external: true },
+    { id: 'spotify', label: 'Spotify', icon: '🎼', color: '#7C3AED', href: 'https://open.spotify.com/user/312mixbngb3jlmrulyzl4lq3x6ui?si=57c245e47328410f', external: true },
+    { id: 'about', label: 'All About Me', icon: '👤', color: '#9333EA', to: '/about' },
+    { id: 'projects', label: 'Projects', icon: '💻', color: '#818CF8', to: '/projects' },
+    { id: 'blogs', label: 'Blogs', icon: '📝', color: '#60A5FA', to: '/blogs' },
   ];
 
-  const handleIconClick = (id, url) => {
-    if (id === 'home') {
-      if (onNavigate) {
-        onNavigate('home');
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    } else if (id === 'email') {
-      window.open('https://mail.google.com/mail/u/0/?fs=1&to=eeshag50@gmail.com&tf=cm', '_blank');
-    } else if (id === 'youtube') {
-      window.open('https://youtube.com/@incredgirl678?si=akOgxelHdVx3eZDz', '_blank');
-    } else if (id === 'github') {
-      window.open('https://github.com/eeshag', '_blank');
-    } else if (id === 'spotify') {
-      window.open('https://open.spotify.com/user/312mixbngb3jlmrulyzl4lq3x6ui?si=57c245e47328410f', '_blank');
-    } else if (id === 'about') {
-      // Navigate to All About Me page
-      if (onNavigate) {
-        onNavigate('about');
-      } else {
-        const aboutSection = document.getElementById('about-section');
-        if (aboutSection) {
-          aboutSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    } else if (id === 'blogs') {
-      // Navigate to blogs page
-      if (onNavigate) {
-        onNavigate('blogs');
-      }
-    } else if (id === 'projects') {
-      // Navigate to projects page
-      if (onNavigate) {
-        onNavigate('projects');
-      } else {
-        const projectsSection = document.getElementById('projects-section');
-        if (projectsSection) {
-          projectsSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    } else if (url) {
-      // Handle project URLs
-      if (url.startsWith('#')) {
-        const element = document.querySelector(url);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      } else {
-        window.open(url, '_blank');
-      }
-    }
+  const isItemActive = (item) => {
+    if (currentPage === item.id) return true;
+    if (item.id === 'projects' && currentPage.startsWith('project-')) return true;
+    if (item.id === 'blogs' && currentPage.startsWith('blog-')) return true;
+    return false;
   };
+
+  const iconContent = (item) => (
+    <>
+      <span className="icon-emoji">{item.icon}</span>
+      {hoveredIcon === item.id && (
+        <div className="tooltip">
+          <span className="tooltip-icon">{item.icon}</span>
+          <span className="tooltip-label">{item.label}</span>
+        </div>
+      )}
+    </>
+  );
+
+  const sharedProps = (item) => ({
+    className: `sidebar-icon ${isItemActive(item) ? 'active' : ''}`,
+    style: { backgroundColor: item.color },
+    onMouseEnter: () => setHoveredIcon(item.id),
+    onMouseLeave: () => setHoveredIcon(null),
+  });
 
   return (
     <nav className="sidebar">
-      {navItems.map((item) => (
-        <div
-          key={item.id}
-          className={`sidebar-icon ${currentPage === item.id ? 'active' : ''}`}
-          style={{ backgroundColor: item.color }}
-          onMouseEnter={() => setHoveredIcon(item.id)}
-          onMouseLeave={() => setHoveredIcon(null)}
-          onClick={() => handleIconClick(item.id)}
-        >
-          <span className="icon-emoji">{item.icon}</span>
-          {hoveredIcon === item.id && (
-            <div className="tooltip">
-              <span className="tooltip-icon">{item.icon}</span>
-              <span className="tooltip-label">{item.label}</span>
-            </div>
-          )}
-        </div>
-      ))}
+      {navItems.map((item) => {
+        if (item.to) {
+          return (
+            <Link
+              key={item.id}
+              to={item.to}
+              {...sharedProps(item)}
+            >
+              {iconContent(item)}
+            </Link>
+          );
+        }
+        if (item.external && item.href) {
+          return (
+            <a
+              key={item.id}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              {...sharedProps(item)}
+            >
+              {iconContent(item)}
+            </a>
+          );
+        }
+        return null;
+      })}
     </nav>
   );
 };

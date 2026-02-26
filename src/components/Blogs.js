@@ -1,19 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { blogs } from '../data/blogs';
 import './Blogs.css';
 
-const Blogs = ({ onNavigate }) => {
+const Blogs = () => {
   const blogsNewestFirst = [...blogs].sort((a, b) => new Date(b.date) - new Date(a.date));
-
-  const handleBlogClick = (blog) => {
-    if (onNavigate) {
-      onNavigate(`blog-${blog.id}`, blog);
-      return;
-    }
-    if (blog.url && blog.url !== '#') {
-      window.open(blog.url, '_blank');
-    }
-  };
 
   return (
     <div className="blogs-page">
@@ -23,18 +14,10 @@ const Blogs = ({ onNavigate }) => {
 
       <div className="blogs-grid">
         {blogsNewestFirst.map((blog) => (
-          <div
+          <Link
             key={blog.id}
+            to={`/blogs/${blog.slug}`}
             className="blog-card"
-            onClick={() => handleBlogClick(blog)}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(event) => {
-              if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                handleBlogClick(blog);
-              }
-            }}
           >
             <div
               className="blog-card-square"
@@ -43,7 +26,7 @@ const Blogs = ({ onNavigate }) => {
               <span className="blog-card-icon">{blog.icon}</span>
             </div>
             <div className="blog-card-title">{blog.title}</div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

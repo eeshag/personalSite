@@ -1,24 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './Projects.css';
 
-const Projects = ({ onNavigate, projects: projectsProp }) => {
+const Projects = ({ projects: projectsProp }) => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const contentRef = useRef(null);
 
-  // Projects list (from props so dates stay in sync with App.js)
-  const projects = projectsProp ?? [
-    { id: 1, name: 'IHS Imposter', icon: '🎭', color: '#6366F1', dateAdded: 'Jan 7, 2026' },
-    { id: 2, name: 'Poly Market Project', icon: '📊', color: '#A78BFA', dateAdded: 'Jan 22, 2026' },
-    { id: 3, name: 'People vs. Pavement', icon: '🚗', color: '#D9C3F0', dateAdded: 'Feb 5, 2026' },
-    { id: 4, name: 'Study Goblin', icon: '🧌', color: '#7C9A6E', dateAdded: 'Feb 12, 2026' },
-    { id: 6, name: 'Fair Lens', icon: '🔎', color: '#06B6D4', dateAdded: 'Feb 19, 2026' },
-  ];
-
-  const handleProjectClick = (project) => {
-    if (onNavigate) {
-      onNavigate(`project-${project.id}`, project);
-    }
-  };
+  // Projects list (from props so dates stay in sync with App.js; must include slug for URLs)
+  const projects = projectsProp ?? [];
 
   // Calculate approximate word count and reading time (based on projects)
   const wordCount = projects.length * 50; // Estimate words per project
@@ -84,11 +73,10 @@ const Projects = ({ onNavigate, projects: projectsProp }) => {
         {/* Projects List */}
         <div className="writing-area">
           {projects.map((project, index) => (
-            <div 
-              key={project.id} 
-              className="project-row"
-              onClick={() => handleProjectClick(project)}
-              style={{ cursor: 'pointer' }}
+            <Link
+              key={project.id}
+              to={`/projects/${project.slug}`}
+              className="project-row project-row-link"
             >
               <div className="row-number">{index + 1}</div>
               <div className="row-content">
@@ -102,7 +90,7 @@ const Projects = ({ onNavigate, projects: projectsProp }) => {
                 </div>
               </div>
               <div className="row-date">{project.dateAdded}</div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

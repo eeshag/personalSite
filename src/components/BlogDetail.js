@@ -73,7 +73,82 @@ const BlogDetail = ({ blog }) => {
       ];
     }
 
-    if (blog.id === 5 && blog.title === 'Why Everyone Should Have a Blog') {
+    if (blog.id === 4 && blog.title === 'The Power of a Cookie') {
+      return [
+        {
+          type: 'paragraph',
+          content:
+            "Hi guys, todays blog is going to be short and sweet, hope you guys enjoy though."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "My mom always said that the best, funniest hangouts are the spontaneous ones. As someone who likes being organized and planning everything, I never really understand why. But like they say, moms are always right."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "One story I have to prove is one lunch during seventh grade. Lunch doesn't exactly count as a hangout, but you get what I mean. Before this story starts, keep in mind lunch is only 35 minutes, all of this happened in that time period. I remember my friend Shrestra and I were looking all over for our other friends and couldn't find anyone. While looking around, we constantly passed through an area where a Mecha club was selling these huge, Christmas themed sugar cookies. They were as huge as the price tag, four dollars for a cookie. Despite not liking sugar cookies, I really wanted these cookies but didn't think I had the money. Eventually we give up and decide to sit down, Sachi and Lehana find us. At this point we were honestly so hungry and just got to eating."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "A while later, Anandi and Ayaana, who were friends with me and Sachi, came to say hi to us. Sachi and I introduced Ananadi and Araana to Sachi and Lehana and all of us started talking. I decided to bring up the cookies and how badly I wanted one, and would not stop talking about it. At first, NO ONE was on board with me about wanting a cookie. But the more I talked about it and described it, with my amazing persuasion skills, I was able to convince everyone that we NEEDED this cookie."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "Only one problem, we had no money, or so we thought."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "We all started SEARCHING, I mean searching our backpacks. We all did a quick search of our backpacks, not finding anything, thinking we would have to call it a day. But Anandi said we all needed to just look harder, so we searched again. At this point, no one believed her, because we didn't think money was magically going to respond, but I am so happy she said that."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "Since no phones were allowed and no one had a watch, we had no clue what time it was so we were rushing as fast as possible. I discovered I had 2 dollars and a couple of random coins in my backpack, and Lehana and Sachi also had a couple of random coins in their backpack."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "I genuinely don't think you will believe this, but we had exactly four dollars. A combination of dollar bills, quarters, dimes and nickels came out exactly to four dollars. We counted and money and double checked and all genuinely started jumping in excitement. We literally sprinted to where the cookies were being selled and properly handed our money."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "Looking at all the cookies, they were all so cute, and the group made ME decide what to get because this was all my idea, until I made Shresta decide. We all got the cookie and ran back to our lunch spot."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "Even though phones were not technically allowed, Anandi still took hers out anyways to take a photo of us and the cookie, showing just hoe serious and funny this entire thing was."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "Lehana was practically squealing, telling us to just open the cookie, until we realized we would somehow need to split this evenly in six. Lehana snatched the cookie from us, somehow perfectly split it in 6 and told everyone to hurry up and take one."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "On the count of three we all took a bite and I kid you not, that was the WORST cookie ever. The disappointment on everyone's face and realization we wasted four dollars was there for a second, until we all genuinely burst out laughing."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "What had initially seemed to be a boring lunch where none of the friends were there had someone turned into a core middle school memory in 35 minutes over a cookie. To the day, this is one of my favorite school memories, and nothing about it was planned."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "So remember to have fun and go with the flow, chances are you might end up with a bad cookie and lots of memories 🍪"
+        }
+      ];
+    }
+
+    if (blog.id === 3 && blog.title === 'Why Everyone Should Have a Blog') {
       return [
         {
           type: 'paragraph',

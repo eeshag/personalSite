@@ -34,6 +34,8 @@
   padding: 12px;
   border-radius: 14px;
   transition: background-color 0.2s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .blog-card:hover {

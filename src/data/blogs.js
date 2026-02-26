@@ -1,8 +1,9 @@
-// Placeholder blogs data
+// Placeholder blogs data. slug = URL path from title (e.g. /blogs/why-everyone-should-have-a-blog)
 export const blogs = [
   {
     id: 1,
     title: "Cats",
+    slug: "cats",
     excerpt: "An introduction to ML concepts and practical applications",
     date: "2026-01-17",
     url: "#",
@@ -12,6 +13,7 @@ export const blogs = [
   {
     id: 2,
     title: "My First Scratch Project",
+    slug: "my-first-scratch-project",
     excerpt: "Exploring React, Next.js, and modern frontend frameworks",
     date: "2026-02-08",
     url: "#",
@@ -19,13 +21,24 @@ export const blogs = [
     color: "#9B039A",
   },
   {
-    id: 5,
+    id: 3,
     title: "Why Everyone Should Have a Blog",
+    slug: "why-everyone-should-have-a-blog",
     excerpt: "Reasons to start writing and sharing your thoughts online",
     date: "2026-02-16",
     url: "#",
     icon: "📝",
     color: "#F95C4B",
+  },
+  {
+    id: 4,
+    title: "The Power of a Cookie",
+    slug: "the-power-of-a-cookie",
+    excerpt: "A sweet reflection on the little things that make a difference",
+    date: "2026-02-25",
+    url: "#",
+    icon: "🍪",
+    color: "#C17F59",
   },
 ];
 
