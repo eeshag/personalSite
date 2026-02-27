@@ -88,12 +88,12 @@ const BlogDetail = ({ blog }) => {
         {
           type: 'paragraph',
           content:
-            "One story I have to prove is one lunch during seventh grade. Lunch doesn't exactly count as a hangout, but you get what I mean. Before this story starts, keep in mind lunch is only 35 minutes, all of this happened in that time period. I remember my friend Shrestra and I were looking all over for our other friends and couldn't find anyone. While looking around, we constantly passed through an area where a Mecha club was selling these huge, Christmas themed sugar cookies. They were as huge as the price tag, four dollars for a cookie. Despite not liking sugar cookies, I really wanted these cookies but didn't think I had the money. Eventually we give up and decide to sit down, Sachi and Lehana find us. At this point we were honestly so hungry and just got to eating."
+            "One story I have to prove is one lunch during seventh grade. Lunch doesn't exactly count as a hangout, but you get what I mean. Before this story starts, keep in mind lunch is only 35 minutes, all of this happened in that time period. I remember my friend Riya and I were looking all over for our other friends and couldn't find anyone. While looking around, we constantly passed through an area where a Mecha club was selling these huge, Christmas themed sugar cookies. They were as huge as the price tag, four dollars for a cookie. Despite not liking sugar cookies, I really wanted these cookies but didn't think I had the money. Eventually we give up and decide to sit down, Lena and Mira find us. At this point we were honestly so hungry and just got to eating."
         },
         {
           type: 'paragraph',
           content:
-            "A while later, Anandi and Ayaana, who were friends with me and Sachi, came to say hi to us. Sachi and I introduced Ananadi and Araana to Sachi and Lehana and all of us started talking. I decided to bring up the cookies and how badly I wanted one, and would not stop talking about it. At first, NO ONE was on board with me about wanting a cookie. But the more I talked about it and described it, with my amazing persuasion skills, I was able to convince everyone that we NEEDED this cookie."
+            "A while later, Sara and Noor, who were friends with me and Lena, came to say hi to us. Lena and I introduced Sara and Noor to Riya and Mira and all of us started talking. I decided to bring up the cookies and how badly I wanted one, and would not stop talking about it. At first, NO ONE was on board with me about wanting a cookie. But the more I talked about it and described it, with my amazing persuasion skills, I was able to convince everyone that we NEEDED this cookie."
         },
         {
           type: 'paragraph',
@@ -103,12 +103,12 @@ const BlogDetail = ({ blog }) => {
         {
           type: 'paragraph',
           content:
-            "We all started SEARCHING, I mean searching our backpacks. We all did a quick search of our backpacks, not finding anything, thinking we would have to call it a day. But Anandi said we all needed to just look harder, so we searched again. At this point, no one believed her, because we didn't think money was magically going to respond, but I am so happy she said that."
+            "We all started SEARCHING, I mean searching our backpacks. We all did a quick search of our backpacks, not finding anything, thinking we would have to call it a day. But Sara said we all needed to just look harder, so we searched again. At this point, no one believed her, because we didn't think money was magically going to respond, but I am so happy she said that."
         },
         {
           type: 'paragraph',
           content:
-            "Since no phones were allowed and no one had a watch, we had no clue what time it was so we were rushing as fast as possible. I discovered I had 2 dollars and a couple of random coins in my backpack, and Lehana and Sachi also had a couple of random coins in their backpack."
+            "Since no phones were allowed and no one had a watch, we had no clue what time it was so we were rushing as fast as possible. I discovered I had 2 dollars and a couple of random coins in my backpack, and Mira and Lena also had a couple of random coins in their backpack."
         },
         {
           type: 'paragraph',
@@ -118,17 +118,17 @@ const BlogDetail = ({ blog }) => {
         {
           type: 'paragraph',
           content:
-            "Looking at all the cookies, they were all so cute, and the group made ME decide what to get because this was all my idea, until I made Shresta decide. We all got the cookie and ran back to our lunch spot."
+            "Looking at all the cookies, they were all so cute, and the group made ME decide what to get because this was all my idea, until I made Riya decide. We all got the cookie and ran back to our lunch spot."
         },
         {
           type: 'paragraph',
           content:
-            "Even though phones were not technically allowed, Anandi still took hers out anyways to take a photo of us and the cookie, showing just hoe serious and funny this entire thing was."
+            "Even though phones were not technically allowed, Sara still took hers out anyways to take a photo of us and the cookie, showing just hoe serious and funny this entire thing was."
         },
         {
           type: 'paragraph',
           content:
-            "Lehana was practically squealing, telling us to just open the cookie, until we realized we would somehow need to split this evenly in six. Lehana snatched the cookie from us, somehow perfectly split it in 6 and told everyone to hurry up and take one."
+            "Mira was practically squealing, telling us to just open the cookie, until we realized we would somehow need to split this evenly in six. Mira snatched the cookie from us, somehow perfectly split it in 6 and told everyone to hurry up and take one."
         },
         {
           type: 'paragraph',
