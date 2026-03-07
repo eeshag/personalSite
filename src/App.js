@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Home from './components/Home';
@@ -17,14 +17,10 @@ function App() {
   const navigate = useNavigate();
   const pathname = location.pathname;
 
-  // Scroll to top when navigating to a new page (no animation—start at top)
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-  }, [pathname]);
-
   const [currentPage, setCurrentPage] = useState('home');
   const [currentProject, setCurrentProject] = useState(null);
   const [currentBlog, setCurrentBlog] = useState(null);
+  const [searchFilter, setSearchFilter] = useState('all');
 
   // Projects data (used for URL resolution and rendering). Slug = URL path from name (e.g. /projects/personal-website)
   const projects = [
@@ -56,6 +52,21 @@ function App() {
   const isOnProjectsList = pathname === '/projects';
   const isOnProjectDetail = Boolean(projectFromUrl);
   const isOnSearch = pathname.startsWith('/search');
+  const searchQueryFromUrl = useMemo(() => {
+    if (!pathname.startsWith('/search')) return '';
+    const params = new URLSearchParams(location.search);
+    return params.get('q') || '';
+  }, [pathname, location.search]);
+
+  // Scroll to top when navigating to a new page (no animation—start at top)
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [pathname]);
+
+  // Reset search filter when leaving search page or when search query changes
+  useEffect(() => {
+    setSearchFilter('all');
+  }, [pathname, searchQueryFromUrl]);
 
   const effectivePage =
     pathname === '/' ? 'home'
@@ -126,10 +137,11 @@ function App() {
   return (
     <div className="App">
       <Sidebar currentPage={effectivePage} />
-      <main className={`main-content ${effectivePage === 'home' ? 'main-content-with-search' : ''}`}>
-        {effectivePage === 'home' && (
-          <SearchTopStrip onNavigate={handleNavigate} />
-        )}
+      <main className={`main-content main-content-with-search ${effectivePage === 'search' ? 'main-content-search-results' : ''}`}>
+        <SearchTopStrip
+          onNavigate={handleNavigate}
+          initialQuery={effectivePage === 'search' ? searchQueryFromUrl : ''}
+        />
         {effectivePage === 'home' ? (
           <Home onNavigate={handleNavigate} projects={projects} />
         ) : effectivePage === 'about' ? (
@@ -139,7 +151,12 @@ function App() {
         ) : effectivePage === 'blogs' ? (
           <Blogs onNavigate={handleNavigate} />
         ) : effectivePage === 'search' ? (
-          <SearchResults projects={projects} blogs={blogs} />
+          <SearchResults
+            projects={projects}
+            blogs={blogs}
+            activeFilter={searchFilter}
+            onFilterChange={setSearchFilter}
+          />
         ) : effectivePage.startsWith('blog-') ? (
           <BlogDetail blog={effectiveBlog} onNavigate={handleNavigate} />
         ) : effectivePage.startsWith('project-') ? (

@@ -1,15 +1,28 @@
-import React, { useMemo, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React, { useMemo } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { currentlyConsuming } from '../data/content';
+import { aboutMeSearchText, blogSearchTextById, getProjectSearchText } from '../data/searchIndex';
 import './SearchResults.css';
+import './Projects.css';
 import './Home.css';
 
-const SearchResults = ({ projects = [], blogs = [] }) => {
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  if (Number.isNaN(date.getTime())) return dateString;
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+};
+
+const FILTERS = [
+  { id: 'all', label: 'All' },
+  { id: 'about', label: 'About Me' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'blogs', label: 'Blogs' },
+];
+
+const SearchResults = ({ projects = [], blogs = [], activeFilter = 'all', onFilterChange }) => {
   const location = useLocation();
-  const navigate = useNavigate();
   const params = new URLSearchParams(location.search);
   const initialQuery = params.get('q') || '';
-  const [inputValue, setInputValue] = useState(initialQuery);
 
   const normalizedQuery = initialQuery.trim().toLowerCase();
 
@@ -19,6 +32,7 @@ const SearchResults = ({ projects = [], blogs = [] }) => {
         projects: [],
         blogs: [],
         currentlyConsuming: [],
+        showAboutMe: false,
       };
     }
 
@@ -29,70 +43,42 @@ const SearchResults = ({ projects = [], blogs = [] }) => {
       (project) =>
         matches(project.name) ||
         matches(project.slug) ||
-        matches(project.description)
+        (project.description && matches(project.description)) ||
+        matches(getProjectSearchText(project.id, project.name))
     );
 
     const blogResults = blogs.filter(
       (blog) =>
         matches(blog.title) ||
         matches(blog.slug) ||
-        matches(blog.excerpt)
+        matches(blog.excerpt) ||
+        (blogSearchTextById[blog.id] && matches(blogSearchTextById[blog.id]))
     );
 
     const consumingResults = currentlyConsuming.filter(
       (item) => matches(item.title) || matches(item.author)
     );
 
+    const showAboutMe = matches(aboutMeSearchText);
+
     return {
       projects: projectResults,
       blogs: blogResults,
       currentlyConsuming: consumingResults,
+      showAboutMe,
     };
   }, [normalizedQuery, projects, blogs]);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const trimmed = inputValue.trim();
-    navigate(trimmed ? `/search?q=${encodeURIComponent(trimmed)}` : '/search');
-  };
 
   const hasQuery = normalizedQuery.length > 0;
   const hasResults =
     results.projects.length > 0 ||
     results.blogs.length > 0 ||
-    results.currentlyConsuming.length > 0;
+    results.currentlyConsuming.length > 0 ||
+    results.showAboutMe;
 
   return (
     <div className="search-page">
-      <div className="search-header">
-        <form className="home-search-bar" onSubmit={handleSubmit}>
-          <div className="home-search-bar-inner">
-            <span className="home-search-icon" aria-hidden="true">
-              🔍
-            </span>
-            <input
-              type="text"
-              className="home-search-input"
-              placeholder="What do you want to play?"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              aria-label="Search across projects, blogs, and more"
-            />
-            <button
-              type="submit"
-              className="home-search-submit"
-              aria-label="Search"
-            >
-              <span className="home-search-submit-icon">📁</span>
-            </button>
-          </div>
-        </form>
-        {hasQuery && (
-          <p className="search-query-label">
-            Showing results for <span className="search-query-text">{initialQuery}</span>
-          </p>
-        )}
-      </div>
+      <div className="search-header" />
 
       {!hasQuery && (
         <div className="search-empty-state">
@@ -113,88 +99,178 @@ const SearchResults = ({ projects = [], blogs = [] }) => {
       )}
 
       {hasResults && (
-        <div className="search-results-sections">
-          {results.projects.length > 0 && (
-            <section className="search-section">
-              <h2 className="section-title">Projects</h2>
-              <div className="search-grid">
-                {results.projects.map((project) => (
-                  <Link
-                    key={project.id}
-                    to={`/projects/${project.slug}`}
-                    className="search-card search-card-link"
-                  >
-                    <div
-                      className="search-card-icon-wrapper"
-                      style={{ backgroundColor: project.color }}
-                    >
-                      <span className="search-card-icon">{project.icon}</span>
-                    </div>
-                    <div className="search-card-content">
-                      <div className="search-card-title">{project.name}</div>
-                      {project.dateAdded && (
-                        <div className="search-card-meta">
-                          Added {project.dateAdded}
+        <div className="search-results-sections search-results-list">
+          <div className="search-results-filters">
+            {FILTERS.map((filter) => (
+              <button
+                key={filter.id}
+                type="button"
+                className={`search-results-filter-btn ${activeFilter === filter.id ? 'active' : ''}`}
+                onClick={() => onFilterChange && onFilterChange(filter.id)}
+              >
+                {filter.label}
+              </button>
+            ))}
+          </div>
+          {(activeFilter === 'all' || activeFilter === 'about') && results.showAboutMe && (
+            <div className="search-result-block">
+              <h2 className="search-result-block-title">All About Me</h2>
+              <div className="content-section">
+                <div className="content-header">
+                  <div className="header-number">#</div>
+                  <div className="header-title">Title</div>
+                  <div className="header-date">Date added</div>
+                </div>
+                <div className="header-divider"></div>
+                <div className="writing-area">
+                  <Link to="/about" className="project-row project-row-link">
+                    <div className="row-number">1</div>
+                    <div className="row-content">
+                      <div className="project-item">
+                        <div className="project-thumbnail" style={{ backgroundColor: '#9333EA' }}>
+                          <span className="project-icon">👤</span>
                         </div>
-                      )}
+                        <div className="project-info">
+                          <div className="project-title">All About Me</div>
+                        </div>
+                      </div>
                     </div>
+                    <div className="row-date">Dec 30, 2025</div>
                   </Link>
-                ))}
+                </div>
               </div>
-            </section>
+            </div>
           )}
 
-          {results.blogs.length > 0 && (
-            <section className="search-section">
-              <h2 className="section-title">Blogs</h2>
-              <div className="search-grid">
-                {results.blogs.map((blog) => (
-                  <Link
-                    key={blog.id}
-                    to={`/blogs/${blog.slug}`}
-                    className="search-card search-card-link"
-                  >
-                    <div
-                      className="search-card-icon-wrapper"
-                      style={{ backgroundColor: blog.color }}
-                    >
-                      <span className="search-card-icon">{blog.icon}</span>
-                    </div>
-                    <div className="search-card-content">
-                      <div className="search-card-title">{blog.title}</div>
-                      {blog.excerpt && (
-                        <div className="search-card-meta">
-                          {blog.excerpt}
-                        </div>
-                      )}
-                    </div>
-                  </Link>
-                ))}
+          {activeFilter === 'about' && !results.showAboutMe && (
+            <div className="search-result-block">
+              <h2 className="search-result-block-title">All About Me</h2>
+              <div className="content-section">
+                <p className="search-results-none">No results found.</p>
               </div>
-            </section>
+            </div>
           )}
 
-          {results.currentlyConsuming.length > 0 && (
-            <section className="search-section">
-              <h2 className="section-title">Currently Consuming</h2>
-              <div className="search-grid">
-                {results.currentlyConsuming.map((item) => (
-                  <div key={item.id} className="search-card">
-                    <div className="search-card-icon-wrapper search-card-icon-wrapper-muted">
-                      <span className="search-card-icon">{item.cover}</span>
-                    </div>
-                    <div className="search-card-content">
-                      <div className="search-card-title">{item.title}</div>
-                      {item.author && (
-                        <div className="search-card-meta">
-                          {item.author}
+          {(activeFilter === 'all' || activeFilter === 'projects') && results.projects.length > 0 && (
+            <div className="search-result-block">
+              <h2 className="search-result-block-title">Projects</h2>
+              <div className="content-section">
+                <div className="content-header">
+                  <div className="header-number">#</div>
+                  <div className="header-title">Title</div>
+                  <div className="header-date">Date added</div>
+                </div>
+                <div className="header-divider"></div>
+                <div className="writing-area">
+                  {results.projects.map((project, index) => (
+                    <Link
+                      key={project.id}
+                      to={`/projects/${project.slug}`}
+                      className="project-row project-row-link"
+                    >
+                      <div className="row-number">{index + 1}</div>
+                      <div className="row-content">
+                        <div className="project-item">
+                          <div className="project-thumbnail" style={{ backgroundColor: project.color }}>
+                            <span className="project-icon">{project.icon}</span>
+                          </div>
+                          <div className="project-info">
+                            <div className="project-title">{project.name}</div>
+                          </div>
                         </div>
-                      )}
-                    </div>
-                  </div>
-                ))}
+                      </div>
+                      <div className="row-date">{project.dateAdded || '—'}</div>
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </section>
+            </div>
+          )}
+
+          {activeFilter === 'projects' && results.projects.length === 0 && (
+            <div className="search-result-block">
+              <h2 className="search-result-block-title">Projects</h2>
+              <div className="content-section">
+                <p className="search-results-none">No results found.</p>
+              </div>
+            </div>
+          )}
+
+          {(activeFilter === 'all' || activeFilter === 'blogs') && results.blogs.length > 0 && (
+            <div className="search-result-block">
+              <h2 className="search-result-block-title">Blogs</h2>
+              <div className="content-section">
+                <div className="content-header">
+                  <div className="header-number">#</div>
+                  <div className="header-title">Title</div>
+                  <div className="header-date">Date added</div>
+                </div>
+                <div className="header-divider"></div>
+                <div className="writing-area">
+                  {results.blogs.map((blog, index) => (
+                    <Link
+                      key={blog.id}
+                      to={`/blogs/${blog.slug}`}
+                      className="project-row project-row-link"
+                    >
+                      <div className="row-number">{index + 1}</div>
+                      <div className="row-content">
+                        <div className="project-item">
+                          <div className="project-thumbnail" style={{ backgroundColor: blog.color }}>
+                            <span className="project-icon">{blog.icon}</span>
+                          </div>
+                          <div className="project-info">
+                            <div className="project-title">{blog.title}</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="row-date">{formatDate(blog.date)}</div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeFilter === 'blogs' && results.blogs.length === 0 && (
+            <div className="search-result-block">
+              <h2 className="search-result-block-title">Blogs</h2>
+              <div className="content-section">
+                <p className="search-results-none">No results found.</p>
+              </div>
+            </div>
+          )}
+
+          {(activeFilter === 'all') && results.currentlyConsuming.length > 0 && (
+            <div className="search-result-block">
+              <h2 className="search-result-block-title">Currently Consuming</h2>
+              <div className="content-section">
+                <div className="content-header">
+                  <div className="header-number">#</div>
+                  <div className="header-title">Title</div>
+                  <div className="header-date">Date added</div>
+                </div>
+                <div className="header-divider"></div>
+                <div className="writing-area">
+                  {results.currentlyConsuming.map((item, index) => (
+                    <div key={item.id} className="project-row">
+                      <div className="row-number">{index + 1}</div>
+                      <div className="row-content">
+                        <div className="project-item">
+                          <div className="project-thumbnail search-result-consuming-thumb">
+                            <span className="project-icon">{item.cover}</span>
+                          </div>
+                          <div className="project-info">
+                            <div className="project-title">{item.title}</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="row-date">—</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           )}
         </div>
       )}

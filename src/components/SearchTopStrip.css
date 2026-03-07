@@ -1,16 +1,31 @@
-/* Fixed at top, rectangle, flush with screen top */
+/* Fixed at top: from sidebar edge to right edge of screen */
 .search-top-strip {
   position: fixed;
   top: 0;
-  left: 120px; /* start after sidebar */
+  left: 120px;
   right: 0;
   z-index: 100;
   flex-shrink: 0;
-  background-color: #0A0A0A;
-  border-radius: 0;
-  padding: 14px 24px;
-  border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+  height: 68px;
+}
+
+.search-top-strip-band {
+  position: absolute;
+  inset: 0;
+  background-color: #0a0a0a;
+  height: 100%;
+}
+
+.search-top-strip-search-wrap {
+  position: relative;
+  pointer-events: auto;
+  margin: 15px 15px 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  padding: 0;
 }
 
 .search-top-strip-form {
@@ -91,7 +106,10 @@
 @media (max-width: 768px) {
   .search-top-strip {
     left: 0;
-    right: 0;
+  }
+
+  .search-top-strip-search-wrap {
+    margin: 12px 12px 0;
     padding: 12px 16px;
   }
 

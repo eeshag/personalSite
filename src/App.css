@@ -10,9 +10,13 @@
   width: calc(100% - 120px);
 }
 
-/* Reserve space for fixed search bar on home so content doesn't sit under it */
+/* Reserve space for fixed search bar so content starts right below it (no excess gap) */
 .main-content-with-search {
-  padding-top: 80px;
+  padding-top: 68px;
+}
+
+.main-content-search-results {
+  padding-top: 68px;
 }
 
 /* Mobile responsiveness */
@@ -29,5 +33,9 @@
 
   .main-content-with-search {
     padding-top: 72px;
+  }
+
+  .main-content-search-results {
+    padding-top: 85px;
   }
 }

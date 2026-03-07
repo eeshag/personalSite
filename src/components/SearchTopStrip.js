@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './SearchTopStrip.css';
 
-const SearchTopStrip = ({ onNavigate }) => {
-  const [searchQuery, setSearchQuery] = useState('');
+const SearchTopStrip = ({ onNavigate, initialQuery = '' }) => {
+  const [searchQuery, setSearchQuery] = useState(initialQuery);
+
+  useEffect(() => {
+    setSearchQuery(initialQuery);
+  }, [initialQuery]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,9 +19,11 @@ const SearchTopStrip = ({ onNavigate }) => {
 
   return (
     <div className="search-top-strip">
-      <form className="search-top-strip-form" onSubmit={handleSubmit}>
-        <div className="search-top-strip-inner">
-          <img
+      <div className="search-top-strip-band" aria-hidden="true" />
+      <div className="search-top-strip-search-wrap">
+        <form className="search-top-strip-form" onSubmit={handleSubmit}>
+          <div className="search-top-strip-inner">
+            <img
             src={`${process.env.PUBLIC_URL || ''}/eeshaLogo%20(4).png`}
             alt=""
             className="search-top-strip-icon"
@@ -45,6 +51,7 @@ const SearchTopStrip = ({ onNavigate }) => {
           </button>
         </div>
       </form>
+      </div>
     </div>
   );
 };
