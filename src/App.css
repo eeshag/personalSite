@@ -10,6 +10,11 @@
   width: calc(100% - 120px);
 }
 
+/* Reserve space for fixed search bar on home so content doesn't sit under it */
+.main-content-with-search {
+  padding-top: 80px;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .App {
@@ -20,5 +25,9 @@
     margin-left: 0;
     width: 100%;
     padding-top: 0;
+  }
+
+  .main-content-with-search {
+    padding-top: 72px;
   }
 }

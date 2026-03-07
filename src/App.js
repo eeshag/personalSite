@@ -7,6 +7,8 @@ import Projects from './components/Projects';
 import Blogs from './components/Blogs';
 import ProjectDetail from './components/ProjectDetail';
 import BlogDetail from './components/BlogDetail';
+import SearchResults from './components/SearchResults';
+import SearchTopStrip from './components/SearchTopStrip';
 import { blogs } from './data/blogs';
 import './App.css';
 
@@ -53,6 +55,7 @@ function App() {
   const isOnAbout = pathname === '/about';
   const isOnProjectsList = pathname === '/projects';
   const isOnProjectDetail = Boolean(projectFromUrl);
+  const isOnSearch = pathname.startsWith('/search');
 
   const effectivePage =
     pathname === '/' ? 'home'
@@ -61,6 +64,7 @@ function App() {
     : isOnProjectDetail ? `project-${projectFromUrl.id}`
     : isOnBlogsList ? 'blogs'
     : isOnBlogDetail ? `blog-${blogFromUrl.id}`
+    : isOnSearch ? 'search'
     : currentPage;
   const effectiveBlog = isOnBlogDetail ? blogFromUrl : currentBlog;
   const effectiveProject = isOnProjectDetail ? projectFromUrl : currentProject;
@@ -94,6 +98,16 @@ function App() {
       setCurrentBlog(null);
       return;
     }
+    if (page === 'search' && payload && payload.query) {
+      const trimmed = String(payload.query).trim();
+      if (trimmed) {
+        navigate(`/search?q=${encodeURIComponent(trimmed)}`);
+        setCurrentPage('search');
+        setCurrentProject(null);
+        setCurrentBlog(null);
+        return;
+      }
+    }
     if (page.startsWith('blog-') && payload) {
       navigate(`/blogs/${payload.slug}`);
       setCurrentPage(page);
@@ -112,7 +126,10 @@ function App() {
   return (
     <div className="App">
       <Sidebar currentPage={effectivePage} />
-      <main className="main-content">
+      <main className={`main-content ${effectivePage === 'home' ? 'main-content-with-search' : ''}`}>
+        {effectivePage === 'home' && (
+          <SearchTopStrip onNavigate={handleNavigate} />
+        )}
         {effectivePage === 'home' ? (
           <Home onNavigate={handleNavigate} projects={projects} />
         ) : effectivePage === 'about' ? (
@@ -121,6 +138,8 @@ function App() {
           <Projects onNavigate={handleNavigate} projects={projects} />
         ) : effectivePage === 'blogs' ? (
           <Blogs onNavigate={handleNavigate} />
+        ) : effectivePage === 'search' ? (
+          <SearchResults projects={projects} blogs={blogs} />
         ) : effectivePage.startsWith('blog-') ? (
           <BlogDetail blog={effectiveBlog} onNavigate={handleNavigate} />
         ) : effectivePage.startsWith('project-') ? (
