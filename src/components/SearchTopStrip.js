@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './SearchTopStrip.css';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const SearchTopStrip = ({ onNavigate, initialQuery = '' }) => {
   const [searchQuery, setSearchQuery] = useState(initialQuery);
 
@@ -24,11 +26,11 @@ const SearchTopStrip = ({ onNavigate, initialQuery = '' }) => {
         <form className="search-top-strip-form" onSubmit={handleSubmit}>
           <div className="search-top-strip-inner">
             <img
-            src={`${process.env.PUBLIC_URL || ''}/eeshaLogo%20(4).png`}
-            alt=""
-            className="search-top-strip-icon"
-            aria-hidden="true"
-          />
+              src={`${baseUrl}eeshaLogo%20(4).png`}
+              alt=""
+              className="search-top-strip-icon"
+              aria-hidden="true"
+            />
           <input
             type="text"
             className="search-top-strip-input"
@@ -43,7 +45,7 @@ const SearchTopStrip = ({ onNavigate, initialQuery = '' }) => {
             aria-label="Search"
           >
             <img
-              src={`${process.env.PUBLIC_URL || ''}/eeshaLogo%20(5).png`}
+              src={`${baseUrl}eeshaLogo%20(5).png`}
               alt=""
               className="search-top-strip-submit-icon"
               aria-hidden="true"

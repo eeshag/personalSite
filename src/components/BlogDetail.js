@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Projects.css';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const BlogDetail = ({ blog }) => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const contentRef = useRef(null);
@@ -204,9 +206,9 @@ const BlogDetail = ({ blog }) => {
   const blogImages =
     blog && blog.id === 1
       ? [
-          `${process.env.PUBLIC_URL}/cats-1.jpg`,
-          `${process.env.PUBLIC_URL}/cats-2.jpg`,
-          `${process.env.PUBLIC_URL}/cats-3.jpg`
+          `${baseUrl}cats-1.jpg`,
+          `${baseUrl}cats-2.jpg`,
+          `${baseUrl}cats-3.jpg`
         ]
       : [];
 
