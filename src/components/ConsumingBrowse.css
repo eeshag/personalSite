@@ -1,0 +1,137 @@
+/* Browse all – Spotify-style grid of category cards */
+.consuming-browse-page {
+  min-height: 100vh;
+  background: #121212;
+  color: #ffffff;
+  padding: 32px 32px 48px;
+}
+
+.consuming-browse-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.02em;
+}
+
+.consuming-browse-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: none;
+}
+
+.consuming-browse-card {
+  position: relative;
+  display: block;
+  min-height: 180px;
+  border-radius: 8px;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.consuming-browse-card::before {
+  content: '';
+  position: absolute;
+  /* Position so both left-side corners of the rotated square are fully visible while right/top edges are clipped */
+  bottom: -70px;
+  right: -60px;
+  width: 170px;
+  height: 170px;
+  border-radius: 6px; /* very slight rounding */
+  background: #f97316; /* default bright accent, overridden per-card below */
+  pointer-events: none;
+  transform: rotate(25deg);
+}
+
+/* Per-card bright accent colors for the small square */
+.consuming-browse-card:nth-child(1)::before {
+  background: #fb7185; /* bright rose for Books */
+}
+
+.consuming-browse-card:nth-child(2)::before {
+  background: #ffffff; /* white for Podcasts */
+}
+
+.consuming-browse-card:nth-child(3)::before {
+  background: #eab308; /* yellow for Courses */
+}
+
+.consuming-browse-card:nth-child(4)::before {
+  background: #6366f1; /* indigo for Documentaries */
+}
+
+.consuming-browse-card:nth-child(5)::before {
+  background: #f97316; /* vivid orange for TV/Movies */
+}
+
+.consuming-browse-card:nth-child(6)::before {
+  background: #a5b4fc; /* baby blue for Music */
+}
+
+.consuming-browse-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.consuming-browse-card-title {
+  position: relative;
+  z-index: 1;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+  display: block;
+  max-width: 70%;
+}
+
+.consuming-browse-card-cover {
+  position: absolute;
+  bottom: 6px;
+  right: 10px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  line-height: 1;
+  transform: rotate(25deg);
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .consuming-browse-page {
+    padding: 24px 20px 40px;
+  }
+
+  .consuming-browse-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .consuming-browse-grid {
+    grid-template-columns: 1fr; /* single column => 6 rows on mobile */
+    gap: 16px;
+  }
+
+  .consuming-browse-card {
+    min-height: 140px;
+    padding: 16px;
+  }
+
+  .consuming-browse-card-title {
+    font-size: 16px;
+  }
+
+  .consuming-browse-card-cover {
+    width: 72px;
+    height: 72px;
+    font-size: 40px;
+    top: -4px;
+    right: -4px;
+  }
+}

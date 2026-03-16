@@ -1,0 +1,180 @@
+/* Consuming detail page – matches site’s dark, Spotify-like detail layout */
+.consuming-detail-page {
+  min-height: 100vh;
+  background: #121212;
+  color: #ffffff;
+}
+
+/* Content section */
+.consuming-content-section {
+  padding: 24px 32px 48px;
+}
+
+.consuming-list-header {
+  display: grid;
+  grid-template-columns: 48px 1fr 160px 80px;
+  gap: 16px;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.consuming-header-number {
+  text-align: center;
+}
+
+.consuming-header-title {
+  padding-left: 8px;
+}
+
+.consuming-header-creator {
+  text-align: left;
+}
+
+.consuming-header-rating {
+  text-align: right;
+  padding-right: 8px;
+}
+
+.consuming-list-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 8px;
+}
+
+/* List rows */
+.consuming-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.consuming-list-row {
+  display: grid;
+  grid-template-columns: 48px 1fr 160px 80px;
+  gap: 16px;
+  align-items: center;
+  padding: 12px 8px;
+  border-radius: 6px;
+  transition: background-color 0.15s ease;
+}
+
+.consuming-list-row:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.consuming-row-number {
+  text-align: center;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+}
+
+.consuming-row-main {
+  padding-left: 8px;
+  min-width: 0;
+}
+
+.consuming-row-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  display: block;
+}
+
+.consuming-row-note {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 4px 0 0 0;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.consuming-row-creator {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.consuming-row-rating {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: right;
+  padding-right: 8px;
+}
+
+/* Empty list state */
+.consuming-empty-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  text-align: center;
+}
+
+.consuming-empty-icon {
+  font-size: 56px;
+  margin-bottom: 16px;
+  opacity: 0.6;
+}
+
+.consuming-empty-text {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 8px 0;
+  font-weight: 500;
+}
+
+.consuming-empty-hint {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+/* Empty state (category not found) */
+.consuming-empty-state {
+  padding: 80px 32px;
+  text-align: center;
+}
+
+.consuming-empty-state p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 20px 0;
+}
+
+.consuming-back-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background: #6366F1;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.consuming-back-btn:hover {
+  background: #4F46E5;
+}
+
+.consuming-back-btn:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .consuming-list-header,
+  .consuming-list-row {
+    grid-template-columns: 36px 1fr 100px 60px;
+    gap: 12px;
+    font-size: 14px;
+  }
+}

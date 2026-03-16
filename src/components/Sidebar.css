@@ -10,7 +10,7 @@
   align-items: center;
   padding-top: 20px;
   gap: 20px;
-  z-index: 1000;
+  z-index: 1;
   border-radius: 12px;
 }
 
@@ -47,14 +47,11 @@ a.sidebar-icon {
   display: block;
 }
 
-.tooltip {
-  position: absolute;
-  left: calc(100% + 12px);
-  top: 50%;
-  transform: translateY(-50%);
+/* Portaled tooltip: position set inline so it appears above all content without raising sidebar z-index */
+.tooltip.tooltip--portal {
   background-color: rgba(30, 30, 30, 0.95);
   color: white;
-  padding: 12px;
+  padding: 12px 14px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -63,8 +60,11 @@ a.sidebar-icon {
   pointer-events: none;
   border: 1px solid #1DB954;
   box-shadow: 0 8px 24px rgba(29, 185, 84, 0.2);
-  z-index: 1001;
-  width: 160px;
+  z-index: 10000;
+  min-width: 120px;
+  width: max-content;
+  max-width: 240px;
+  box-sizing: border-box;
 }
 
 .tooltip-icon {
@@ -76,9 +76,10 @@ a.sidebar-icon {
   font-size: 13px;
   font-weight: 600;
   white-space: nowrap;
+  overflow: visible;
 }
 
-.tooltip::before {
+.tooltip--portal::before {
   content: '';
   position: absolute;
   right: 100%;
@@ -108,6 +109,10 @@ a.sidebar-icon {
     width: 40px;
     height: 40px;
     flex-shrink: 0;
+  }
+
+  .sidebar-icon--search {
+    background-color: #9CCAFF;
   }
 
   .icon-emoji {

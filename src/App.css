@@ -8,15 +8,17 @@
   flex: 1;
   margin-left: 120px;
   width: calc(100% - 120px);
+  position: relative;
+  z-index: 10;
 }
 
-/* Reserve space for fixed search bar so content starts right below it (no excess gap) */
+/* Search bar is in flow; no extra top padding needed */
 .main-content-with-search {
-  padding-top: 68px;
+  padding-top: 0;
 }
 
 .main-content-search-results {
-  padding-top: 68px;
+  padding-top: 0;
 }
 
 /* Mobile responsiveness */
@@ -32,10 +34,10 @@
   }
 
   .main-content-with-search {
-    padding-top: 72px;
+    padding-top: 0;
   }
 
   .main-content-search-results {
-    padding-top: 85px;
+    padding-top: 0;
   }
 }

@@ -1,46 +1,67 @@
 // Content categories for "Currently Consuming" carousel
+// Each category can have items: [{ title, creator, note?, rating? }]
 export const currentlyConsuming = [
   {
     id: 1,
+    slug: "books",
     title: "Books",
     author: "",
     type: "category",
     cover: "📚",
+    subtitle: "What I'm reading",
+    items: [
+      { title: "Atomic Habits", creator: "James Clear", note: "First self-help book I read—convinced me to read more.", rating: "5" },
+    ],
   },
   {
     id: 2,
+    slug: "podcasts",
     title: "Podcasts",
     author: "",
     type: "category",
     cover: "🎙️",
+    subtitle: "What I'm listening to",
+    items: [],
   },
   {
     id: 3,
+    slug: "courses",
     title: "Courses",
     author: "",
     type: "category",
     cover: "🎓",
+    subtitle: "What I'm learning",
+    items: [],
   },
   {
     id: 4,
+    slug: "documentaries",
     title: "Documentaries",
     author: "",
     type: "category",
     cover: "🎬",
+    subtitle: "What I'm watching",
+    items: [],
   },
   {
     id: 5,
+    slug: "tv-shows-movies",
     title: "TV Shows & Movies",
     author: "",
     type: "category",
     cover: "🎞️",
+    subtitle: "Shows & films I'm into",
+    items: [],
   },
   {
     id: 6,
+    slug: "music",
     title: "Music",
     author: "",
     type: "category",
     cover: "🎵",
+    subtitle: "What I'm playing",
+    items: [],
   },
 ];
 

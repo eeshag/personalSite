@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { currentlyConsuming } from '../data/content';
-import { blogs } from '../data/blogs';
+import { blogs } from '../data/siteData';
 import './Home.css';
 
 const formatBlogDate = (dateString) => {
@@ -9,20 +9,27 @@ const formatBlogDate = (dateString) => {
   return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 };
 
+const quickLinkEmoji = {
+  email: '✉️',
+  youtube: '▶️',
+  github: '🐙',
+  spotify: '🎼',
+  about: '👤',
+};
+
 const Home = ({ onNavigate, projects = [] }) => {
   const [hoveredColor, setHoveredColor] = useState(null);
   const timeoutRef = useRef(null);
   const blogsNewestFirst = [...blogs].sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const quickLinks = [
-    { id: 'email', label: 'Email', icon: '✉️', url: 'https://mail.google.com/mail/u/0/?fs=1&to=eeshag50@gmail.com&tf=cm', color: '#A78BFA' },
-    { id: 'youtube', label: 'YouTube', icon: '▶️', url: 'https://youtube.com/@incredgirl678?si=akOgxelHdVx3eZDz', color: '#3B82F6' },
-    { id: 'github', label: 'GitHub', icon: '🐙', url: 'https://github.com/eeshag', color: '#6e5494' },
-    { id: 'spotify', label: 'Spotify', icon: '🎼', url: 'https://open.spotify.com/user/312mixbngb3jlmrulyzl4lq3x6ui?si=57c245e47328410f', color: '#7C3AED' },
-    { id: 'about', label: 'All About Me', icon: '👤', url: 'about', color: '#9333EA', isPage: true },
+    { id: 'email', label: 'Email', url: 'https://mail.google.com/mail/u/0/?fs=1&to=eeshag50@gmail.com&tf=cm', color: '#A78BFA' },
+    { id: 'youtube', label: 'YouTube', url: 'https://youtube.com/@incredgirl678?si=akOgxelHdVx3eZDz', color: '#3B82F6' },
+    { id: 'github', label: 'GitHub', url: 'https://github.com/eeshag', color: '#6e5494' },
+    { id: 'spotify', label: 'Spotify', url: 'https://open.spotify.com/user/312mixbngb3jlmrulyzl4lq3x6ui?si=57c245e47328410f', color: '#7C3AED' },
+    { id: 'about', label: 'All About Me', url: 'about', color: '#9333EA', isPage: true },
   ];
 
-  // Function to darken a hex color for subtle gradient
   const darkenColor = (hex, amount = 0.7) => {
     const num = parseInt(hex.replace('#', ''), 16);
     const r = Math.max(0, Math.floor((num >> 16) * amount));
@@ -31,7 +38,6 @@ const Home = ({ onNavigate, projects = [] }) => {
     return `#${((r << 16) | (g << 8) | b).toString(16).padStart(6, '0')}`;
   };
 
-  // Mix the hovered color with the default color for subtlety
   const mixColors = (color1, color2, ratio = 0.3) => {
     const hex1 = color1.replace('#', '');
     const hex2 = color2.replace('#', '');
@@ -48,28 +54,24 @@ const Home = ({ onNavigate, projects = [] }) => {
   };
 
   const defaultGradientColor = '#1a0f2e';
-  const gradientTopColor = hoveredColor 
+  const gradientTopColor = hoveredColor
     ? mixColors(darkenColor(hoveredColor, 0.4), defaultGradientColor, 0.25)
     : defaultGradientColor;
 
   const handleLinkClick = (link) => {
     if (link.isPage && onNavigate) {
-      // Navigate to a page
       onNavigate(link.url);
     } else if (link.url.startsWith('#')) {
-      // Scroll to section
       const element = document.querySelector(link.url);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      // Open external link
       window.open(link.url, link.url.startsWith('mailto:') ? '_self' : '_blank');
     }
   };
 
   const handleMouseEnter = (color) => {
-    // Clear any existing timeout
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
@@ -78,7 +80,6 @@ const Home = ({ onNavigate, projects = [] }) => {
   };
 
   const handleMouseLeave = () => {
-    // Set a timeout to clear the color after 0.5 seconds
     timeoutRef.current = setTimeout(() => {
       setHoveredColor(null);
       timeoutRef.current = null;
@@ -86,14 +87,13 @@ const Home = ({ onNavigate, projects = [] }) => {
   };
 
   return (
-    <div 
+    <div
       className="home"
       style={{
         background: `linear-gradient(180deg, ${gradientTopColor} 0%, #0a0a0a 100%)`,
         transition: 'background 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
       }}
     >
-      {/* Header Section */}
       <div className="home-header">
         <div className="header-icon-wrapper">
           <span className="header-icon">👧</span>
@@ -104,7 +104,6 @@ const Home = ({ onNavigate, projects = [] }) => {
         </div>
       </div>
 
-      {/* Quick Links Section */}
       <div className="quick-links-section">
         <h2 className="section-title">Quick Links</h2>
         <div className="quick-links-grid">
@@ -116,14 +115,13 @@ const Home = ({ onNavigate, projects = [] }) => {
               onMouseEnter={() => handleMouseEnter(link.color)}
               onMouseLeave={handleMouseLeave}
             >
-              <span className="link-icon" style={{ backgroundColor: link.color }}>{link.icon}</span>
+              <span className="link-icon" style={{ backgroundColor: link.color }}>{quickLinkEmoji[link.id]}</span>
               <span className="link-label">{link.label}</span>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Projects Carousel Section */}
       <div className="content-carousel-section">
         <h2 className="section-title">Projects</h2>
         <div className="carousel-container">
@@ -135,9 +133,9 @@ const Home = ({ onNavigate, projects = [] }) => {
                 onClick={() => onNavigate && onNavigate(`project-${project.id}`, project)}
                 role="button"
                 tabIndex={0}
-                onKeyDown={(e) => {
-                  if ((e.key === 'Enter' || e.key === ' ') && onNavigate) {
-                    e.preventDefault();
+                onKeyDown={(event) => {
+                  if ((event.key === 'Enter' || event.key === ' ') && onNavigate) {
+                    event.preventDefault();
                     onNavigate(`project-${project.id}`, project);
                   }
                 }}
@@ -146,7 +144,7 @@ const Home = ({ onNavigate, projects = [] }) => {
                   <div
                     className="carousel-card-cover"
                     style={{
-                      background: `linear-gradient(135deg, ${project.color}40 0%, rgba(0, 0, 0, 0.4) 100%)`,
+                      background: `linear-gradient(135deg, ${project.color}40 0%, rgba(0, 0, 0, 0.4) 100%)`
                     }}
                   >
                     {project.icon}
@@ -162,7 +160,6 @@ const Home = ({ onNavigate, projects = [] }) => {
         </div>
       </div>
 
-      {/* Blogs Carousel Section */}
       <div className="content-carousel-section">
         <h2 className="section-title">Blogs</h2>
         <div className="carousel-container">
@@ -174,9 +171,9 @@ const Home = ({ onNavigate, projects = [] }) => {
                 onClick={() => onNavigate && onNavigate(`blog-${blog.id}`, blog)}
                 role="button"
                 tabIndex={0}
-                onKeyDown={(e) => {
-                  if ((e.key === 'Enter' || e.key === ' ') && onNavigate) {
-                    e.preventDefault();
+                onKeyDown={(event) => {
+                  if ((event.key === 'Enter' || event.key === ' ') && onNavigate) {
+                    event.preventDefault();
                     onNavigate(`blog-${blog.id}`, blog);
                   }
                 }}
@@ -185,7 +182,7 @@ const Home = ({ onNavigate, projects = [] }) => {
                   <div
                     className="carousel-card-cover"
                     style={{
-                      background: `linear-gradient(135deg, ${blog.color}40 0%, rgba(0, 0, 0, 0.4) 100%)`,
+                      background: `linear-gradient(135deg, ${blog.color}40 0%, rgba(0, 0, 0, 0.4) 100%)`
                     }}
                   >
                     {blog.icon}
@@ -201,7 +198,6 @@ const Home = ({ onNavigate, projects = [] }) => {
         </div>
       </div>
 
-      {/* Currently Consuming Carousel Section */}
       <div className="content-carousel-section">
         <h2 className="section-title">Currently Consuming</h2>
         <div className="carousel-container">
@@ -209,13 +205,26 @@ const Home = ({ onNavigate, projects = [] }) => {
             {currentlyConsuming.map((item, index) => {
               const consumingColors = ['#6366F1', '#8B5CF6', '#EC4899', '#06B6D4', '#10B981', '#F59E0B'];
               const color = consumingColors[index % consumingColors.length];
+              const slug = item.slug || item.title.toLowerCase().replace(/\s+&\s+/g, '-').replace(/\s+/g, '-');
               return (
-                <div key={item.id} className="carousel-item-wrapper">
+                <div
+                  key={item.id}
+                  className="carousel-item-wrapper carousel-item-clickable"
+                  onClick={() => onNavigate && onNavigate(`consuming-${item.id}`, { ...item, slug })}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(event) => {
+                    if ((event.key === 'Enter' || event.key === ' ') && onNavigate) {
+                      event.preventDefault();
+                      onNavigate(`consuming-${item.id}`, { ...item, slug });
+                    }
+                  }}
+                >
                   <div className="carousel-card">
                     <div
                       className="carousel-card-cover"
                       style={{
-                        background: `linear-gradient(135deg, ${color}40 0%, rgba(0, 0, 0, 0.4) 100%)`,
+                        background: `linear-gradient(135deg, ${color}40 0%, rgba(0, 0, 0, 0.4) 100%)`
                       }}
                     >
                       {item.cover}
@@ -236,4 +245,3 @@ const Home = ({ onNavigate, projects = [] }) => {
 };
 
 export default Home;
-

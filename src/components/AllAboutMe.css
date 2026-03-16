@@ -35,6 +35,14 @@
   font-size: 120px;
   color: #ffffff;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.all-about-me .cover-icon svg {
+  width: 100px;
+  height: 100px;
 }
 
 .all-about-me .banner-text {
@@ -190,6 +198,14 @@
 .player-icon {
   font-size: 32px;
   color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-icon svg {
+  width: 28px;
+  height: 28px;
 }
 
 .player-info {

@@ -1,10 +1,6 @@
-/* Fixed at top: from sidebar edge to right edge of screen */
+/* In flow at top so it scrolls with content and doesn't block the player bar / bottom content */
 .search-top-strip {
-  position: fixed;
-  top: 0;
-  left: 120px;
-  right: 0;
-  z-index: 100;
+  position: relative;
   flex-shrink: 0;
   pointer-events: none;
   height: 68px;
@@ -20,11 +16,8 @@
 .search-top-strip-search-wrap {
   position: relative;
   pointer-events: auto;
-  margin: 15px 15px 0;
+  margin: 15px auto 0;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 15px;
   padding: 0;
 }
 
@@ -39,18 +32,20 @@
   align-items: center;
   width: 100%;
   max-width: 800px;
-  background-color: #1F1F1F;
+  background-color: #1f1f1f;
   border-radius: 999px;
   padding: 6px 10px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.search-top-strip-inner-open,
 .search-top-strip-inner:hover {
   background-color: #2d2d2d;
 }
 
-.search-top-strip-inner:focus-within {
+.search-top-strip-inner:focus-within,
+.search-top-strip-inner-open {
   border: 1px solid rgba(255, 255, 255, 0.9);
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9);
 }
@@ -103,17 +98,62 @@
   object-fit: contain;
 }
 
-@media (max-width: 768px) {
-  .search-top-strip {
-    left: 0;
-  }
+.search-top-strip-dropdown {
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 18px;
+  background: rgba(24, 24, 27, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
 
+.search-top-strip-suggestion {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #f9fafb;
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.search-top-strip-suggestion:hover,
+.search-top-strip-suggestion.active {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.search-top-strip-suggestion-main {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.search-top-strip-suggestion-meta {
+  font-size: 12px;
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
   .search-top-strip-search-wrap {
     margin: 12px 12px 0;
-    padding: 12px 16px;
+    padding: 0;
+    max-width: none;
   }
 
   .search-top-strip-inner {
     max-width: 100%;
+  }
+
+  .search-top-strip-suggestion {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .search-top-strip-suggestion-meta {
+    flex-shrink: 1;
   }
 }

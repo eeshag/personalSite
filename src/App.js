@@ -7,9 +7,12 @@ import Projects from './components/Projects';
 import Blogs from './components/Blogs';
 import ProjectDetail from './components/ProjectDetail';
 import BlogDetail from './components/BlogDetail';
+import ConsumingDetail from './components/ConsumingDetail';
+import ConsumingBrowse from './components/ConsumingBrowse';
 import SearchResults from './components/SearchResults';
 import SearchTopStrip from './components/SearchTopStrip';
-import { blogs } from './data/blogs';
+import { blogs, projects } from './data/siteData';
+import { currentlyConsuming } from './data/content';
 import './App.css';
 
 function App() {
@@ -21,29 +24,27 @@ function App() {
   const [currentProject, setCurrentProject] = useState(null);
   const [currentBlog, setCurrentBlog] = useState(null);
   const [searchFilter, setSearchFilter] = useState('all');
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== 'undefined' ? window.innerWidth <= 768 : false
+  );
 
-  // Projects data (used for URL resolution and rendering). Slug = URL path from name (e.g. /projects/personal-website)
-  const projects = [
-    { id: 5, name: 'Personal Website', slug: 'personal-website', icon: '🤩', color: '#9E17AB', dateAdded: 'Dec 28, 2025' },
-    { id: 1, name: 'IHS Imposter', slug: 'ihs-imposter', icon: '🎭', color: '#6366F1', dateAdded: 'Jan 7, 2026' },
-    { id: 2, name: 'Poly Market Project', slug: 'poly-market-project', icon: '📊', color: '#A78BFA', dateAdded: 'Jan 22, 2026' },
-    { id: 3, name: 'People vs. Pavement', slug: 'people-vs-pavement', icon: '🚗', color: '#D9C3F0', dateAdded: 'Feb 5, 2026' },
-    { id: 4, name: 'Study Goblin', slug: 'study-goblin', icon: '🧌', color: '#7C9A6E', dateAdded: 'Feb 12, 2026' },
-    { id: 6, name: 'Fair Lens', slug: 'fair-lens', icon: '🔎', color: '#06B6D4', dateAdded: 'Feb 19, 2026' },
-  ];
-
-  // Derive view from URL so direct links and back/forward work (blogs use slug, e.g. /blogs/cats)
   const blogSlugFromUrl = pathname.startsWith('/blogs/') && pathname.length > 7
     ? pathname.replace(/^\/blogs\//, '')
     : null;
   const blogFromUrl = blogSlugFromUrl
-    ? blogs.find((b) => b.slug === blogSlugFromUrl)
+    ? blogs.find((blog) => blog.slug === blogSlugFromUrl)
     : null;
   const projectSlugFromUrl = pathname.startsWith('/projects/') && pathname.length > 10
     ? pathname.replace(/^\/projects\//, '')
     : null;
   const projectFromUrl = projectSlugFromUrl
-    ? projects.find((p) => p.slug === projectSlugFromUrl)
+    ? projects.find((project) => project.slug === projectSlugFromUrl)
+    : null;
+  const consumingSlugFromUrl = pathname.startsWith('/consuming/') && pathname.length > 11
+    ? pathname.replace(/^\/consuming\//, '')
+    : null;
+  const consumingFromUrl = consumingSlugFromUrl
+    ? currentlyConsuming.find((c) => c.slug === consumingSlugFromUrl)
     : null;
 
   const isOnBlogsList = pathname === '/blogs';
@@ -51,6 +52,8 @@ function App() {
   const isOnAbout = pathname === '/about';
   const isOnProjectsList = pathname === '/projects';
   const isOnProjectDetail = Boolean(projectFromUrl);
+  const isOnConsumingList = pathname === '/consuming';
+  const isOnConsumingDetail = Boolean(consumingFromUrl);
   const isOnSearch = pathname.startsWith('/search');
   const searchQueryFromUrl = useMemo(() => {
     if (!pathname.startsWith('/search')) return '';
@@ -58,15 +61,22 @@ function App() {
     return params.get('q') || '';
   }, [pathname, location.search]);
 
-  // Scroll to top when navigating to a new page (no animation—start at top)
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [pathname]);
 
-  // Reset search filter when leaving search page or when search query changes
   useEffect(() => {
     setSearchFilter('all');
   }, [pathname, searchQueryFromUrl]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const effectivePage =
     pathname === '/' ? 'home'
@@ -75,10 +85,13 @@ function App() {
     : isOnProjectDetail ? `project-${projectFromUrl.id}`
     : isOnBlogsList ? 'blogs'
     : isOnBlogDetail ? `blog-${blogFromUrl.id}`
+    : isOnConsumingList ? 'consuming'
+    : isOnConsumingDetail ? `consuming-${consumingFromUrl.id}`
     : isOnSearch ? 'search'
     : currentPage;
   const effectiveBlog = isOnBlogDetail ? blogFromUrl : currentBlog;
   const effectiveProject = isOnProjectDetail ? projectFromUrl : currentProject;
+  const effectiveConsuming = isOnConsumingDetail ? consumingFromUrl : null;
 
   const handleNavigate = (page, payload = null) => {
     if (page === 'about') {
@@ -126,6 +139,20 @@ function App() {
       setCurrentProject(null);
       return;
     }
+    if (page === 'consuming') {
+      navigate('/consuming');
+      setCurrentPage('consuming');
+      setCurrentProject(null);
+      setCurrentBlog(null);
+      return;
+    }
+    if (page.startsWith('consuming-') && payload && payload.slug) {
+      navigate(`/consuming/${payload.slug}`);
+      setCurrentPage(page);
+      setCurrentProject(null);
+      setCurrentBlog(null);
+      return;
+    }
     setCurrentPage(page);
     if (page === 'home') {
       navigate('/');
@@ -138,10 +165,12 @@ function App() {
     <div className="App">
       <Sidebar currentPage={effectivePage} />
       <main className={`main-content main-content-with-search ${effectivePage === 'search' ? 'main-content-search-results' : ''}`}>
-        <SearchTopStrip
-          onNavigate={handleNavigate}
-          initialQuery={effectivePage === 'search' ? searchQueryFromUrl : ''}
-        />
+        {(!isMobile || effectivePage === 'search') && (
+          <SearchTopStrip
+            onNavigate={handleNavigate}
+            initialQuery={effectivePage === 'search' ? searchQueryFromUrl : ''}
+          />
+        )}
         {effectivePage === 'home' ? (
           <Home onNavigate={handleNavigate} projects={projects} />
         ) : effectivePage === 'about' ? (
@@ -151,17 +180,19 @@ function App() {
         ) : effectivePage === 'blogs' ? (
           <Blogs onNavigate={handleNavigate} />
         ) : effectivePage === 'search' ? (
-          <SearchResults
-            projects={projects}
-            blogs={blogs}
-            activeFilter={searchFilter}
-            onFilterChange={setSearchFilter}
-          />
+          <SearchResults activeFilter={searchFilter} onFilterChange={setSearchFilter} />
+        ) : effectivePage === 'consuming' ? (
+          <ConsumingBrowse onNavigate={handleNavigate} />
         ) : effectivePage.startsWith('blog-') ? (
           <BlogDetail blog={effectiveBlog} onNavigate={handleNavigate} />
         ) : effectivePage.startsWith('project-') ? (
-          <ProjectDetail 
-            project={effectiveProject || projects.find(p => `project-${p.id}` === effectivePage)} 
+          <ProjectDetail
+            project={effectiveProject || projects.find((project) => `project-${project.id}` === effectivePage)}
+            onNavigate={handleNavigate}
+          />
+        ) : effectivePage.startsWith('consuming-') ? (
+          <ConsumingDetail
+            category={effectiveConsuming || currentlyConsuming.find((c) => `consuming-${c.id}` === effectivePage)}
             onNavigate={handleNavigate}
           />
         ) : (

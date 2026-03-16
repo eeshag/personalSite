@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import './Sidebar.css';
 
 const Sidebar = ({ currentPage }) => {
   const [hoveredIcon, setHoveredIcon] = useState(null);
+  const [tooltipPosition, setTooltipPosition] = useState({ top: 0, left: 0 });
 
   const navItems = [
     { id: 'home', label: 'Home', icon: '🏠', color: '#6366F1', to: '/' },
@@ -14,37 +16,79 @@ const Sidebar = ({ currentPage }) => {
     { id: 'about', label: 'All About Me', icon: '👤', color: '#9333EA', to: '/about' },
     { id: 'projects', label: 'Projects', icon: '💻', color: '#818CF8', to: '/projects' },
     { id: 'blogs', label: 'Blogs', icon: '📝', color: '#60A5FA', to: '/blogs' },
+    { id: 'consuming', label: 'Currently Consuming', icon: '🎧', color: '#06B6D4', to: '/consuming' },
+    { id: 'search', label: 'Search', icon: '🔍', color: '#9CCAFF', to: '/search' },
   ];
+
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== 'undefined' ? window.innerWidth <= 768 : false
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const visibleNavItems = isMobile
+    ? navItems.filter((item) =>
+        ['home', 'about', 'projects', 'blogs', 'consuming', 'search'].includes(item.id)
+      )
+    : navItems.filter((item) => item.id !== 'search');
 
   const isItemActive = (item) => {
     if (currentPage === item.id) return true;
     if (item.id === 'projects' && currentPage.startsWith('project-')) return true;
     if (item.id === 'blogs' && currentPage.startsWith('blog-')) return true;
+    if (item.id === 'consuming' && (currentPage === 'consuming' || currentPage.startsWith('consuming-'))) return true;
     return false;
   };
+
+  const handleIconMouseEnter = useCallback((item, event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    setTooltipPosition({
+      left: rect.right + 12,
+      top: rect.top + rect.height / 2,
+    });
+    setHoveredIcon(item.id);
+  }, []);
 
   const iconContent = (item) => (
     <>
       <span className="icon-emoji">{item.icon}</span>
-      {hoveredIcon === item.id && (
-        <div className="tooltip">
-          <span className="tooltip-icon">{item.icon}</span>
-          <span className="tooltip-label">{item.label}</span>
-        </div>
-      )}
     </>
   );
 
   const sharedProps = (item) => ({
-    className: `sidebar-icon ${isItemActive(item) ? 'active' : ''}`,
+    className: `sidebar-icon ${item.id === 'search' ? 'sidebar-icon--search' : ''} ${isItemActive(item) ? 'active' : ''}`,
     style: { backgroundColor: item.color },
-    onMouseEnter: () => setHoveredIcon(item.id),
+    onMouseEnter: (e) => handleIconMouseEnter(item, e),
     onMouseLeave: () => setHoveredIcon(null),
   });
 
+  const tooltipItem = hoveredIcon && navItems.find((i) => i.id === hoveredIcon);
+  const tooltipPortal = tooltipItem && typeof document !== 'undefined' && createPortal(
+    <div
+      className="tooltip tooltip--portal"
+      style={{
+        position: 'fixed',
+        left: tooltipPosition.left,
+        top: tooltipPosition.top,
+        transform: 'translateY(-50%)',
+      }}
+    >
+      <span className="tooltip-icon">{tooltipItem.icon}</span>
+      <span className="tooltip-label">{tooltipItem.label}</span>
+    </div>,
+    document.body
+  );
+
   return (
     <nav className="sidebar">
-      {navItems.map((item) => {
+      {visibleNavItems.map((item) => {
         if (item.to) {
           return (
             <Link
@@ -71,6 +115,7 @@ const Sidebar = ({ currentPage }) => {
         }
         return null;
       })}
+      {tooltipPortal}
     </nav>
   );
 };

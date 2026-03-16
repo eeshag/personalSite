@@ -98,6 +98,12 @@
   border-radius: 8px;
   font-size: 96px;
   line-height: 1;
+  color: #ffffff;
+}
+
+.header-icon svg {
+  width: 72px;
+  height: 72px;
 }
 
 .header-content {
@@ -174,6 +180,12 @@
   justify-content: center;
   border-radius: 6px;
   flex-shrink: 0;
+  color: #ffffff;
+}
+
+.link-icon svg {
+  width: 28px;
+  height: 28px;
 }
 
 .link-label {
@@ -295,6 +307,11 @@
     border-radius: 6px;
   }
 
+  .header-icon svg {
+    width: 48px;
+    height: 48px;
+  }
+
   .name-title {
     font-size: 48px;
   }
@@ -323,6 +340,11 @@
     height: 100%;
     min-height: 56px;
     border-radius: 6px;
+  }
+
+  .link-icon svg {
+    width: 24px;
+    height: 24px;
   }
 
   .link-label {
