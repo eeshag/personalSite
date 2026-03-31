@@ -364,6 +364,83 @@ We sprinted over, bought the cookie, split it six ways, and took a bite together
 It turned out to be the worst cookie ever.
 Instead of ruining the moment, that made the whole experience even funnier and more memorable.
 It became one of my favorite middle school memories.`
+  },
+  {
+    id: 5,
+    type: 'blog',
+    title: 'Spaghetti Structures!',
+    slug: 'first-stem-workshop-aka-spaghetti-structures',
+    url: '/blogs/first-stem-workshop-aka-spaghetti-structures',
+    excerpt: 'A debrief of our first GEM STEM workshop on structural engineering and spaghetti towers.',
+    summary: 'Eesha reflects on planning and running her first in-person GEM workshop, from logistics and timing to the joy of teaching.',
+    date: '2026-03-30',
+    icon: '\u{1F477}\u{200D}\u{2640}\u{FE0F}',
+    color: '#7A5CFA',
+    keywords: ['stem', 'workshop', 'engineering', 'girls in engineering and management', 'gem', 'structural engineering'],
+    fullText: `Hi guys, this sunday my cousin and I hosted our first STEM Workshop.
+For a bit of context, my cousin and I have been in STEM for a very long time.
+We have been doing robotics since second grade.
+During all our time in STEM, we have experienced and seen other girls being undermined, ignored, and discouraged, just because of our gender.
+We wanted to do something about this, which is why we created GEM (Girls in engineering and management).
+We wanted to create a space where girls were valued and respected, so that they could genuinely learn and enjoy STEM.
+As part of GEM, we have organized 5 workshops each covering different aspects of STEM.
+We just had our engineering workshop where we talked about structural engineering.
+We taught them how structures remained stable, following it up with an activity.
+In the activity, they were tasked with creating the tallest tower possible with spaghetti, marshmallows and tape, but it also had to be stable, any tower that fell down would not be counted.
+We gave them time beforehand to come up with and sketch a design on paper, and present their idea to us.
+At the end, we gave everyone prizes, let everyone eat the extra marshmallows (not the one they used for their project of course), and handed out a paper with the summary of the topics we covered in class.
+For the extra time before and after the class, we had brought () and () because they both relate to structural engineering, plus letting them improve their towers, build new towers, and draw or play games on the white board.
+Not to brag, but I would say the workshop went pretty well.
+First off, nearly everyone who signed up showed up, everyone besides one person.
+In my experience, that never really happens with free classes and activities.
+Everything takes it for granted, because if their kid does not show up, they do not lose money.
+So, I am really grateful for everyone actually sticking to their word here, the more the merrier and all the girls were so nice and funny!
+One thing me and my cousin were really stressed about beforehand was time.
+You can give estimates about how long each acidity will take, but as both of us have figured out through our years of teaching, that never really goes to plan.
+We were worried about having too much time or too little time left over, but luckily everything honestly went pretty perfectly in terms of time.
+We were right on schedule.
+Most of the classes Anika and I have taught have been online.
+I have been part of Norcal Robotics since sixth grade, where I did python summer camps, tinkercad summer camps, thunkable summer camps, Canva summer camps, python classes, math classes, ACSL classes, and probably even more, but each of those were online.
+Planning in person comes with a whole new set of logistics.
+You have to think about where you are going to to do the classes, how you will arrange the chairs, how you will share your screen, how many materials do you need to get, etc.
+For us, we definitely got way too many materials.
+The marshmallows practically finished because all the girls ate the extras, but the spaghetti on the other hand...
+My cousin and I will be eating spaghetti for weeks.
+We also had a lot of extra tape.
+Luckily, the materials for this workshop were pretty cheap, and it is always better to have more than less.
+Planning out these workshops definitely takes a lot of time, my cousin and I spent a ridiculous amount of time and energy just brainstorming.
+Then you have to create the website page and do advertising.
+Then you have to come out with actual content for the classes, make the slides, make the one pager to give at the end of the class.
+You need to practice and memorize the content on the slides.
+You have to decide on materials, decide how much of each material to get, and actually try out the activity for yourself to make sure it works.
+You need to go a day before to rearrange the classroom, and make sure the projector and everything is working along with bringing all the materials.
+On the day of, you need to come early for final adjustments, and stay after to clean everything up.
+During the class you need to take pictures for instagram, and you have to go through them and make the instagram post.
+You need to be sending out reminder emails and responding to questions.
+You have to manage at least 20 girls.
+Honestly though, work it.
+Doing all the work, although sometimes it can be a headache, is actually pretty fun and rewarding.
+It was fun learning about structural engineering, it was fun trying to make a tower on our own beforehand.
+It was fun taking pictures during the lesson and designing stuff on Canva.
+It was fun talking and teaching the girls.
+It was fun spending all this time thinking about ideas and actually seeing them come to life.
+Despite the time commitment of hosting in person workshops, it is worth it.
+The hands-on activities are so fun, and overall, in person is just funner for everyone compared to online.
+I would like to personally thank my mom for the workshops running smoothly, not because she did anything directly, but because of the prior experience and knowledge I had after being a teacher assistant for her summer camps.
+During the summer my mom hosts robotics summer camps, from 9am - 3pm, with elementary schoolers.
+I am telling you if you can handle 12 elementary schoolers, you can handle anyone, besides parents.
+Luckily, since this was a free workshop, all the parents were super nice.
+I already have so much experience teaching and answering questions, being patient, being chill and nice but firm when you can see someone is trying to break the rules, or being nonchalant when you see a kid is trying to rage bait you.
+It also helped me think about the ways the workshops could go wrong, and made me think of things like bringing games or additional activities in case we had extra time.
+Also, as a person who likes things to go to plan, I have learned that life has other plans, and sometimes it is better to just go with the flow then force people to do things they really do not want to do.
+For example, we still had a couple of concluding slides at our workshop, but all the girls were out of it and just wanted to eat marshmallows, and I realized to just go with the flow and not finish the slides.
+The summer camps also helped me with talking to people younger than me, and getting people who do not know each other to come together and talk, which helps at the start of class when it is super awkward.
+It has also just improved my speaking and teaching skills in general, my voice is a lot more clear and confident, thanks to all the elementary schoolers, I can scream pretty loud.
+Thats honestly my debrief from the first work.
+It was a lot of work but the 1.5 hours of the actual workshop flew by.
+My cousin and I are so lucky that all the girls were so nice, when we were giving the lesson they did not really talk over us, and were laughing and having fun during the activity we organized.
+They were all super sweet too!
+See you at the next workshop!`
   }
 ];
 

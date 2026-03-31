@@ -72,6 +72,69 @@
   padding: 24px 32px 40px 32px;
 }
 
+.blog-reload-button-row {
+  padding: 0 32px;
+  margin-top: 22px;
+  margin-bottom: 14px;
+}
+
+.blog-reload-button {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  background-color: #1ed760;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 0 2px #121212, 0 10px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.blog-reload-button:hover {
+  transform: scale(1.03);
+  background-color: #2de26d;
+}
+
+.blog-reload-button:active {
+  transform: scale(0.98);
+}
+
+.blog-reload-play-icon {
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 11px solid #000000;
+  margin-left: 2px;
+}
+
+.blog-reload-pause-icon {
+  width: 14px;
+  height: 16px;
+  position: relative;
+}
+
+.blog-reload-pause-icon::before,
+.blog-reload-pause-icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 3px;
+  height: 16px;
+  background-color: #000000;
+  border-radius: 1px;
+}
+
+.blog-reload-pause-icon::before {
+  left: 2px;
+}
+
+.blog-reload-pause-icon::after {
+  right: 2px;
+}
+
 .content-header {
   display: grid;
   grid-template-columns: 48px 1fr 180px;
@@ -161,7 +224,7 @@
 }
 
 .row-date {
-  /* Empty column to match header layout */
+  min-height: 1px;
 }
 
 .blog-intro-row {
@@ -439,6 +502,35 @@
 
   .content-section {
     padding: 32px 20px 32px 20px;
+  }
+
+  .blog-reload-button-row {
+    padding: 0 20px;
+    margin-top: 18px;
+    margin-bottom: 12px;
+  }
+
+  .blog-reload-button {
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 0 0 2px #121212, 0 8px 18px rgba(0, 0, 0, 0.35);
+  }
+
+  .blog-reload-play-icon {
+    border-top-width: 6px;
+    border-bottom-width: 6px;
+    border-left-width: 10px;
+  }
+
+  .blog-reload-pause-icon {
+    width: 12px;
+    height: 14px;
+  }
+
+  .blog-reload-pause-icon::before,
+  .blog-reload-pause-icon::after {
+    width: 3px;
+    height: 14px;
   }
 
   .content-header {

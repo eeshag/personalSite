@@ -3,7 +3,12 @@ import './Projects.css';
 
 const ProjectDetail = ({ project, onNavigate }) => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isReadingAloud, setIsReadingAloud] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [speechProgress, setSpeechProgress] = useState(0);
   const contentRef = useRef(null);
+  const progressBarRef = useRef(null);
+  const speechOffsetRef = useRef(0);
   
   // Get project-specific content
   const getProjectContent = () => {
@@ -728,12 +733,160 @@ const ProjectDetail = ({ project, onNavigate }) => {
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
-  const currentTime = Math.floor((scrollProgress / 100) * readingTime * 60);
   const totalTime = readingTime * 60;
+  const activeProgress = isReadingAloud || isPaused ? speechProgress : scrollProgress;
+  const currentTime = Math.floor((activeProgress / 100) * totalTime);
+
+  const extractText = (node) => {
+    if (node === null || node === undefined || typeof node === 'boolean') {
+      return '';
+    }
+    if (typeof node === 'string' || typeof node === 'number') {
+      return String(node);
+    }
+    if (Array.isArray(node)) {
+      return node.map((child) => extractText(child)).join(' ');
+    }
+    if (React.isValidElement(node)) {
+      return extractText(node.props?.children);
+    }
+    return '';
+  };
+
+  const getReadableText = () =>
+    projectContent
+      .map((item) => {
+        if (item.type === 'list') {
+          return item.items
+            .map((entry) => {
+              if (typeof entry === 'object' && entry !== null && 'text' in entry) {
+                const subText = entry.subItems ? `. ${entry.subItems.map((s) => extractText(s)).join('. ')}` : '';
+                return `${extractText(entry.text)}${subText}`;
+              }
+              return extractText(entry);
+            })
+            .join('. ');
+        }
+        return extractText(item.content);
+      })
+      .join('\n\n');
+
+  const pickPreferredVoice = () => {
+    if (!('speechSynthesis' in window)) return null;
+    const voices = window.speechSynthesis.getVoices();
+    if (!voices || voices.length === 0) return null;
+
+    const preferredVoiceNameSnippets = ['david', 'guy', 'mark', 'ryan', 'google uk english male', 'male'];
+    const preferred = voices.find((voice) =>
+      preferredVoiceNameSnippets.some((snippet) => voice.name.toLowerCase().includes(snippet))
+    );
+    if (preferred) return preferred;
+
+    const englishNonDefault = voices.find((voice) => voice.lang.toLowerCase().startsWith('en') && !voice.default);
+    if (englishNonDefault) return englishNonDefault;
+    return voices.find((voice) => voice.lang.toLowerCase().startsWith('en')) || voices[0] || null;
+  };
+
+  const startSpeechFrom = (textToRead, startChar = 0) => {
+    const clampedStartChar = Math.max(0, Math.min(startChar, Math.max(0, textToRead.length - 1)));
+    const speechText = textToRead.slice(clampedStartChar);
+    if (!speechText.trim()) {
+      setIsReadingAloud(false);
+      setIsPaused(false);
+      setSpeechProgress(100);
+      return;
+    }
+
+    speechOffsetRef.current = clampedStartChar;
+    const utterance = new SpeechSynthesisUtterance(speechText);
+    utterance.rate = 1;
+    utterance.pitch = 0.9;
+    utterance.lang = 'en-US';
+    const preferredVoice = pickPreferredVoice();
+    if (preferredVoice) {
+      utterance.voice = preferredVoice;
+      utterance.lang = preferredVoice.lang || utterance.lang;
+    }
+
+    if (textToRead.length > 0) {
+      const startProgress = (clampedStartChar / textToRead.length) * 100;
+      setSpeechProgress(Math.min(100, Math.max(0, startProgress)));
+    }
+
+    utterance.onstart = () => {
+      setIsReadingAloud(true);
+      setIsPaused(false);
+    };
+    utterance.onboundary = (event) => {
+      if (typeof event.charIndex === 'number' && textToRead.length > 0) {
+        const absoluteCharIndex = speechOffsetRef.current + event.charIndex;
+        const progress = (absoluteCharIndex / textToRead.length) * 100;
+        setSpeechProgress(Math.min(100, Math.max(0, progress)));
+      }
+    };
+    utterance.onend = () => {
+      setIsReadingAloud(false);
+      setIsPaused(false);
+      setSpeechProgress(100);
+    };
+    utterance.onerror = () => {
+      setIsReadingAloud(false);
+      setIsPaused(false);
+    };
+    window.speechSynthesis.speak(utterance);
+  };
+
+  const handleReadAloud = () => {
+    if (!('speechSynthesis' in window)) {
+      return;
+    }
+
+    if (isReadingAloud) {
+      if (isPaused) {
+        window.speechSynthesis.resume();
+        setIsPaused(false);
+      } else {
+        window.speechSynthesis.pause();
+        setIsPaused(true);
+      }
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+    const textToRead = getReadableText();
+    if (!textToRead.trim()) {
+      return;
+    }
+    startSpeechFrom(textToRead, 0);
+  };
+
+  const handleSeekSpeech = (event) => {
+    if (!('speechSynthesis' in window) || !progressBarRef.current) {
+      return;
+    }
+    const textToRead = getReadableText();
+    if (!textToRead.trim()) {
+      return;
+    }
+    const rect = progressBarRef.current.getBoundingClientRect();
+    const relativeX = event.clientX - rect.left;
+    const ratio = Math.min(1, Math.max(0, relativeX / rect.width));
+    const nextCharIndex = Math.floor(ratio * textToRead.length);
+    window.speechSynthesis.cancel();
+    startSpeechFrom(textToRead, nextCharIndex);
+  };
 
   if (!project) {
     return null;
   }
+
+  useEffect(() => {
+    return () => {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }, []);
 
   // Convert hex color to rgba for gradient
   const hexToRgba = (hex, alpha) => {
@@ -764,6 +917,22 @@ const ProjectDetail = ({ project, onNavigate }) => {
             <p className="banner-metadata">Author: Eesha Gupta, {wordCount} words, {readingTime} minute read</p>
           </div>
         </div>
+      </div>
+
+      <div className="blog-reload-button-row">
+        <button
+          type="button"
+          className={`blog-reload-button ${isReadingAloud ? 'is-reading' : ''}`}
+          onClick={handleReadAloud}
+          aria-label={!isReadingAloud ? 'Read aloud' : isPaused ? 'Resume reading' : 'Pause reading'}
+          title={!isReadingAloud ? 'Read aloud' : isPaused ? 'Resume reading' : 'Pause reading'}
+        >
+          {isReadingAloud && !isPaused ? (
+            <span className="blog-reload-pause-icon" aria-hidden="true"></span>
+          ) : (
+            <span className="blog-reload-play-icon" aria-hidden="true"></span>
+          )}
+        </button>
       </div>
 
       {/* Content Section */}
@@ -865,10 +1034,10 @@ const ProjectDetail = ({ project, onNavigate }) => {
         <div className="player-center">
           <div className="player-progress-container">
             <div className="player-time player-time-left">{formatTime(currentTime)}</div>
-            <div className="player-progress-bar">
+            <div className="player-progress-bar" ref={progressBarRef} onClick={handleSeekSpeech}>
               <div 
                 className="player-progress-fill" 
-                style={{ width: `${scrollProgress}%` }}
+                style={{ width: `${activeProgress}%` }}
               ></div>
             </div>
             <div className="player-time player-time-right">{formatTime(totalTime)}</div>
