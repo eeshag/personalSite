@@ -444,6 +444,69 @@ See you at the next workshop!`
   }
 ];
 
+export const photography = [
+  {
+    id: 1,
+    type: 'photography',
+    title: 'Pink Flower',
+    slug: 'pink-flower',
+    url: '/photography/pink-flower',
+    date: '2026-04-05',
+    icon: '\u{1F338}',
+    color: '#DB2777',
+    image: '/IMG_0100.JPG',
+    gallery: ['/IMG_0100.JPG', '/IMG_0101.JPG', '/IMG_0110.JPG', '/IMG_0116.JPG'],
+    summary: 'The first photos from my new camera—the only bloom in the yard.',
+    keywords: ['photography', 'flower', 'macro', 'nature', 'pink'],
+    fullText: `When I first got my camera, our front and back yards were completely dead. Not a single flower in sight except this one. A stunning pink flower. These are the first pictures I ever took with my camera.`
+  },
+  {
+    id: 2,
+    type: 'photography',
+    title: 'Jan 27, 2026 Sunset',
+    slug: 'jan-27-2026-sunset',
+    url: '/photography/jan-27-2026-sunset',
+    date: '2026-01-27',
+    icon: '\u{1F305}',
+    color: '#EA580C',
+    image: '/IMG_0141.JPG',
+    gallery: [
+      '/IMG_0141.JPG',
+      '/IMG_0140.JPG',
+      '/IMG_0142.JPG',
+      '/IMG_0144.JPG',
+      '/IMG_0158.JPG',
+      '/IMG_0164.JPG'
+    ],
+    summary: 'Sunset over the neighborhood—silhouettes, streetlights, and a bright horizon.',
+    keywords: ['photography', 'sunset', 'golden hour', 'sky', 'landscape']
+  },
+  {
+    id: 3,
+    type: 'photography',
+    title: 'Our Apricot Tree',
+    slug: 'our-apricot-tree',
+    url: '/photography/our-apricot-tree',
+    date: '2026-03-15',
+    icon: '\u{1F333}',
+    color: '#E8A598',
+    image: '/IMG_0181.JPG',
+    gallery: [
+      '/IMG_0169.JPG',
+      '/IMG_0171.JPG',
+      '/IMG_0172.JPG',
+      '/IMG_0181.JPG',
+      '/IMG_0183.JPG',
+      '/IMG_0185.JPG'
+    ],
+    summary: 'Spring blossoms on the apricot—soft petals against the branches.',
+    keywords: ['photography', 'apricot', 'tree', 'blossoms', 'spring', 'nature'],
+    fullText: `When we first moved into this house, the first thing I noticed was the play structure, but the first thing my parents noticed was the huge apricot tree. They didn't notice its beauty or think about all the amazing apricots we would get from it; instead, they noticed how close it was to the cell-phone tower wires—honestly, a valid concern.
+
+Even though this tree has needed a lot of maintenance, it will always be my favorite tree in our backyard.`
+  }
+];
+
 export const currentlyConsuming = [
   { id: 1, type: 'consuming', title: 'Books', author: '', cover: '\u{1F4DA}', keywords: ['books', 'reading'] },
   { id: 2, type: 'consuming', title: 'Podcasts', author: '', cover: '\u{1F399}\u{FE0F}', keywords: ['podcasts', 'audio'] },

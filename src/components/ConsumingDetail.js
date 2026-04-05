@@ -8,7 +8,7 @@ const formatTime = (seconds) => {
   return `${mins}:${secs.toString().padStart(2, '0')}`;
 };
 
-const CONSUMING_COLORS = ['#6366F1', '#8B5CF6', '#EC4899', '#06B6D4', '#10B981', '#F59E0B'];
+const CONSUMING_COLORS = ['#FB7185', '#FFFFFF', '#EAB308', '#6366F1', '#F97316', '#A5B4FC'];
 
 const ConsumingDetail = ({ category, onNavigate }) => {
   const [scrollProgress, setScrollProgress] = useState(0);

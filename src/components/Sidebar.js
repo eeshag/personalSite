@@ -9,13 +9,10 @@ const Sidebar = ({ currentPage }) => {
 
   const navItems = [
     { id: 'home', label: 'Home', icon: '🏠', color: '#6366F1', to: '/' },
-    { id: 'email', label: 'Email', icon: '✉️', color: '#A78BFA', href: 'https://mail.google.com/mail/u/0/?fs=1&to=eeshag50@gmail.com&tf=cm', external: true },
-    { id: 'youtube', label: 'YouTube', icon: '▶️', color: '#3B82F6', href: 'https://youtube.com/@incredgirl678?si=akOgxelHdVx3eZDz', external: true },
-    { id: 'github', label: 'GitHub', icon: '🐙', color: '#6e5494', href: 'https://github.com/eeshag', external: true },
-    { id: 'spotify', label: 'Spotify', icon: '🎼', color: '#7C3AED', href: 'https://open.spotify.com/user/312mixbngb3jlmrulyzl4lq3x6ui?si=57c245e47328410f', external: true },
     { id: 'about', label: 'All About Me', icon: '👤', color: '#9333EA', to: '/about' },
     { id: 'projects', label: 'Projects', icon: '💻', color: '#818CF8', to: '/projects' },
     { id: 'blogs', label: 'Blogs', icon: '📝', color: '#60A5FA', to: '/blogs' },
+    { id: 'photography', label: 'Photography', icon: '📷', color: '#A855F7', to: '/photography' },
     { id: 'consuming', label: 'Currently Consuming', icon: '🎧', color: '#06B6D4', to: '/consuming' },
     { id: 'search', label: 'Search', icon: '🔍', color: '#9CCAFF', to: '/search' },
   ];
@@ -35,7 +32,7 @@ const Sidebar = ({ currentPage }) => {
 
   const visibleNavItems = isMobile
     ? navItems.filter((item) =>
-        ['home', 'about', 'projects', 'blogs', 'consuming', 'search'].includes(item.id)
+        ['home', 'about', 'projects', 'blogs', 'photography', 'consuming', 'search'].includes(item.id)
       )
     : navItems.filter((item) => item.id !== 'search');
 
@@ -43,6 +40,7 @@ const Sidebar = ({ currentPage }) => {
     if (currentPage === item.id) return true;
     if (item.id === 'projects' && currentPage.startsWith('project-')) return true;
     if (item.id === 'blogs' && currentPage.startsWith('blog-')) return true;
+    if (item.id === 'photography' && (currentPage === 'photography' || currentPage.startsWith('photo-'))) return true;
     if (item.id === 'consuming' && (currentPage === 'consuming' || currentPage.startsWith('consuming-'))) return true;
     return false;
   };

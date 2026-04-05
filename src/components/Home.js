@@ -14,6 +14,7 @@ const quickLinkEmoji = {
   youtube: '▶️',
   github: '🐙',
   spotify: '🎼',
+  facebook: '📘',
   about: '👤',
 };
 
@@ -27,6 +28,7 @@ const Home = ({ onNavigate, projects = [] }) => {
     { id: 'youtube', label: 'YouTube', url: 'https://youtube.com/@incredgirl678?si=akOgxelHdVx3eZDz', color: '#3B82F6' },
     { id: 'github', label: 'GitHub', url: 'https://github.com/eeshag', color: '#6e5494' },
     { id: 'spotify', label: 'Spotify', url: 'https://open.spotify.com/user/312mixbngb3jlmrulyzl4lq3x6ui?si=57c245e47328410f', color: '#7C3AED' },
+    { id: 'facebook', label: 'Facebook', url: 'https://www.facebook.com/eesha.gupta.222295', color: '#1877F2' },
     { id: 'about', label: 'All About Me', url: 'about', color: '#9333EA', isPage: true },
   ];
 
@@ -203,7 +205,7 @@ const Home = ({ onNavigate, projects = [] }) => {
         <div className="carousel-container">
           <div className="carousel">
             {currentlyConsuming.map((item, index) => {
-              const consumingColors = ['#6366F1', '#8B5CF6', '#EC4899', '#06B6D4', '#10B981', '#F59E0B'];
+              const consumingColors = ['#FB7185', '#FFFFFF', '#EAB308', '#6366F1', '#F97316', '#A5B4FC'];
               const color = consumingColors[index % consumingColors.length];
               const slug = item.slug || item.title.toLowerCase().replace(/\s+&\s+/g, '-').replace(/\s+/g, '-');
               return (

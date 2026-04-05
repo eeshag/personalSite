@@ -2,6 +2,7 @@ import {
   aboutPage,
   blogs,
   currentlyConsuming,
+  photography,
   projects,
   suggestedQuestions
 } from '../../shared/siteContent.mjs';
@@ -40,7 +41,7 @@ const consumingDocuments = currentlyConsuming.map((item) => ({
   fullText: item.author ? `${item.title} ${item.author}` : item.title
 }));
 
-export { aboutPage, blogs, currentlyConsuming, projects, suggestedQuestions };
+export { aboutPage, blogs, currentlyConsuming, photography, projects, suggestedQuestions };
 
 export const searchDocuments = [
   aboutDocument,

@@ -5,13 +5,15 @@ import Home from './components/Home';
 import AllAboutMe from './components/AllAboutMe';
 import Projects from './components/Projects';
 import Blogs from './components/Blogs';
+import Photography from './components/Photography';
 import ProjectDetail from './components/ProjectDetail';
 import BlogDetail from './components/BlogDetail';
+import PhotographyDetail from './components/PhotographyDetail';
 import ConsumingDetail from './components/ConsumingDetail';
 import ConsumingBrowse from './components/ConsumingBrowse';
 import SearchResults from './components/SearchResults';
 import SearchTopStrip from './components/SearchTopStrip';
-import { blogs, projects } from './data/siteData';
+import { blogs, photography, projects } from './data/siteData';
 import { currentlyConsuming } from './data/content';
 import './App.css';
 
@@ -23,6 +25,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [currentProject, setCurrentProject] = useState(null);
   const [currentBlog, setCurrentBlog] = useState(null);
+  const [currentPhoto, setCurrentPhoto] = useState(null);
   const [searchFilter, setSearchFilter] = useState('all');
   const [isMobile, setIsMobile] = useState(
     typeof window !== 'undefined' ? window.innerWidth <= 768 : false
@@ -47,11 +50,21 @@ function App() {
     ? currentlyConsuming.find((c) => c.slug === consumingSlugFromUrl)
     : null;
 
+  const photoSlugFromUrl =
+    pathname.startsWith('/photography/') && pathname.length > 12
+      ? pathname.replace(/^\/photography\//, '')
+      : null;
+  const photoFromUrl = photoSlugFromUrl
+    ? photography.find((p) => p.slug === photoSlugFromUrl)
+    : null;
+
   const isOnBlogsList = pathname === '/blogs';
   const isOnBlogDetail = Boolean(blogFromUrl);
   const isOnAbout = pathname === '/about';
   const isOnProjectsList = pathname === '/projects';
   const isOnProjectDetail = Boolean(projectFromUrl);
+  const isOnPhotographyList = pathname === '/photography';
+  const isOnPhotographyDetail = Boolean(photoFromUrl);
   const isOnConsumingList = pathname === '/consuming';
   const isOnConsumingDetail = Boolean(consumingFromUrl);
   const isOnSearch = pathname.startsWith('/search');
@@ -85,6 +98,8 @@ function App() {
     : isOnProjectDetail ? `project-${projectFromUrl.id}`
     : isOnBlogsList ? 'blogs'
     : isOnBlogDetail ? `blog-${blogFromUrl.id}`
+    : isOnPhotographyList ? 'photography'
+    : isOnPhotographyDetail ? `photo-${photoFromUrl.id}`
     : isOnConsumingList ? 'consuming'
     : isOnConsumingDetail ? `consuming-${consumingFromUrl.id}`
     : isOnSearch ? 'search'
@@ -92,6 +107,7 @@ function App() {
   const effectiveBlog = isOnBlogDetail ? blogFromUrl : currentBlog;
   const effectiveProject = isOnProjectDetail ? projectFromUrl : currentProject;
   const effectiveConsuming = isOnConsumingDetail ? consumingFromUrl : null;
+  const effectivePhoto = isOnPhotographyDetail ? photoFromUrl : currentPhoto;
 
   const handleNavigate = (page, payload = null) => {
     if (page === 'about') {
@@ -99,6 +115,7 @@ function App() {
       setCurrentPage('about');
       setCurrentProject(null);
       setCurrentBlog(null);
+      setCurrentPhoto(null);
       return;
     }
     if (page === 'projects') {
@@ -106,6 +123,7 @@ function App() {
       setCurrentPage('projects');
       setCurrentProject(null);
       setCurrentBlog(null);
+      setCurrentPhoto(null);
       return;
     }
     if (page.startsWith('project-') && payload) {
@@ -113,6 +131,7 @@ function App() {
       setCurrentPage(page);
       setCurrentProject(payload);
       setCurrentBlog(null);
+      setCurrentPhoto(null);
       return;
     }
     if (page === 'blogs') {
@@ -120,6 +139,7 @@ function App() {
       setCurrentPage('blogs');
       setCurrentProject(null);
       setCurrentBlog(null);
+      setCurrentPhoto(null);
       return;
     }
     if (page === 'search' && payload && payload.query) {
@@ -129,6 +149,7 @@ function App() {
         setCurrentPage('search');
         setCurrentProject(null);
         setCurrentBlog(null);
+        setCurrentPhoto(null);
         return;
       }
     }
@@ -137,6 +158,23 @@ function App() {
       setCurrentPage(page);
       setCurrentBlog(payload);
       setCurrentProject(null);
+      setCurrentPhoto(null);
+      return;
+    }
+    if (page === 'photography') {
+      navigate('/photography');
+      setCurrentPage('photography');
+      setCurrentProject(null);
+      setCurrentBlog(null);
+      setCurrentPhoto(null);
+      return;
+    }
+    if (page.startsWith('photo-') && payload) {
+      navigate(`/photography/${payload.slug}`);
+      setCurrentPage(page);
+      setCurrentPhoto(payload);
+      setCurrentProject(null);
+      setCurrentBlog(null);
       return;
     }
     if (page === 'consuming') {
@@ -144,6 +182,7 @@ function App() {
       setCurrentPage('consuming');
       setCurrentProject(null);
       setCurrentBlog(null);
+      setCurrentPhoto(null);
       return;
     }
     if (page.startsWith('consuming-') && payload && payload.slug) {
@@ -151,6 +190,7 @@ function App() {
       setCurrentPage(page);
       setCurrentProject(null);
       setCurrentBlog(null);
+      setCurrentPhoto(null);
       return;
     }
     setCurrentPage(page);
@@ -159,6 +199,7 @@ function App() {
     }
     setCurrentProject(null);
     setCurrentBlog(null);
+    setCurrentPhoto(null);
   };
 
   return (
@@ -179,12 +220,16 @@ function App() {
           <Projects onNavigate={handleNavigate} projects={projects} />
         ) : effectivePage === 'blogs' ? (
           <Blogs onNavigate={handleNavigate} />
+        ) : effectivePage === 'photography' ? (
+          <Photography />
         ) : effectivePage === 'search' ? (
           <SearchResults activeFilter={searchFilter} onFilterChange={setSearchFilter} />
         ) : effectivePage === 'consuming' ? (
           <ConsumingBrowse onNavigate={handleNavigate} />
         ) : effectivePage.startsWith('blog-') ? (
           <BlogDetail blog={effectiveBlog} onNavigate={handleNavigate} />
+        ) : effectivePage.startsWith('photo-') ? (
+          <PhotographyDetail photo={effectivePhoto} />
         ) : effectivePage.startsWith('project-') ? (
           <ProjectDetail
             project={effectiveProject || projects.find((project) => `project-${project.id}` === effectivePage)}
