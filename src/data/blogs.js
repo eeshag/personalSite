@@ -40,6 +40,16 @@ export const blogs = [
     icon: "🍪",
     color: "#C17F59",
   },
+  {
+    id: 6,
+    title: "Math Workshop",
+    slug: "math-workshop",
+    excerpt: "A debrief of our second workshop where we taught two-variable equations.",
+    date: "2026-04-09",
+    url: "#",
+    icon: "🟰",
+    color: "#2563EB",
+  },
 ];
 
 

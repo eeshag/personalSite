@@ -262,6 +262,75 @@ const BlogDetail = ({ blog }) => {
       ];
     }
 
+    if (blog.id === 6 && blog.title === 'Math Workshop') {
+      return [
+        {
+          type: 'paragraph',
+          content: 'Hey guys, this weekend we had our second workshop, our math workshop!'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'As you can probably figure out, you do not need to buy a lot of materials for a math workshop, so this workshop cost us no money. On the other hand, it is also the most boring and hardest class to teach, so making the curriculum took forever.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'We decided to teach two-variable equations. In hindsight, maybe something geometry-related could have been more fun and hands-on. We planned out the lesson so that we first did a review of solving one-variable equations before jumping into substitution and elimination.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'We had two games to wrap it up in the end: a scavenger hunt and a relay race. In the scavenger hunt, we had envelopes labeled clue 1, clue 2, and clue 3. In each envelope there was a system of two-variable equations, and at the end one equation where they had to plug in the values of x and y to find the answer.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'Once they solved the final equation for all three clues, they got a code to the lock. If they tried the code and the lock opened, they won. Otherwise, they lost. The scavenger hunt part came into play because we hid the envelopes across two rooms in the building. In our opinion we did a good job, but they found them pretty easily.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'We also had a relay race prepared with one-variable equations, where they would have to solve an equation, come to us with the answer, and get the next equation. The first group to finish all equations won.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'When we came the day before to set up, we decided to practice our presentation. To our surprise, it took around 50 minutes. We knew no one wanted to listen to that, ourselves included. That is literally a whole normal school period. So we had to shorten our slides and practice problems a lot.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            "Another problem we faced was projecting our slideshow. We learned that projecting onto a whiteboard might not be as clear as projecting onto a wall. That was pretty interesting because my projector was equally clear on each surface, but my cousin's projector worked much better on a wall than a whiteboard."
+        },
+        {
+          type: 'paragraph',
+          content:
+            'In the actual workshop, this time we also handed out Dum Dums for participation because this required a lot of participation and we needed something to convince them. It actually worked pretty well. We went through a lot of Dum Dums though.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'The first part with one-variable equations went pretty well because they already knew how to solve them. Two-variable equations were a bit harder because some of them knew it and some of them did not. I went over substitution and my cousin went over elimination because substitution is my favorite and elimination is her favorite.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'I will say it was kind of sad that no one got substitution. I would be like, okay guys, what do we do first? What do we do now? No one raised their hand lol. That was kind of sad, but I asked and they said there was not anything I could do better. At least they got how to eliminate, so that did not ruin the scavenger hunt because they could solve the equations.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'For this workshop, we did not get nearly as many pictures. I think I only took 20, compared to the last workshop where I took around 80. The photos did come out good though, so I am not really mad. This time we also already had the drill down, so the Instagram post was up the next day.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'Overall, we did not really have high expectations for this workshop because it is arguably pretty boring and hard to teach. We are pretty proud of how it went, so just a friendly reminder that the things you are worried about are never nearly as bad as they seem :)'
+        }
+      ];
+    }
+
     return [
       {
         type: 'paragraph',

@@ -277,7 +277,7 @@ What I Learned
 How to build and integrate an AI-powered web application end to end, including authentication, file handling, model evaluation, prompt engineering, and dataset validation.
 Future Plans
 Add video analysis, support multiple languages, and work toward real-world adoption in schools.`
-  }
+  },
 ];
 
 export const blogs = [
@@ -441,6 +441,56 @@ It was a lot of work but the 1.5 hours of the actual workshop flew by.
 My cousin and I are so lucky that all the girls were so nice, when we were giving the lesson they did not really talk over us, and were laughing and having fun during the activity we organized.
 They were all super sweet too!
 See you at the next workshop!`
+  },
+  {
+    id: 6,
+    type: 'blog',
+    title: 'Math Workshop',
+    slug: 'math-workshop',
+    url: '/blogs/math-workshop',
+    excerpt: 'A debrief of our second workshop, where we taught two-variable equations with games and lots of participation.',
+    summary: 'Eesha reflects on planning and teaching a math workshop, from trimming a long lesson to running a scavenger hunt and relay race.',
+    date: '2026-04-09',
+    icon: '\u{1F7F0}',
+    color: '#2563EB',
+    keywords: ['math', 'workshop', 'algebra', 'substitution', 'elimination', 'teaching', 'stem'],
+    fullText: `Hey guys, this weekend we had our second workshop, our math workshop.
+As you can probably figure out, you do not need to buy a lot of materials for a math workshop, so this workshop cost us no money.
+On the other hand, it is also the most boring and hardest class to teach, so making the curriculum took forever.
+We decided to teach two-variable equations.
+In hindsight, maybe something geometry-related could have been more fun and hands-on.
+We planned out the lesson so that we first did a review of solving one-variable equations before jumping into substitution and elimination.
+We had two games to wrap it up at the end: a scavenger hunt and a relay race.
+In the scavenger hunt, we had envelopes labeled clue 1, clue 2, and clue 3.
+In each envelope there was a system of two-variable equations, and at the end one equation where they had to plug in the values of x and y to find the answer.
+Once they solved the final equation for all three clues, they got a code to the lock.
+If they tried the code and the lock opened, they won. Otherwise, they lost.
+The scavenger hunt part came into play because we hid the envelopes across two rooms in the building.
+In our opinion we did a good job, but they found them pretty easily.
+We also had a relay race prepared with one-variable equations, where they would have to solve an equation, come to us with the answer, and get the next equation.
+The first group to finish all equations won.
+When we came the day before to set up, we decided to practice our presentation.
+To our surprise, it took around 50 minutes.
+We knew no one wanted to listen to that, ourselves included. That is literally a whole normal school period.
+So we had to shorten our slides and practice problems a lot.
+Another problem we faced was projecting our slideshow.
+We learned that projecting onto a whiteboard might not be as clear as projecting onto a wall.
+That was pretty interesting because my projector was equally clear on each surface, but my cousin's projector worked much better on a wall than a whiteboard.
+In the actual workshop, this time we also handed out Dum Dums for participation because this required a lot of participation and we needed something to convince them.
+It actually worked pretty well. We went through a lot of Dum Dums though.
+The first part with one-variable equations went pretty well because they already knew how to solve them.
+Two-variable equations were a bit harder because some of them knew it and some of them did not.
+I went over substitution and my cousin went over elimination because substitution is my favorite and elimination is her favorite.
+I will say it was kind of sad that no one got substitution.
+I would be like, okay guys, what do we do first? What do we do now? No one raised their hand lol.
+That was kind of sad, but I asked and they said there was not anything I could do better.
+At least they got how to eliminate, so that did not ruin the scavenger hunt because they could solve the equations.
+For this workshop, we did not get nearly as many pictures.
+I think I only took 20, compared to the last workshop where I took around 80.
+The photos did come out good though, so I am not really mad.
+This time we also already had the drill down, so the Instagram post was up the next day.
+Overall, we did not really have high expectations for this workshop because it is arguably pretty boring and hard to teach.
+We are pretty proud of how it went, so just a friendly reminder that the things you are worried about are never nearly as bad as they seem :)`
   }
 ];
 
@@ -588,7 +638,7 @@ Even though this tree has needed a lot of maintenance, it will always be my favo
     ],
     summary: 'Teaching two-variable equations, then a scavenger hunt—our second STEM math workshop.',
     keywords: ['photography', 'math', 'workshop', 'STEM', 'learning', 'algebra'],
-    fullText: `This Sunday my cousin and I had our second STEM workshop—our math workshop. In this workshop we taught how to solve two-variable equations with substitution and elimination. Before that, we went over one-variable equations and basic algebraic concepts. After the lesson, we played a scavenger hunt so they could work together, apply concepts, and have fun! Here are some pictures, and if you want to learn more about the workshop and the process of preparing for it, I will be releasing a blog very soon.`
+    fullText: `This Sunday my cousin and I had our second STEM workshop—our math workshop. In this workshop we taught how to solve two-variable equations with substitution and elimination. Before that, we went over one-variable equations and basic algebraic concepts. After the lesson, we played a scavenger hunt so they could work together, apply concepts, and have fun! Here are some pictures, and if you want to learn more about the workshop and the process of preparing for it, [read my Math Workshop blog](/blogs/math-workshop).`
   },
   {
     id: 5,
