@@ -504,6 +504,28 @@ export const photography = [
     fullText: `When we first moved into this house, the first thing I noticed was the play structure, but the first thing my parents noticed was the huge apricot tree. They didn't notice its beauty or think about all the amazing apricots we would get from it; instead, they noticed how close it was to the cell-phone tower wires—honestly, a valid concern.
 
 Even though this tree has needed a lot of maintenance, it will always be my favorite tree in our backyard.`
+  },
+  {
+    id: 4,
+    type: 'photography',
+    title: 'Math Workshop',
+    slug: 'math-workshop',
+    url: '/photography/math-workshop',
+    date: '2026-04-08',
+    icon: '\u{1F4D0}',
+    color: '#2563EB',
+    image: '/IMG_1764-math-workshop.JPG',
+    gallery: [
+      '/IMG_1764-math-workshop.JPG',
+      '/IMG_0269.JPG',
+      '/IMG_0260.JPG',
+      '/IMG_0262.JPG',
+      '/IMG_0267.JPG',
+      '/IMG_0259.JPG'
+    ],
+    summary: 'Teaching two-variable equations, then a scavenger hunt—our second STEM math workshop.',
+    keywords: ['photography', 'math', 'workshop', 'STEM', 'learning', 'algebra'],
+    fullText: `This Sunday my cousin and I had our second STEM workshop—our math workshop. In this workshop we taught how to solve two-variable equations with substitution and elimination. Before that, we went over one-variable equations and basic algebraic concepts. After the lesson, we played a scavenger hunt so they could work together, apply concepts, and have fun! Here are some pictures, and if you want to learn more about the workshop and the process of preparing for it, I will be releasing a blog very soon.`
   }
 ];
 

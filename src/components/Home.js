@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { currentlyConsuming } from '../data/content';
-import { blogs } from '../data/siteData';
+import { blogs, photography } from '../data/siteData';
 import './Home.css';
 
 const formatBlogDate = (dateString) => {
@@ -22,6 +22,9 @@ const Home = ({ onNavigate, projects = [] }) => {
   const [hoveredColor, setHoveredColor] = useState(null);
   const timeoutRef = useRef(null);
   const blogsNewestFirst = [...blogs].sort((a, b) => new Date(b.date) - new Date(a.date));
+  const photosNewestFirst = [...photography].sort(
+    (a, b) => new Date(b.date) - new Date(a.date)
+  );
 
   const quickLinks = [
     { id: 'email', label: 'Email', url: 'https://mail.google.com/mail/u/0/?fs=1&to=eeshag50@gmail.com&tf=cm', color: '#A78BFA' },
@@ -239,6 +242,50 @@ const Home = ({ onNavigate, projects = [] }) => {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </div>
+
+      <div className="content-carousel-section">
+        <h2 className="section-title">Photography</h2>
+        <div className="carousel-container">
+          <div className="carousel">
+            {photosNewestFirst.map((photo) => (
+              <div
+                key={photo.id}
+                className="carousel-item-wrapper carousel-item-clickable"
+                onClick={() => onNavigate && onNavigate(`photo-${photo.id}`, photo)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(event) => {
+                  if ((event.key === 'Enter' || event.key === ' ') && onNavigate) {
+                    event.preventDefault();
+                    onNavigate(`photo-${photo.id}`, photo);
+                  }
+                }}
+              >
+                <div className="carousel-card">
+                  {photo.image ? (
+                    <div className="carousel-card-cover carousel-card-cover--photo">
+                      <img src={photo.image} alt="" className="carousel-card-photo" loading="lazy" />
+                    </div>
+                  ) : (
+                    <div
+                      className="carousel-card-cover"
+                      style={{
+                        background: `linear-gradient(135deg, ${photo.color}40 0%, rgba(0, 0, 0, 0.4) 100%)`
+                      }}
+                    >
+                      {photo.icon}
+                    </div>
+                  )}
+                </div>
+                <div className="carousel-card-info">
+                  <h3 className="carousel-card-title">{photo.title}</h3>
+                  <p className="carousel-card-author">{formatBlogDate(photo.date)}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
