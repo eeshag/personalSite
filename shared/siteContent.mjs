@@ -448,6 +448,7 @@ export const photography = [
   {
     id: 1,
     type: 'photography',
+    section: 'flowers',
     title: 'Pink Flower',
     slug: 'pink-flower',
     url: '/photography/pink-flower',
@@ -461,8 +462,46 @@ export const photography = [
     fullText: `When I first got my camera, our front and back yards were completely dead. Not a single flower in sight except this one. A stunning pink flower. These are the first pictures I ever took with my camera.`
   },
   {
+    id: 7,
+    type: 'photography',
+    section: 'flowers',
+    title: 'Red Rose',
+    slug: 'red-rose',
+    url: '/photography/red-rose',
+    date: '2026-04-08',
+    icon: '\u{1F339}',
+    color: '#B91C1C',
+    image: '/IMG_0270.JPG',
+    gallery: [
+      '/IMG_0292.JPG',
+      '/IMG_0272.JPG',
+      '/IMG_0274.JPG',
+      '/IMG_0275.JPG',
+      '/IMG_0290.JPG',
+      '/IMG_0270.JPG'
+    ],
+    summary: 'Close-ups of a deep red rose in the yard—sunlight, petals, and buds.',
+    keywords: ['photography', 'rose', 'flower', 'red', 'macro', 'nature']
+  },
+  {
+    id: 8,
+    type: 'photography',
+    section: 'flowers',
+    title: 'Pink Rose',
+    slug: 'pink-rose',
+    url: '/photography/pink-rose',
+    date: '2026-04-08',
+    icon: '\u{1F339}',
+    color: '#EC4899',
+    image: '/IMG_0286.JPG',
+    gallery: ['/IMG_0278.JPG', '/IMG_0280.JPG', '/IMG_0286.JPG', '/IMG_0287.JPG'],
+    summary: 'Pink roses in the yard—buds, blooms, and sunlight.',
+    keywords: ['photography', 'rose', 'flower', 'pink', 'macro', 'nature']
+  },
+  {
     id: 2,
     type: 'photography',
+    section: 'sunsets',
     title: 'Jan 27, 2026 Sunset',
     slug: 'jan-27-2026-sunset',
     url: '/photography/jan-27-2026-sunset',
@@ -482,8 +521,31 @@ export const photography = [
     keywords: ['photography', 'sunset', 'golden hour', 'sky', 'landscape']
   },
   {
+    id: 6,
+    type: 'photography',
+    section: 'sunsets',
+    title: 'April 6th Sunset',
+    slug: 'april-6th-sunset',
+    url: '/photography/april-6th-sunset',
+    date: '2026-04-06',
+    icon: '\u{1F305}',
+    color: '#C026D3',
+    image: '/IMG_0303.JPG',
+    gallery: [
+      '/IMG_0310.JPG',
+      '/IMG_0302.JPG',
+      '/IMG_0303.JPG',
+      '/IMG_0301.JPG',
+      '/IMG_0305.JPG',
+      '/IMG_0304.JPG'
+    ],
+    summary: 'Neighborhood sunset—pink clouds, silhouettes, and the sky after golden hour.',
+    keywords: ['photography', 'sunset', 'sky', 'neighborhood', 'twilight']
+  },
+  {
     id: 3,
     type: 'photography',
+    section: 'flowers',
     title: 'Our Apricot Tree',
     slug: 'our-apricot-tree',
     url: '/photography/our-apricot-tree',
@@ -508,6 +570,7 @@ Even though this tree has needed a lot of maintenance, it will always be my favo
   {
     id: 4,
     type: 'photography',
+    section: 'workshops',
     title: 'Math Workshop',
     slug: 'math-workshop',
     url: '/photography/math-workshop',
@@ -526,6 +589,33 @@ Even though this tree has needed a lot of maintenance, it will always be my favo
     summary: 'Teaching two-variable equations, then a scavenger hunt—our second STEM math workshop.',
     keywords: ['photography', 'math', 'workshop', 'STEM', 'learning', 'algebra'],
     fullText: `This Sunday my cousin and I had our second STEM workshop—our math workshop. In this workshop we taught how to solve two-variable equations with substitution and elimination. Before that, we went over one-variable equations and basic algebraic concepts. After the lesson, we played a scavenger hunt so they could work together, apply concepts, and have fun! Here are some pictures, and if you want to learn more about the workshop and the process of preparing for it, I will be releasing a blog very soon.`
+  },
+  {
+    id: 5,
+    type: 'photography',
+    section: 'workshops',
+    title: 'Spaghetti Structures',
+    slug: 'spaghetti-structures',
+    url: '/photography/spaghetti-structures',
+    date: '2026-03-29',
+    icon: '\u{1F35D}',
+    color: '#B45309',
+    image: '/IMG_0249-spaghetti-structures.JPG',
+    gallery: [
+      '/IMG_0249-spaghetti-structures.JPG',
+      '/IMG_0189.JPG',
+      '/IMG_0202.JPG',
+      '/IMG_0220.JPG',
+      '/IMG_0216.JPG',
+      '/IMG_0221.JPG',
+      '/IMG_0230.JPG',
+      '/IMG_0244.JPG',
+      '/IMG_0246.JPG',
+      '/IMG_0253.JPG'
+    ],
+    summary: 'Our engineering workshop challenge: build the tallest stable tower with spaghetti and marshmallows.',
+    keywords: ['photography', 'spaghetti structures', 'STEM', 'engineering', 'workshop', 'tower challenge'],
+    fullText: `This was the first STEM workshop my cousin and I hosted. The workshop focused on engineering, specifically structural engineering. We began with a lesson on what structural engineering is, careers in the field, and how structures are designed to be stable. Then, working in groups, teams completed a short design review—they had ten minutes to sketch and plan a design, which they presented to us. From there, they had fifteen minutes to build. Their task was to create a stable, tall structure using spaghetti, marshmallows, and tape; the tallest standing structure at the end won. At the end, we gave everyone a handout summarizing the concepts we covered in class, the remaining marshmallows, and some extra prizes. If you want to learn more about the workshop and the behind-the-scenes work, [read my Spaghetti Structures blog](/blogs/first-stem-workshop-aka-spaghetti-structures).`
   }
 ];
 
