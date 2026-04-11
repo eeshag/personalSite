@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-/** Renders optional [label](/path) markdown inline links as React Router links. */
+/** Renders optional [label](url) markdown: internal paths use React Router; http(s) opens in a new tab. */
 export function paragraphWithOptionalLinks(text, paragraphIndex) {
   const re = /\[([^\]]+)\]\(([^)]+)\)/g;
   const matches = [...text.matchAll(re)];
@@ -15,14 +15,28 @@ export function paragraphWithOptionalLinks(text, paragraphIndex) {
     if (match.index > last) {
       parts.push(text.slice(last, match.index));
     }
+    const href = match[2];
+    const isExternal = /^https?:\/\//i.test(href);
     parts.push(
-      <Link
-        key={`${paragraphIndex}-${match.index}`}
-        to={match[2]}
-        className="content-inline-link"
-      >
-        {match[1]}
-      </Link>
+      isExternal ? (
+        <a
+          key={`${paragraphIndex}-${match.index}`}
+          href={href}
+          className="content-inline-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {match[1]}
+        </a>
+      ) : (
+        <Link
+          key={`${paragraphIndex}-${match.index}`}
+          to={href}
+          className="content-inline-link"
+        >
+          {match[1]}
+        </Link>
+      )
     );
     last = match.index + match[0].length;
   }

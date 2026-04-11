@@ -440,7 +440,7 @@ Thats honestly my debrief from the first work.
 It was a lot of work but the 1.5 hours of the actual workshop flew by.
 My cousin and I are so lucky that all the girls were so nice, when we were giving the lesson they did not really talk over us, and were laughing and having fun during the activity we organized.
 They were all super sweet too!
-If you want to see photos from the workshop, visit the Spaghetti Structures photography post (/photography/spaghetti-structures).
+You can see the photos from our workshop on our [instagram(@norcalroboticsgem)](https://www.instagram.com/norcalroboticsgem?igsh=NTc4MTIwNjQ2YQ==).
 See you at the next workshop!`
   },
   {
@@ -490,7 +490,7 @@ For this workshop, we did not get nearly as many pictures.
 I think I only took 20, compared to the last workshop where I took around 80.
 The photos did come out good though, so I am not really mad.
 This time we also already had the drill down, so the Instagram post was up the next day.
-You can see the Math Workshop photos (/photography/math-workshop).
+You can see the photos from our workshop on our [instagram(@norcalroboticsgem)](https://www.instagram.com/norcalroboticsgem?igsh=NTc4MTIwNjQ2YQ==).
 Overall, we did not really have high expectations for this workshop because it is arguably pretty boring and hard to teach.
 We are pretty proud of how it went, so just a friendly reminder that the things you are worried about are never nearly as bad as they seem :)`
   }
@@ -616,56 +616,6 @@ export const photography = [
     fullText: `When we first moved into this house, the first thing I noticed was the play structure, but the first thing my parents noticed was the huge apricot tree. They didn't notice its beauty or think about all the amazing apricots we would get from it; instead, they noticed how close it was to the cell-phone tower wires—honestly, a valid concern.
 
 Even though this tree has needed a lot of maintenance, it will always be my favorite tree in our backyard.`
-  },
-  {
-    id: 4,
-    type: 'photography',
-    section: 'workshops',
-    title: 'Math Workshop',
-    slug: 'math-workshop',
-    url: '/photography/math-workshop',
-    date: '2026-04-08',
-    icon: '\u{1F4D0}',
-    color: '#2563EB',
-    image: '/IMG_1764-math-workshop.JPG',
-    gallery: [
-      '/IMG_1764-math-workshop.JPG',
-      '/IMG_0269.JPG',
-      '/IMG_0260.JPG',
-      '/IMG_0262.JPG',
-      '/IMG_0267.JPG',
-      '/IMG_0259.JPG'
-    ],
-    summary: 'Teaching two-variable equations, then a scavenger hunt—our second STEM math workshop.',
-    keywords: ['photography', 'math', 'workshop', 'STEM', 'learning', 'algebra'],
-    fullText: `This Sunday my cousin and I had our second STEM workshop—our math workshop. In this workshop we taught how to solve two-variable equations with substitution and elimination. Before that, we went over one-variable equations and basic algebraic concepts. After the lesson, we played a scavenger hunt so they could work together, apply concepts, and have fun! Here are some pictures, and if you want to learn more about the workshop and the process of preparing for it, [read my Math Workshop blog](/blogs/math-workshop).`
-  },
-  {
-    id: 5,
-    type: 'photography',
-    section: 'workshops',
-    title: 'Spaghetti Structures',
-    slug: 'spaghetti-structures',
-    url: '/photography/spaghetti-structures',
-    date: '2026-03-29',
-    icon: '\u{1F35D}',
-    color: '#B45309',
-    image: '/IMG_0249-spaghetti-structures.JPG',
-    gallery: [
-      '/IMG_0249-spaghetti-structures.JPG',
-      '/IMG_0189.JPG',
-      '/IMG_0202.JPG',
-      '/IMG_0220.JPG',
-      '/IMG_0216.JPG',
-      '/IMG_0221.JPG',
-      '/IMG_0230.JPG',
-      '/IMG_0244.JPG',
-      '/IMG_0246.JPG',
-      '/IMG_0253.JPG'
-    ],
-    summary: 'Our engineering workshop challenge: build the tallest stable tower with spaghetti and marshmallows.',
-    keywords: ['photography', 'spaghetti structures', 'STEM', 'engineering', 'workshop', 'tower challenge'],
-    fullText: `This was the first STEM workshop my cousin and I hosted. The workshop focused on engineering, specifically structural engineering. We began with a lesson on what structural engineering is, careers in the field, and how structures are designed to be stable. Then, working in groups, teams completed a short design review—they had ten minutes to sketch and plan a design, which they presented to us. From there, they had fifteen minutes to build. Their task was to create a stable, tall structure using spaghetti, marshmallows, and tape; the tallest standing structure at the end won. At the end, we gave everyone a handout summarizing the concepts we covered in class, the remaining marshmallows, and some extra prizes. If you want to learn more about the workshop and the behind-the-scenes work, [read my Spaghetti Structures blog](/blogs/first-stem-workshop-aka-spaghetti-structures).`
   }
 ];
 

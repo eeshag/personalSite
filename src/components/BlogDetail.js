@@ -259,7 +259,7 @@ const BlogDetail = ({ blog }) => {
         {
           type: 'paragraph',
           content:
-            'If you want to see photos from the workshop, [visit the Spaghetti Structures photography post](/photography/spaghetti-structures).'
+            'You can see the photos from our workshop on our [instagram(@norcalroboticsgem)](https://www.instagram.com/norcalroboticsgem?igsh=NTc4MTIwNjQ2YQ==).'
         },
         {
           type: 'paragraph',
@@ -327,7 +327,12 @@ const BlogDetail = ({ blog }) => {
         {
           type: 'paragraph',
           content:
-            'For this workshop, we did not get nearly as many pictures. I think I only took 20, compared to the last workshop where I took around 80. The photos did come out good though, so I am not really mad. This time we also already had the drill down, so the Instagram post was up the next day. You can [see the Math Workshop photos here](/photography/math-workshop).'
+            'For this workshop, we did not get nearly as many pictures. I think I only took 20, compared to the last workshop where I took around 80. The photos did come out good though, so I am not really mad. This time we also already had the drill down, so the Instagram post was up the next day.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'You can see the photos from our workshop on our [instagram(@norcalroboticsgem)](https://www.instagram.com/norcalroboticsgem?igsh=NTc4MTIwNjQ2YQ==).'
         },
         {
           type: 'paragraph',

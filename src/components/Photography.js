@@ -5,8 +5,7 @@ import './Photography.css';
 
 const PHOTOGRAPHY_SECTIONS = [
   { key: 'flowers', label: 'Flowers' },
-  { key: 'sunsets', label: 'Sunsets' },
-  { key: 'workshops', label: 'Workshops' }
+  { key: 'sunsets', label: 'Sunsets' }
 ];
 
 const Photography = () => {
