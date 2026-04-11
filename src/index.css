@@ -6,6 +6,30 @@
   -ms-overflow-style: none; /* IE and Edge */
 }
 
+:root {
+  /* Hand on links / click targets (see html for default arrow) */
+  --site-cursor: url('/site-cursor-hand.png') 10 0, pointer;
+}
+
+/* Default: arrow. Interactive hovers use --site-cursor (hand) */
+html {
+  cursor: url('/site-cursor.png') 0 0, auto;
+}
+
+a,
+button,
+[role='button'],
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+input[type='checkbox'],
+input[type='radio'],
+label[for],
+select,
+summary {
+  cursor: var(--site-cursor);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -14,6 +38,19 @@ body {
   background-color: #0a0a0a;
   color: #ffffff;
   overflow-x: hidden;
+}
+
+/* Typing should stay the text caret, not the custom pointer */
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+textarea,
+[contenteditable="true"] {
+  cursor: text;
 }
 
 code {

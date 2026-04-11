@@ -100,7 +100,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: var(--site-cursor);
   box-shadow: 0 0 0 2px #121212, 0 10px 24px rgba(0, 0, 0, 0.35);
   transition: transform 0.15s ease, background-color 0.15s ease;
 }
@@ -211,7 +211,7 @@
 .project-row-link {
   text-decoration: none;
   color: inherit;
-  cursor: pointer;
+  cursor: var(--site-cursor);
 }
 
 .writing-row:last-child,
@@ -450,7 +450,7 @@
   height: 4px;
   background-color: #535353;
   border-radius: 2px;
-  cursor: pointer;
+  cursor: var(--site-cursor);
   position: relative;
 }
 

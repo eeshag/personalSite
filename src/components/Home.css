@@ -56,7 +56,7 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  cursor: pointer;
+  cursor: var(--site-cursor);
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
@@ -158,7 +158,7 @@
   align-items: stretch;
   justify-content: flex-start;
   gap: 0;
-  cursor: pointer;
+  cursor: var(--site-cursor);
   transition: all 0.3s ease;
   border: 1px solid transparent;
   overflow: hidden;
@@ -231,7 +231,7 @@
 }
 
 .carousel-item-wrapper.carousel-item-clickable {
-  cursor: pointer;
+  cursor: var(--site-cursor);
 }
 
 .carousel-item-clickable .carousel-card:hover {
@@ -244,7 +244,7 @@
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   overflow: hidden;
-  cursor: pointer;
+  cursor: var(--site-cursor);
   transition: transform 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }

@@ -82,7 +82,7 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  cursor: pointer;
+  cursor: var(--site-cursor);
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
@@ -118,7 +118,7 @@
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  cursor: pointer;
+  cursor: var(--site-cursor);
 }
 
 .search-top-strip-suggestion:hover,
