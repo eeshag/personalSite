@@ -1,37 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { paragraphWithOptionalLinks } from '../utils/paragraphWithOptionalLinks';
 import './Projects.css';
 import './Photography.css';
-
-function paragraphWithOptionalLinks(text, paragraphIndex) {
-  const re = /\[([^\]]+)\]\(([^)]+)\)/g;
-  const matches = [...text.matchAll(re)];
-  if (matches.length === 0) {
-    return text;
-  }
-
-  const parts = [];
-  let last = 0;
-  for (const match of matches) {
-    if (match.index > last) {
-      parts.push(text.slice(last, match.index));
-    }
-    parts.push(
-      <Link
-        key={`${paragraphIndex}-${match.index}`}
-        to={match[2]}
-        className="content-inline-link"
-      >
-        {match[1]}
-      </Link>
-    );
-    last = match.index + match[0].length;
-  }
-  if (last < text.length) {
-    parts.push(text.slice(last));
-  }
-  return parts;
-}
 
 const PhotographyDetail = ({ photo }) => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -129,9 +99,8 @@ const PhotographyDetail = ({ photo }) => {
             <p className="banner-metadata">Photo set</p>
             <h1 className="banner-title">{photo.title}</h1>
             <p className="banner-metadata">
-              {photoCount > 0
-                ? `Eesha Gupta, ${photoCount} ${photoCount === 1 ? 'photo' : 'photos'}`
-                : `Eesha Gupta, ${wordCount} words, ${readingTime} minute read`}
+              Photographer: Eesha Gupta, {photoCount}{' '}
+              {photoCount === 1 ? 'photo' : 'photos'}
             </p>
           </div>
         </div>

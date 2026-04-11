@@ -440,6 +440,7 @@ Thats honestly my debrief from the first work.
 It was a lot of work but the 1.5 hours of the actual workshop flew by.
 My cousin and I are so lucky that all the girls were so nice, when we were giving the lesson they did not really talk over us, and were laughing and having fun during the activity we organized.
 They were all super sweet too!
+If you want to see photos from the workshop, visit the Spaghetti Structures photography post (/photography/spaghetti-structures).
 See you at the next workshop!`
   },
   {
@@ -489,6 +490,7 @@ For this workshop, we did not get nearly as many pictures.
 I think I only took 20, compared to the last workshop where I took around 80.
 The photos did come out good though, so I am not really mad.
 This time we also already had the drill down, so the Instagram post was up the next day.
+You can see the Math Workshop photos (/photography/math-workshop).
 Overall, we did not really have high expectations for this workshop because it is arguably pretty boring and hard to teach.
 We are pretty proud of how it went, so just a friendly reminder that the things you are worried about are never nearly as bad as they seem :)`
   }
@@ -552,7 +554,7 @@ export const photography = [
     id: 2,
     type: 'photography',
     section: 'sunsets',
-    title: 'Jan 27, 2026 Sunset',
+    title: '1/27/26 Sunset',
     slug: 'jan-27-2026-sunset',
     url: '/photography/jan-27-2026-sunset',
     date: '2026-01-27',
@@ -574,7 +576,7 @@ export const photography = [
     id: 6,
     type: 'photography',
     section: 'sunsets',
-    title: 'April 6th Sunset',
+    title: '4/6/26 Sunset',
     slug: 'april-6th-sunset',
     url: '/photography/april-6th-sunset',
     date: '2026-04-06',
@@ -585,8 +587,6 @@ export const photography = [
       '/IMG_0310.JPG',
       '/IMG_0302.JPG',
       '/IMG_0303.JPG',
-      '/IMG_0301.JPG',
-      '/IMG_0305.JPG',
       '/IMG_0304.JPG'
     ],
     summary: 'Neighborhood sunset—pink clouds, silhouettes, and the sky after golden hour.',

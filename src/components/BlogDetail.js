@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { paragraphWithOptionalLinks, stripInlineMarkdownLinks } from '../utils/paragraphWithOptionalLinks';
 import './Projects.css';
 
 const baseUrl = import.meta.env.BASE_URL;
@@ -257,6 +258,11 @@ const BlogDetail = ({ blog }) => {
         },
         {
           type: 'paragraph',
+          content:
+            'If you want to see photos from the workshop, [visit the Spaghetti Structures photography post](/photography/spaghetti-structures).'
+        },
+        {
+          type: 'paragraph',
           content: 'See you at the next workshop! 👷‍♀️'
         }
       ];
@@ -321,7 +327,7 @@ const BlogDetail = ({ blog }) => {
         {
           type: 'paragraph',
           content:
-            'For this workshop, we did not get nearly as many pictures. I think I only took 20, compared to the last workshop where I took around 80. The photos did come out good though, so I am not really mad. This time we also already had the drill down, so the Instagram post was up the next day.'
+            'For this workshop, we did not get nearly as many pictures. I think I only took 20, compared to the last workshop where I took around 80. The photos did come out good though, so I am not really mad. This time we also already had the drill down, so the Instagram post was up the next day. You can [see the Math Workshop photos here](/photography/math-workshop).'
         },
         {
           type: 'paragraph',
@@ -353,13 +359,13 @@ const BlogDetail = ({ blog }) => {
     let count = 0;
     blogContent.forEach((item) => {
       if (item.type === 'paragraph') {
-        count += item.content.split(/\s+/).length;
+        count += stripInlineMarkdownLinks(item.content).split(/\s+/).filter(Boolean).length;
       } else if (item.type === 'list') {
         item.items.forEach((itemText) => {
-          count += itemText.split(/\s+/).length;
+          count += stripInlineMarkdownLinks(itemText).split(/\s+/).filter(Boolean).length;
         });
       } else if (item.type === 'header') {
-        count += item.content.split(/\s+/).length;
+        count += stripInlineMarkdownLinks(item.content).split(/\s+/).filter(Boolean).length;
       }
     });
     return count;
@@ -420,9 +426,9 @@ const BlogDetail = ({ blog }) => {
     blogContent
       .map((item) => {
         if (item.type === 'list') {
-          return item.items.join('. ');
+          return item.items.map((t) => stripInlineMarkdownLinks(t)).join('. ');
         }
-        return item.content || '';
+        return stripInlineMarkdownLinks(item.content || '');
       })
       .join('\n\n');
 
@@ -676,13 +682,13 @@ const BlogDetail = ({ blog }) => {
                       </div>
                       <div className="blog-intro-text">
                         <p className="content-paragraph" style={{ margin: '0 0 10px 0' }}>
-                          {item.content}
+                          {paragraphWithOptionalLinks(item.content, index)}
                         </p>
                         <p className="content-paragraph" style={{ margin: '0 0 10px 0' }}>
-                          {nextItem.content}
+                          {paragraphWithOptionalLinks(nextItem.content, index + 1)}
                         </p>
                         <p className="content-paragraph" style={{ margin: '0' }}>
-                          {nextNextItem.content}
+                          {paragraphWithOptionalLinks(nextNextItem.content, index + 2)}
                         </p>
                       </div>
                     </div>
@@ -708,7 +714,7 @@ const BlogDetail = ({ blog }) => {
                           className="content-paragraph"
                           style={{ marginBottom: listIndex < item.items.length - 1 ? '2px' : '0' }}
                         >
-                          {listItem}
+                          {paragraphWithOptionalLinks(listItem, `${index}-${listIndex}`)}
                         </li>
                       ))}
                     </ul>
@@ -727,7 +733,7 @@ const BlogDetail = ({ blog }) => {
                 <div className="row-number">{index + 1}</div>
                 <div className="row-content">
                   <p className="content-paragraph" style={{ margin: '0' }}>
-                    {item.content}
+                    {paragraphWithOptionalLinks(item.content, index)}
                   </p>
                 </div>
                 <div className="row-date"></div>
