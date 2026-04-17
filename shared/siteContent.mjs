@@ -493,6 +493,42 @@ This time we also already had the drill down, so the Instagram post was up the n
 You can see the photos from our workshop on our [instagram(@norcalroboticsgem)](https://www.instagram.com/norcalroboticsgem?igsh=NTc4MTIwNjQ2YQ==).
 Overall, we did not really have high expectations for this workshop because it is arguably pretty boring and hard to teach.
 We are pretty proud of how it went, so just a friendly reminder that the things you are worried about are never nearly as bad as they seem :)`
+  },
+  {
+    id: 7,
+    type: 'blog',
+    title: 'Create it in 3D',
+    slug: 'create-it-in-3d',
+    url: '/blogs/create-it-in-3d',
+    excerpt:
+      'Our third GEM STEM workshop: TinkerCAD, a CAD lesson, emoji challenges, and a lot of relief when the laptops showed up.',
+    summary:
+      'Eesha debriefs the "Create it in 3D" tech workshop—teaching TinkerCAD, running emoji rounds, handling no email replies and laptop worries, and why planning ahead paid off.',
+    date: '2026-04-16',
+    icon: '\u{1F4BB}',
+    color: '#0EA5E9',
+    keywords: ['stem', 'workshop', 'tinkercad', 'cad', '3d', 'gem', 'teaching', 'girls in stem'],
+    fullText: `Hi guys, you can probably guess—this week we had another STEM workshop! This was our third workshop, our tech workshop, aka "Create it in 3D" (very proud of this name, by the way).
+
+If you would like to see them, the photos from our workshop are on our [instagram(@norcalroboticsgem)](https://www.instagram.com/norcalroboticsgem?igsh=NTc4MTIwNjQ2YQ==).
+
+Let's start with what we did in class. When everyone first came in, we let them draw and play games on the whiteboard, but the place where we hold classes only has kinda lame Expo markers, so we bring our own. We also brought games—Guess Who and card games this time. After about five to ten minutes, we got started with the slides. Before that, though, we got everyone connected to Wi-Fi, since they had to bring their own laptops. We always start with an introduction to GEM, a couple of fun facts about ourselves, and of course an icebreaker. From there, we talked about what CAD is, where it is used in the real world, and why knowing CAD will be helpful for the future.
+
+After that, we moved on to TinkerCAD. At first we let them tinker on their own (haha, get it?), so they could explore different features by themselves. Then we went over the basics, like changing dimensions, rotation, and position, and how to make new shapes by cutting or grouping. We finished with a short tutorial on how to make a simple emoji and helped them while they tried it. Once everyone seemed comfortable, we started the challenge. We showed emojis that got progressively harder and gave a time limit to recreate each one. Whoever had the closest-looking emoji won the round. We did three rounds with the 🫤 😍 🤑 emojis. It was really fun seeing how everyone built the shapes and seeing all the creations at the end—they honestly did better than we did. At the end of class we handed out gifts and a one-pager summarizing what we taught, with winners going first and getting an extra prize. This time we also handed out GEM 3D-printed keychains; everyone got to pick green, orange, blue, or yellow.
+
+The workshop ended up going smoothly, but there were times when we wondered whether it would work out. We sent three emails: a one-week reminder, a one-day reminder, and one asking if we could take pictures. Usually we get replies—someone saying they cannot make it, someone asking us not to photograph their kid, or at least four people canceling an hour before. This time: nothing. Not one reply. The day of the workshop it was pouring. That was not even the worst part.
+
+While we were setting up that morning, my cousin told me about a nightmare from the night before. Most of it seemed impossible, but the part about nobody bringing a laptop felt a little too plausible. We had said in the description and all three emails that attendees needed a laptop, but it hit us that people might have skipped that detail, especially for a free workshop. There was not much we could do but hope. The first five people who walked in did not have laptops, and we started to panic—game day, rescheduling an online teach session, bringing laptops from home, full spiral mode. Thank goodness we did not need any of that. As more girls arrived, many of them did have laptops. Around half or a bit more had one, and you should have seen my cousin and me—we were so relieved.
+
+In hindsight, worrying was silly—not only because it worked out, but because those factors were out of our control.
+
+Behind the scenes, prep was simpler and more organized. I had already taught a TinkerCAD summer camp and built content for it, so we reused that for guidance and ideas. Everything was digital, so there was nothing to physically prototype. My cousin and I also called at the start of the week to pick a slide template and handle logistics, so we could chip away during the week instead of cramming on the weekend. I usually worked on it in advisory or flex at school.
+
+That system worked way better. It removed the blocks that used to stop us from working before the weekend, and the whole thing felt easier. Plan ahead—it makes a huge difference.
+
+Before these workshops, my cousin and I taught online Python summer classes last year. They were not our strongest work. Attendance nearly halved every class, and rightfully so—we were not putting in the effort, we were weaker teachers, and we were not enthusiastic. Online did not help either. At this workshop we had one of the girls from those Python classes. She told us afterward these workshops were way better: better planned, more fun, and she said we had improved a lot. That made our day.
+
+So take this as your reminder: worrying about what you cannot control will not change the outcome, but giving your best effort to what you can control will.`
   }
 ];
 

@@ -50,6 +50,17 @@ export const blogs = [
     icon: "🟰",
     color: "#2563EB",
   },
+  {
+    id: 7,
+    title: "Create it in 3D",
+    slug: "create-it-in-3d",
+    excerpt:
+      "Our third GEM STEM workshop: TinkerCAD, emoji challenges, and a lot of relief when the laptops showed up.",
+    date: "2026-04-16",
+    url: "#",
+    icon: "💻",
+    color: "#0EA5E9",
+  },
 ];
 
 

@@ -342,6 +342,76 @@ const BlogDetail = ({ blog }) => {
       ];
     }
 
+    if (blog.id === 7 && blog.title === 'Create it in 3D') {
+      return [
+        {
+          type: 'paragraph',
+          content:
+            'Hi guys, you can probably guess—this week we had another STEM workshop! This was our third workshop, our tech workshop, aka "Create it in 3D" (very proud of this name, by the way).'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'If you would like to see them, the photos from our workshop are on our [instagram(@norcalroboticsgem)](https://www.instagram.com/norcalroboticsgem?igsh=NTc4MTIwNjQ2YQ==).'
+        },
+        {
+          type: 'paragraph',
+          content:
+            "Let's start with what we did in class. When everyone first came in, we let them draw and play games on the whiteboard, but the place where we hold classes only has kinda lame Expo markers, so we bring our own. We also brought games—Guess Who and card games this time. After about five to ten minutes, we got started with the slides. Before that, though, we got everyone connected to Wi-Fi, since they had to bring their own laptops. We always start with an introduction to GEM, a couple of fun facts about ourselves, and of course an icebreaker. From there, we talked about what CAD is, where it is used in the real world, and why knowing CAD will be helpful for the future."
+        },
+        {
+          type: 'paragraph',
+          content:
+            'After that, we moved on to TinkerCAD. At first we let them tinker on their own (haha, get it?), so they could explore different features by themselves. Then we went over the basics, like changing dimensions, rotation, and position, and how to make new shapes by cutting or grouping. We finished with a short tutorial on how to make a simple emoji and helped them while they tried it.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'Once everyone seemed comfortable, we started the challenge. We showed emojis that got progressively harder and gave a time limit to recreate each one. Whoever had the closest-looking emoji won the round. We did three rounds with the 🫤 😍 🤑 emojis. It was really fun seeing how everyone built the shapes and seeing all the creations at the end—they honestly did better than we did.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'At the end of class we handed out gifts and a one-pager summarizing what we taught, with winners going first and getting an extra prize. This time we also handed out GEM 3D-printed keychains; everyone got to pick green, orange, blue, or yellow.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'The workshop ended up going smoothly, but there were times when we wondered whether it would work out. We sent three emails: a one-week reminder, a one-day reminder, and one asking if we could take pictures. Usually we get replies—someone saying they cannot make it, someone asking us not to photograph their kid, or at least four people canceling an hour before. This time: nothing. Not one reply. The day of the workshop it was pouring. That was not even the worst part.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            "While we were setting up that morning, my cousin told me about a nightmare from the night before. Most of it seemed impossible, but the part about nobody bringing a laptop felt a little too plausible. We had said in the description and all three emails that attendees needed a laptop, but it hit us that people might have skipped that detail, especially for a free workshop. There was not much we could do but hope. The first five people who walked in did not have laptops, and we started to panic—game day, rescheduling an online teach session, bringing laptops from home, full spiral mode. Thank goodness we did not need any of that. As more girls arrived, many of them did have laptops. Around half or a bit more had one, and you should have seen my cousin and me—we were so relieved."
+        },
+        {
+          type: 'paragraph',
+          content:
+            'In hindsight, worrying was silly—not only because it worked out, but because those factors were out of our control.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'Behind the scenes, prep was simpler and more organized. I had already taught a TinkerCAD summer camp and built content for it, so we reused that for guidance and ideas. Everything was digital, so there was nothing to physically prototype. My cousin and I also called at the start of the week to pick a slide template and handle logistics, so we could chip away during the week instead of cramming on the weekend. I usually worked on it in advisory or flex at school.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'That system worked way better. It removed the blocks that used to stop us from working before the weekend, and the whole thing felt easier. Plan ahead—it makes a huge difference.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'Before these workshops, my cousin and I taught online Python summer classes last year. They were not our strongest work. Attendance nearly halved every class, and rightfully so—we were not putting in the effort, we were weaker teachers, and we were not enthusiastic. Online did not help either. At this workshop we had one of the girls from those Python classes. She told us afterward these workshops were way better: better planned, more fun, and she said we had improved a lot. That made our day.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            'So take this as your reminder: worrying about what you cannot control will not change the outcome, but giving your best effort to what you can control will.'
+        }
+      ];
+    }
+
     return [
       {
         type: 'paragraph',
