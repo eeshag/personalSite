@@ -250,7 +250,7 @@ const ProjectDetail = ({ project, onNavigate }) => {
           type: 'paragraph',
           content: (
             <>
-              People vs. Pavement: <a href="https://people-vs-pavement.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: '#6366F1', textDecoration: 'underline' }}>https://people-vs-pavement.vercel.app/</a>
+              People vs. Pavement: <a href="https://www.people-vs-pavement.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#6366F1', textDecoration: 'underline' }}>https://www.people-vs-pavement.com/</a>
             </>
           ),
           wordCount: 5
@@ -527,7 +527,9 @@ const ProjectDetail = ({ project, onNavigate }) => {
             'Project pages function like playlists, with a banner at the top and each project listed like a track.',
             'Blog pages resemble Spotify\'s search/browse view, with each post presented as its own album.',
             'Includes a "currently consuming" section where I share media I\'m engaging with, along with ratings and thoughts.',
-            'Includes all about me page which shares quick facts about me and my journey of how I reached to where I am today.'
+            'Includes all about me page which shares quick facts about me and my journey of how I reached to where I am today.',
+            'Includes a photography page where I share my photography in album and playlist style, mainly focused on nature photos.',
+            'Text-to-speech support includes a bottom slider that lets users move forward or backward while listening.'
           ]
         },
         {

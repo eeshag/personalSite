@@ -11,6 +11,13 @@ export const currentlyConsuming = [
     subtitle: "What I'm reading",
     items: [
       { title: "Atomic Habits", creator: "James Clear", note: "First self-help book I read—convinced me to read more.", rating: "5" },
+      { title: "Born a Crime", creator: "Trevor Noah", note: "Learned a lot of history, really funny, good life lessons", rating: "5" },
+      {
+        title: "Flipped",
+        creator: "Wendelin Van Draanen",
+        note: "Wasn't a find of the dialogue in the book, Bryce is a very unlikable character, making the ending hard to like",
+        rating: "3",
+      },
     ],
   },
   {
@@ -51,7 +58,10 @@ export const currentlyConsuming = [
     type: "category",
     cover: "🎞️",
     subtitle: "Shows & films I'm into",
-    items: [],
+    items: [
+      { title: "Flipped", creator: "Rob Reiner", note: "Super cute, funny, like hearted romcom", rating: "5" },
+      { title: "Project Hail Mary", creator: "Phil Lord, Chris Miller", note: "Insanely funny movie, everyone in the theather was laughing 24/7", rating: "5" },
+    ],
   },
   {
     id: 6,

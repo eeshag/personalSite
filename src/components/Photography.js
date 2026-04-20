@@ -6,7 +6,8 @@ import './Photography.css';
 const FILTERS = [
   { id: 'all', label: 'All' },
   { id: 'flowers', label: 'Flowers' },
-  { id: 'sunsets', label: 'Sunsets' }
+  { id: 'sunsets', label: 'Sunsets' },
+  { id: 'other', label: 'Other' }
 ];
 
 const Photography = () => {

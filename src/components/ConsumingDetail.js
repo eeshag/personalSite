@@ -52,6 +52,8 @@ const ConsumingDetail = ({ category, onNavigate }) => {
   };
   const bannerBackground = `linear-gradient(180deg, ${hexToRgba(color, 0.4)} 0%, ${hexToRgba(color, 0.6)} 100%)`;
   const items = category.items || [];
+  const creatorLabel =
+    category.slug === 'tv-shows-movies' ? 'Director' : category.slug === 'books' ? 'Author' : 'Creator';
 
   const wordCount = items.reduce((total, item) => {
     const titleWords = (item.title || '').split(/\s+/).filter(Boolean).length;
@@ -84,7 +86,7 @@ const ConsumingDetail = ({ category, onNavigate }) => {
         <div className="consuming-list-header">
           <span className="consuming-header-number">#</span>
           <span className="consuming-header-title">Title</span>
-          <span className="consuming-header-creator">Creator</span>
+          <span className="consuming-header-creator">{creatorLabel}</span>
           <span className="consuming-header-rating">Rating</span>
         </div>
         <div className="consuming-list-divider" />

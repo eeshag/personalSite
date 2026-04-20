@@ -59,6 +59,8 @@ const PhotographyDetail = ({ photo }) => {
   const readingTime = Math.max(1, Math.ceil(wordCount / 100));
   const galleryCount = Array.isArray(photo.gallery) ? photo.gallery.length : 0;
   const photoCount = galleryCount > 0 ? galleryCount : photo.image ? 1 : 0;
+  const isKodakPhotoSet = photo.slug === 'pictures-with-kodak-digi-cam';
+  const hasFullWidthLastPhoto = photo.slug === 'yellow-roses';
 
   const hexToRgba = (hex, alpha) => {
     const r = parseInt(hex.slice(1, 3), 16);
@@ -137,6 +139,34 @@ const PhotographyDetail = ({ photo }) => {
         ) : null}
 
         {Array.isArray(photo.gallery) && photo.gallery.length > 0 ? (
+          isKodakPhotoSet ? (
+            <div style={{ marginTop: paragraphs.length > 0 ? '40px' : '0' }}>
+              <img
+                src={photo.gallery[0]}
+                alt={`${photo.title} cover`}
+                style={{
+                  width: '100%',
+                  maxHeight: '420px',
+                  objectFit: 'cover',
+                  borderRadius: '10px',
+                  marginBottom: '10px',
+                  display: 'block'
+                }}
+                loading="lazy"
+              />
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                {photo.gallery.slice(1).map((src, index) => (
+                  <img
+                    key={`${index + 1}-${src}`}
+                    src={src}
+                    alt={`${photo.title} ${index + 2}`}
+                    style={{ width: '100%', borderRadius: '10px', display: 'block' }}
+                    loading="lazy"
+                  />
+                ))}
+              </div>
+            </div>
+          ) : (
           <div
             className={
               'photography-detail-gallery' +
@@ -144,7 +174,15 @@ const PhotographyDetail = ({ photo }) => {
             }
           >
             {photo.gallery.map((src, index) => (
-              <figure key={`${index}-${src}`} className="photography-detail-gallery-figure">
+              <figure
+                key={`${index}-${src}`}
+                className={
+                  'photography-detail-gallery-figure' +
+                  (hasFullWidthLastPhoto && index === photo.gallery.length - 1
+                    ? ' photography-detail-gallery-figure--full-width'
+                    : '')
+                }
+              >
                 <img
                   src={src}
                   alt={`${photo.title} ${index + 1}`}
@@ -154,6 +192,7 @@ const PhotographyDetail = ({ photo }) => {
               </figure>
             ))}
           </div>
+          )
         ) : null}
       </div>
 

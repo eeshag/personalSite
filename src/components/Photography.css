@@ -153,6 +153,18 @@
   min-width: 0;
 }
 
+.photography-detail-gallery-figure--full-width {
+  grid-column: 1 / -1;
+}
+
+.photography-detail-gallery-figure--full-width .photography-detail-gallery-image {
+  width: 100%;
+  height: clamp(260px, 42vw, 520px);
+  object-fit: contain;
+  object-position: center;
+  background-color: #141414;
+}
+
 .photography-detail-gallery-image {
   width: 100%;
   height: auto;

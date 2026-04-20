@@ -143,10 +143,6 @@
   max-width: 800px;
 }
 
-.row-date {
-  /* Empty column to match header layout */
-}
-
 .content-paragraph {
   font-size: 16px;
   line-height: 1.75;
@@ -154,6 +150,7 @@
   margin: 0;
   font-weight: 400;
   letter-spacing: 0.01em;
+  white-space: pre-line;
 }
 
 .favorite-paragraph {

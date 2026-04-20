@@ -544,7 +544,7 @@ export const photography = [
     icon: '\u{1F338}',
     color: '#DB2777',
     image: '/IMG_0100.JPG',
-    gallery: ['/IMG_0100.JPG', '/IMG_0101.JPG', '/IMG_0110.JPG', '/IMG_0116.JPG'],
+    gallery: ['/IMG_0100.JPG', '/IMG_0101.JPG', '/IMG_0116.JPG'],
     summary: 'The first photos from my new camera—the only bloom in the yard.',
     keywords: ['photography', 'flower', 'macro', 'nature', 'pink'],
     fullText: `When I first got my camera, our front and back yards were completely dead. Not a single flower in sight except this one. A stunning pink flower. These are the first pictures I ever took with my camera.`
@@ -652,6 +652,61 @@ export const photography = [
     fullText: `When we first moved into this house, the first thing I noticed was the play structure, but the first thing my parents noticed was the huge apricot tree. They didn't notice its beauty or think about all the amazing apricots we would get from it; instead, they noticed how close it was to the cell-phone tower wires—honestly, a valid concern.
 
 Even though this tree has needed a lot of maintenance, it will always be my favorite tree in our backyard.`
+  },
+  {
+    id: 9,
+    type: 'photography',
+    section: 'other',
+    title: 'Pictures with Kodak Digi Cam',
+    slug: 'pictures-with-kodak-digi-cam',
+    url: '/photography/pictures-with-kodak-digi-cam',
+    date: '2026-04-19',
+    icon: '\u{1F4F8}',
+    color: '#16A34A',
+    image: '/100_0104.JPG',
+    gallery: ['/100_0104.JPG', '/100_0103.JPG', '/100_0098.JPG'],
+    summary: 'Three nature photos taken with my Kodak digital camera.',
+    keywords: ['photography', 'kodak', 'digital camera', 'nature', 'other'],
+    fullText: `I took these photos with my Kodak Digital Camera. It is a pretty old camera and I was really surprised with the quality of the photos. I decided to switch it up and took pictures of the orange tree in my backyard and a tree canopy shot.`
+  },
+  {
+    id: 10,
+    type: 'photography',
+    section: 'flowers',
+    title: 'More Red Roses',
+    slug: 'more-red-roses',
+    url: '/photography/more-red-roses',
+    date: '2026-04-19',
+    icon: '\u{1F339}',
+    color: '#DC2626',
+    image: '/IMG_0316.JPG',
+    gallery: ['/IMG_0316.JPG', '/IMG_0311.JPG', '/IMG_0312.JPG', '/IMG_0318.JPG'],
+    summary: 'Another set of red rose photos in bright sunlight and close-up detail.',
+    keywords: ['photography', 'rose', 'red', 'flower', 'nature', 'close-up'],
+    fullText: `A second set of red rose photos from the yard, with bright sunlight and a mix of close-up and wider shots.`
+  },
+  {
+    id: 11,
+    type: 'photography',
+    section: 'flowers',
+    title: 'Yellow Roses',
+    slug: 'yellow-roses',
+    url: '/photography/yellow-roses',
+    date: '2026-04-19',
+    icon: '\u{1F33C}',
+    color: '#EAB308',
+    image: '/IMG_0324.JPG',
+    gallery: [
+      '/IMG_0324.JPG',
+      '/IMG_0325.JPG',
+      '/IMG_0334.JPG',
+      '/IMG_0336.JPG',
+      '/IMG_0337.JPG',
+      '/IMG_0338.JPG',
+      '/IMG_0339.JPG'
+    ],
+    summary: 'Yellow rose blooms from different angles, from close-up petals to wider neighborhood frames.',
+    keywords: ['photography', 'yellow rose', 'flower', 'nature', 'garden', 'close-up']
   }
 ];
 
