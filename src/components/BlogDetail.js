@@ -412,6 +412,50 @@ const BlogDetail = ({ blog }) => {
       ];
     }
 
+    if (blog.id === 8 && blog.title === 'Chemical Reactions Lab') {
+      return [
+        {
+          type: 'paragraph',
+          content:
+            'Hey everyone, I am back with another blog about how our (me and cousin) STEM workshop went! This week we had our science workshop, aka "Chemical Reactions Lab" and as you can guess, we went over chemistry!'
+        },
+        {
+          type: 'paragraph',
+          content:
+            "Let's first start off with what we did in this workshop. In this workshop, we of course, first did an introduction to GEM, followed by an introduction to chemistry. After that we went over chemical reactions, what they are, how they occur, signs one happened, what are catalysts, etc. We applied all of this to elephant toothpaste to explain how it works. After, we went over oobleck and how it is able to be solid and liquid. Once we were done with the lesson, me and my cousin did a live demonstration of elephant toothpaste, and then the girls got to make their own oobleck. We set up the table with cornstarch, water, measuring cups, spoons, Wet Ones and paper towels, where everyone could go to get materials to make oobleck, and then go to their tables to mix everything up and play with it. At the end of class, everyone washed their hands of course, and threw away their oobleck, and got a prize and a one pager with the concepts we went over in class, and they were free to play cards, or play games and draw on the whiteboard, or just talk until their parents came."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "For anyone who is planning to do this activity, making oobleck, please don't underestimate how messy it can be. For us, when we made it, it was a bit messy but not really, the only problem was cornstarch falling on the table, which is why we covered all the tables in the newspaper. That was not enough, at all. They got it on the floor, on the chairs, and on themselves. They even got oobleck on all those places. They also ripped the newspapers, some of them, so it got on the table too. Luckily, with the Wet Ones, wiping tables and chairs off was easy. For the floor, we were going to go to the storage closet and get a vacuum, but there was another event going on and we didn't want the sound to disturb them, so we decided we would come back later to vacuum the area."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "Like any class, this one had a lot of moments where we were a bit scared. For starters, we initially had 30 registrations for this workshop, three people cancelled, so we had 27. We waited for around 10 minutes at the start of class, and only 9 people had come. We decided to go ahead and start anyway, and luckily a lot of people were running late. We were still a bit upset, as only 15 people showed up, meaning half of the people cancelled but didn't tell us they cancelled. It is pretty frustrating, because we prepared and bought materials for 30 people, and set up the classroom for 30 people, but it is also to be expected."
+        },
+        {
+          type: 'paragraph',
+          content:
+            "Another jumpscare was us not realizing how short our slideshow was. In fact, we were scared of it being too long because we were going over a lot of information. We literally finished the entire thing in 20 minutes, and when we saw that we still had an hour, we were a bit scared. After that, we decided to set up for elephant toothpaste, and we couldn't do multiple test runs because we didn't have enough materials, so we only ended up doing one, which went really well, but in the real class, it didn't go as well, could have been worse you know. When it worked when we tested it before it was the coolest thing ever, so we really wanted it to work for the class. But, me pointing this out is more of just a nitpicking thing, since it still went pretty good."
+        },
+        {
+          type: 'paragraph',
+          content:
+            'Us finishing the slideshow really fast was actually a blessing in disguise though because all the girls absolutely loved the oobleck. They were making it and playing with it for around 40 minutes. Since less people came, we had extra materials, so they got to make more, where they could experiment with the amounts of cornstarch and water they put, if they used food coloring or not etc. They had an insane amount of fun with it, one girl even told us it was the best class ever and way better than our other STEM classes haha.'
+        },
+        {
+          type: 'paragraph',
+          content:
+            "A lot of things actually ended up working out beautifully. For example, if more people came, we wouldn't have enough cornstarch for them to experiment and make multiple batches, which meant they might not have as much fun. If our lesson was longer, they would have had less time for the oobleck activity, which they really enjoyed."
+        },
+        {
+          type: 'paragraph',
+          content: 'So take this as your reminder that everything happens for a reason :)'
+        }
+      ];
+    }
+
     return [
       {
         type: 'paragraph',

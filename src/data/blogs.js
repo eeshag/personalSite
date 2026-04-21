@@ -61,6 +61,16 @@ export const blogs = [
     icon: "💻",
     color: "#0EA5E9",
   },
+  {
+    id: 8,
+    title: "Chemical Reactions Lab",
+    slug: "chemical-reactions-lab",
+    excerpt: "A recap of our chemistry workshop, from elephant toothpaste to very messy oobleck.",
+    date: "2026-04-20",
+    url: "#",
+    icon: "🧪",
+    color: "#14B8A6",
+  },
 ];
 
 
