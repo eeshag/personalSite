@@ -186,11 +186,11 @@
 }
 
 .blog-detail-page .content-paragraph .content-inline-link {
-  color: #f97316;
+  color: var(--blog-link-color, #f97316);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
 .blog-detail-page .content-paragraph .content-inline-link:hover {
-  color: #fb923c;
+  color: var(--blog-link-color, #f97316);
 }

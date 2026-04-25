@@ -105,7 +105,7 @@ const Home = ({ onNavigate, projects = [] }) => {
         </div>
         <div className="header-content">
           <h1 className="name-title">Eesha</h1>
-          <p className="bio-text">Freshman from Fremont interested in Tech and ML</p>
+          <p className="bio-text">I am a freshmen from Fremont, CA. Welcome to my website :)</p>
         </div>
       </div>
 

@@ -422,6 +422,11 @@ const BlogDetail = ({ blog }) => {
         {
           type: 'paragraph',
           content:
+            'If you would like to see the photos from our workshop, see our [instagram (@norcalroboticsgem)](https://www.instagram.com/norcalroboticsgem?igsh=NTc4MTIwNjQ2YQ%3D%3D).'
+        },
+        {
+          type: 'paragraph',
+          content:
             "Let's first start off with what we did in this workshop. In this workshop, we of course, first did an introduction to GEM, followed by an introduction to chemistry. After that we went over chemical reactions, what they are, how they occur, signs one happened, what are catalysts, etc. We applied all of this to elephant toothpaste to explain how it works. After, we went over oobleck and how it is able to be solid and liquid. Once we were done with the lesson, me and my cousin did a live demonstration of elephant toothpaste, and then the girls got to make their own oobleck. We set up the table with cornstarch, water, measuring cups, spoons, Wet Ones and paper towels, where everyone could go to get materials to make oobleck, and then go to their tables to mix everything up and play with it. At the end of class, everyone washed their hands of course, and threw away their oobleck, and got a prize and a one pager with the concepts we went over in class, and they were free to play cards, or play games and draw on the whiteboard, or just talk until their parents came."
         },
         {
@@ -694,7 +699,7 @@ const BlogDetail = ({ blog }) => {
   };
 
   return (
-    <div className="projects-page blog-detail-page" ref={contentRef}>
+    <div className="projects-page blog-detail-page" ref={contentRef} style={{ '--blog-link-color': blog.color }}>
       <div
         className="banner-section"
         style={{

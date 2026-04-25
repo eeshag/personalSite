@@ -545,6 +545,8 @@ So take this as your reminder: worrying about what you cannot control will not c
     keywords: ['stem', 'workshop', 'chemistry', 'chemical reactions', 'oobleck', 'elephant toothpaste', 'gem'],
     fullText: `Hey everyone, I am back with another blog about how our (me and cousin) STEM workshop went! This week we had our science workshop, aka "Chemical Reactions Lab" and as you can guess, we went over chemistry!
 
+If you would like to see the photos from our workshop, see our [instagram (@norcalroboticsgem)](https://www.instagram.com/norcalroboticsgem?igsh=NTc4MTIwNjQ2YQ%3D%3D).
+
 Let's first start off with what we did in this workshop. In this workshop, we of course, first did an introduction to GEM, followed by an introduction to chemistry. After that we went over chemical reactions, what they are, how they occur, signs one happened, what are catalysts, etc. We applied all of this to elephant toothpaste to explain how it works. After, we went over oobleck and how it is able to be solid and liquid. Once we were done with the lesson, me and my cousin did a live demonstration of elephant toothpaste, and then the girls got to make their own oobleck. We set up the table with cornstarch, water, measuring cups, spoons, Wet Ones and paper towels, where everyone could go to get materials to make oobleck, and then go to their tables to mix everything up and play with it. At the end of class, everyone washed their hands of course, and threw away their oobleck, and got a prize and a one pager with the concepts we went over in class, and they were free to play cards, or play games and draw on the whiteboard, or just talk until their parents came.
 
 For anyone who is planning to do this activity, making oobleck, please don't underestimate how messy it can be. For us, when we made it, it was a bit messy but not really, the only problem was cornstarch falling on the table, which is why we covered all the tables in the newspaper. That was not enough, at all. They got it on the floor, on the chairs, and on themselves. They even got oobleck on all those places. They also ripped the newspapers, some of them, so it got on the table too. Luckily, with the Wet Ones, wiping tables and chairs off was easy. For the floor, we were going to go to the storage closet and get a vacuum, but there was another event going on and we didn't want the sound to disturb them, so we decided we would come back later to vacuum the area.
@@ -736,6 +738,96 @@ Even though this tree has needed a lot of maintenance, it will always be my favo
     ],
     summary: 'Yellow rose blooms from different angles, from close-up petals to wider neighborhood frames.',
     keywords: ['photography', 'yellow rose', 'flower', 'nature', 'garden', 'close-up']
+  },
+  {
+    id: 12,
+    type: 'photography',
+    section: 'other',
+    title: 'Moon',
+    slug: 'moon',
+    url: '/photography/moon',
+    date: '2026-04-24',
+    icon: '\u{1F319}',
+    color: '#3B82F6',
+    image: '/IMG_0493.JPG',
+    gallery: ['/IMG_0488.JPG', '/IMG_0493.JPG', '/IMG_0497.JPG'],
+    summary: 'A moon photo set captured against the evening sky with silhouette framing.',
+    keywords: ['photography', 'moon', 'sky', 'evening', 'nature', 'silhouette']
+  },
+  {
+    id: 13,
+    type: 'photography',
+    section: 'other',
+    title: 'Oranges',
+    slug: 'oranges',
+    url: '/photography/oranges',
+    date: '2026-04-24',
+    icon: '\u{1F34A}',
+    color: '#F97316',
+    image: '/IMG_0518.JPG',
+    gallery: [
+      '/IMG_0513.JPG',
+      '/IMG_0515.JPG',
+      '/IMG_0518.JPG',
+      '/IMG_0520.JPG',
+      '/IMG_0519.JPG',
+      '/IMG_0517.JPG'
+    ],
+    summary: 'Bright oranges on the tree with sunlight, leaves, and close-up details.',
+    keywords: ['photography', 'oranges', 'fruit', 'tree', 'nature', 'close-up']
+  },
+  {
+    id: 14,
+    type: 'photography',
+    section: 'sunsets',
+    title: '4/20/26 Sunset',
+    slug: 'april-20-2026-sunset',
+    url: '/photography/april-20-2026-sunset',
+    date: '2026-04-20',
+    icon: '\u{1F305}',
+    color: '#EC4899',
+    image: '/IMG_0482.JPG',
+    gallery: [
+      '/IMG_0476.JPG',
+      '/IMG_0477.JPG',
+      '/IMG_0484.JPG',
+      '/IMG_0503.JPG',
+      '/IMG_0478.JPG',
+      '/IMG_0482.JPG'
+    ],
+    summary: '',
+    keywords: ['photography', 'sunset', 'sky', 'clouds', 'evening', 'neighborhood']
+  },
+  {
+    id: 15,
+    type: 'photography',
+    section: 'flowers',
+    title: 'Rainy Day Flowers',
+    slug: 'rainy-day-flowers',
+    url: '/photography/rainy-day-flowers',
+    date: '2026-04-24',
+    icon: '\u{1F327}\u{FE0F}',
+    color: '#60A5FA',
+    image: '/IMG_0438.JPG',
+    gallery: [
+      '/IMG_0438.JPG',
+      '/IMG_0441.JPG',
+      '/IMG_0440.JPG',
+      '/IMG_0439.JPG',
+      '/IMG_0445.JPG',
+      '/IMG_0448.JPG',
+      '/IMG_0450.JPG',
+      '/IMG_0451.JPG',
+      '/IMG_0453.JPG',
+      '/IMG_0454.JPG',
+      '/IMG_0459.JPG',
+      '/IMG_0474.JPG',
+      '/IMG_0460.JPG',
+      '/IMG_0472.JPG'
+    ],
+    summary: 'Raindrops and roses in the yard, from close-up petals to wider rainy-day garden views.',
+    keywords: ['photography', 'flowers', 'roses', 'rain', 'nature', 'close-up'],
+    fullText: `We randomly got a lot of rain this week, and it just led to the flowers looking even more stunning.`
   }
 ];
 

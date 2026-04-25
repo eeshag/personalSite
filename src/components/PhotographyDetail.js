@@ -59,7 +59,7 @@ const PhotographyDetail = ({ photo }) => {
   const readingTime = Math.max(1, Math.ceil(wordCount / 100));
   const galleryCount = Array.isArray(photo.gallery) ? photo.gallery.length : 0;
   const photoCount = galleryCount > 0 ? galleryCount : photo.image ? 1 : 0;
-  const isKodakPhotoSet = photo.slug === 'pictures-with-kodak-digi-cam';
+  const usesKodakLayout = ['pictures-with-kodak-digi-cam', 'moon'].includes(photo.slug);
   const hasFullWidthLastPhoto = photo.slug === 'yellow-roses';
 
   const hexToRgba = (hex, alpha) => {
@@ -139,7 +139,7 @@ const PhotographyDetail = ({ photo }) => {
         ) : null}
 
         {Array.isArray(photo.gallery) && photo.gallery.length > 0 ? (
-          isKodakPhotoSet ? (
+          usesKodakLayout ? (
             <div style={{ marginTop: paragraphs.length > 0 ? '40px' : '0' }}>
               <img
                 src={photo.gallery[0]}
