@@ -124,6 +124,18 @@
   padding-right: 32px;
 }
 
+.search-results-list .project-thumbnail--image {
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.search-results-list .project-thumbnail--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .search-result-consuming-thumb {
   background-color: rgba(39, 39, 42, 0.9) !important;
 }

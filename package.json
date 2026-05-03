@@ -18,7 +18,9 @@
     "vitest": "^3.2.4"
   },
   "scripts": {
-    "dev": "vite --port 3000",
+    "dev": "node scripts/dev-runner.mjs",
+    "dev:client": "vite --port 3000",
+    "dev:server": "node backend/server.js",
     "start": "vite --port 3000",
     "build": "vite build",
     "preview": "vite preview",

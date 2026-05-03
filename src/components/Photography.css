@@ -159,10 +159,8 @@
 
 .photography-detail-gallery-figure--full-width .photography-detail-gallery-image {
   width: 100%;
-  height: clamp(260px, 42vw, 520px);
-  object-fit: contain;
-  object-position: center;
-  background-color: #141414;
+  height: auto;
+  object-fit: cover;
 }
 
 .photography-detail-gallery-image {

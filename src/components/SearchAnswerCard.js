@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-const AI_ENDPOINT = import.meta.env.VITE_SITE_AI_API_URL || '/api/answer';
+const AI_ENDPOINT = import.meta.env.DEV
+  ? '/api/answer'
+  : import.meta.env.VITE_SITE_AI_API_URL || '/api/answer';
 
 const SearchAnswerCard = ({ query, currentPath = '/' }) => {
   const [state, setState] = useState({ status: 'idle', data: null, error: '' });

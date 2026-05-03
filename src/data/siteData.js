@@ -22,6 +22,23 @@ const blogDocuments = blogs.map((blog) => ({
   keywords: blog.keywords || []
 }));
 
+const photographyDocuments = photography.map((photo) => ({
+  ...photo,
+  keywords: photo.keywords || [],
+  summary:
+    photo.summary ||
+    `${photo.title} photo set${photo.section ? ` in ${photo.section}` : ''}.`,
+  fullText: [
+    photo.fullText || '',
+    photo.section ? `Section: ${photo.section}.` : '',
+    Array.isArray(photo.gallery) && photo.gallery.length > 0
+      ? `${photo.gallery.length} photos in this set.`
+      : ''
+  ]
+    .filter(Boolean)
+    .join(' ')
+}));
+
 const titleToSlug = (title) =>
   (title || '').toLowerCase().replace(/\s+&\s+/g, '-').replace(/\s+/g, '-');
 
@@ -47,5 +64,6 @@ export const searchDocuments = [
   aboutDocument,
   ...projectDocuments,
   ...blogDocuments,
+  ...photographyDocuments,
   ...consumingDocuments
 ];

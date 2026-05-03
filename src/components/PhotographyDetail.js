@@ -60,6 +60,7 @@ const PhotographyDetail = ({ photo }) => {
   const galleryCount = Array.isArray(photo.gallery) ? photo.gallery.length : 0;
   const photoCount = galleryCount > 0 ? galleryCount : photo.image ? 1 : 0;
   const usesKodakLayout = ['pictures-with-kodak-digi-cam', 'moon'].includes(photo.slug);
+  const hasFullWidthFirstPhoto = photo.slug === 'photo-dump-1';
   const hasFullWidthLastPhoto = photo.slug === 'yellow-roses';
 
   const hexToRgba = (hex, alpha) => {
@@ -178,6 +179,9 @@ const PhotographyDetail = ({ photo }) => {
                 key={`${index}-${src}`}
                 className={
                   'photography-detail-gallery-figure' +
+                  (hasFullWidthFirstPhoto && index === 0
+                    ? ' photography-detail-gallery-figure--full-width'
+                    : '') +
                   (hasFullWidthLastPhoto && index === photo.gallery.length - 1
                     ? ' photography-detail-gallery-figure--full-width'
                     : '')

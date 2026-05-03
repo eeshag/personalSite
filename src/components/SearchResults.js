@@ -17,7 +17,8 @@ const FILTERS = [
   { id: 'all', label: 'All' },
   { id: 'about', label: 'About Me' },
   { id: 'projects', label: 'Projects' },
-  { id: 'blogs', label: 'Blogs' }
+  { id: 'blogs', label: 'Blogs' },
+  { id: 'photography', label: 'Photography' }
 ];
 
 const SearchResults = ({ activeFilter = 'all', onFilterChange }) => {
@@ -35,6 +36,7 @@ const SearchResults = ({ activeFilter = 'all', onFilterChange }) => {
   const hasResults =
     results.projects.length > 0 ||
     results.blogs.length > 0 ||
+    results.photography.length > 0 ||
     results.currentlyConsuming.length > 0 ||
     results.showAboutMe;
 
@@ -54,7 +56,7 @@ const SearchResults = ({ activeFilter = 'all', onFilterChange }) => {
         <div className="search-empty-state">
           <h2 className="search-empty-title">Search the site</h2>
           <p className="search-empty-description">
-            Ask a question about Eesha or search for projects, blogs, and more.
+            Ask a question about Eesha or search for projects, blogs, photography, and more.
           </p>
         </div>
       )}
@@ -198,6 +200,54 @@ const SearchResults = ({ activeFilter = 'all', onFilterChange }) => {
           {activeFilter === 'blogs' && results.blogs.length === 0 && (
             <div className="search-result-block">
               <h2 className="search-result-block-title">Blogs</h2>
+              <div className="content-section">
+                <p className="search-results-none">No results found.</p>
+              </div>
+            </div>
+          )}
+
+          {(activeFilter === 'all' || activeFilter === 'photography') && results.photography.length > 0 && (
+            <div className="search-result-block">
+              <h2 className="search-result-block-title">Photography</h2>
+              <div className="content-section">
+                <div className="content-header">
+                  <div className="header-number">#</div>
+                  <div className="header-title">Title</div>
+                  <div className="header-date">Date added</div>
+                </div>
+                <div className="header-divider"></div>
+                <div className="writing-area">
+                  {results.photography.map((photo, index) => (
+                    <Link key={photo.id} to={photo.url} className="project-row project-row-link">
+                      <div className="row-number">{index + 1}</div>
+                      <div className="row-content">
+                        <div className="project-item">
+                          <div
+                            className={`project-thumbnail${photo.image ? ' project-thumbnail--image' : ''}`}
+                            style={!photo.image ? { backgroundColor: photo.color } : undefined}
+                          >
+                            {photo.image ? (
+                              <img src={photo.image} alt="" className="cover-square-photo" />
+                            ) : (
+                              <span className="project-icon">{photo.icon}</span>
+                            )}
+                          </div>
+                          <div className="project-info">
+                            <div className="project-title">{photo.title}</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="row-date">{formatDate(photo.date)}</div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeFilter === 'photography' && results.photography.length === 0 && (
+            <div className="search-result-block">
+              <h2 className="search-result-block-title">Photography</h2>
               <div className="content-section">
                 <p className="search-results-none">No results found.</p>
               </div>

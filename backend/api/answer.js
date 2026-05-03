@@ -24,16 +24,36 @@ const applyCors = (req, res) => {
 };
 
 const buildDocuments = (siteContent) => {
-  const documents = [siteContent.aboutPage, ...siteContent.projects, ...siteContent.blogs].map((item) => ({
-    id: `${item.type}-${item.id}`,
-    type: item.type,
-    title: item.title || item.name,
-    url: item.url,
-    slug: item.slug || '',
-    summary: item.summary || item.excerpt || '',
-    keywords: item.keywords || [],
-    fullText: item.fullText || ''
-  }));
+  const documents = [
+    siteContent.aboutPage,
+    ...siteContent.projects,
+    ...siteContent.blogs,
+    ...siteContent.photography
+  ].map((item) => {
+    const galleryCount = Array.isArray(item.gallery) ? item.gallery.length : 0;
+
+    return {
+      id: `${item.type}-${item.id}`,
+      type: item.type,
+      title: item.title || item.name,
+      url: item.url,
+      slug: item.slug || '',
+      summary:
+        item.summary ||
+        item.excerpt ||
+        (item.type === 'photography'
+          ? `${item.title || item.name} photo set${item.section ? ` in ${item.section}` : ''}.`
+          : ''),
+      keywords: item.keywords || [],
+      fullText: [
+        item.fullText || '',
+        item.type === 'photography' && item.section ? `Section: ${item.section}.` : '',
+        item.type === 'photography' && galleryCount > 0 ? `${galleryCount} photos in this set.` : ''
+      ]
+        .filter(Boolean)
+        .join(' ')
+    };
+  });
 
   return documents;
 };

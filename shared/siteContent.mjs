@@ -560,6 +560,37 @@ Us finishing the slideshow really fast was actually a blessing in disguise thoug
 A lot of things actually ended up working out beautifully. For example, if more people came, we wouldn't have enough cornstarch for them to experiment and make multiple batches, which meant they might not have as much fun. If our lesson was longer, they would have had less time for the oobleck activity, which they really enjoyed.
 
 So take this as your reminder that everything happens for a reason :)`
+  },
+  {
+    id: 9,
+    type: 'blog',
+    title: 'Final Workshop!',
+    slug: 'final-workshop',
+    url: '/blogs/final-workshop',
+    excerpt: 'A recap of GEM\'s final workshop, from density demos and immiscible liquids to lava lamps and end-of-series thank-yous.',
+    summary:
+      'Eesha reflects on the final GEM workshop, covering density, chemistry, lava lamps, strong attendance, and gratitude for everyone who helped make the workshops possible.',
+    date: '2026-04-27',
+    icon: '\u{1F48E}',
+    color: '#38BDF8',
+    keywords: ['stem', 'workshop', 'final workshop', 'lava lamps', 'density', 'chemistry', 'gem'],
+    fullText: `In case you would like to see the photos from our workshop, see our Instagram (@norcalroboticsgem).
+
+Hi everyone, as you can guess, we had our final workshop this week, another science workshop, aka Colors, Chemistry and Creations!
+
+In this workshop, we first went over GEM, as usual, before getting into density and why some objects sink or float in water. We then applied this to a couple of examples, like why Diet Coke floats and Coke sinks, and why things float in salt water but not fresh water. Afterwards, we talked about immiscible liquids. After that, we had provided all the information needed for our density experiment. In this experiment, we had different immiscible liquids of different densities and put them all in the jar so you could see the clear layers. We also brought different objects and saw them sink to the bottom of different layers. We let them play around, trying to add food coloring or trying to mix it as much as possible and seeing the liquids still not mix. Then we went over chemical reactions and how they work. Once we learned all these concepts, we could now understand how lava lamps work, which was our main activity for the day. We talked about how lava lamps work because oil and water are immiscible liquids and do not mix throughout the process, the chemical reaction that occurs with the Alka-Seltzer, and the density causing the rising and falling motion.
+
+From there, we finally got to make the lava lamps. Just like our last workshop, we set up all the materials in order like a station. First we had the plastic cups and then the water. Once they had the amount of water they wanted, we had different food coloring and popsicle sticks, so they could mix colors together with the water to make the shade they wanted. After, we had vegetable oil, which my cousin was pouring, since you have to pour it to the top of the cup. At the end, we had packets of Alka-Seltzer, which they took to their desk with their lava lamps. Once they reached their desks, they could put the Alka-Seltzer in and watch the reaction. Since lava lamps die out pretty fast, people started experimenting. We had someone put in 8 tablets at once, and people created multiple lava lamps, etc.
+
+At the end, we took them to a separate room where we had a bunch of gifts set up for them. First, they had critter bots, then the normal prizes that we had out at every class along with our one-pager, followed by small closed bags of chips and lemonade. They were free to take whatever they wanted and talk with their friends until their parents came.
+
+This workshop went well. For starters, so many girls showed up! We were scared at first since everyone was running late. We had like 3 people 7 minutes into the workshop, but luckily people kept pouring in. In addition, in the last workshop, we went through our slides way too fast and realized we could have covered more information, which is why this workshop had a lot more content and examples, which ended up working well. We also were not expecting them to enjoy the density demonstration that much, but we are happy they did! We also were nervous about them getting bored of lava lamps since they die out fast or are less hands-on and more watch-once-you-actually-make-it, but they also enjoyed that a lot and enjoyed having the free will to do basically whatever they wanted. Of course, they enjoyed the food at the end too. We really wanted this to be a fun workshop, since it was the last one, to end everything off on a good note, and I am happy we got to do so!
+
+There were so many other people that supported us and made this possible. Thank you to my mom for the idea in the first place. Thank you to our parents for helping clean up after workshops, getting materials, driving us, and encouraging us. Thank you to my mom's friend who helped advertise in middle school parent group chats and Girl Scout group chats! Thank you to the people who let us host these workshops at their center! Thank you to all the parents who signed their kids up and drove them every Sunday! Thank you to all the girls who came to the workshops and had fun; you are the reason we were so excited for these workshops every week!
+
+All of these workshops are so much bigger than me and Anika. There are so many more people behind what made them successful.
+
+So again, thank you everyone!`
   }
 ];
 
@@ -621,6 +652,7 @@ export const photography = [
     id: 2,
     type: 'photography',
     section: 'sunsets',
+    favorite: true,
     title: '1/27/26 Sunset',
     slug: 'jan-27-2026-sunset',
     url: '/photography/jan-27-2026-sunset',
@@ -663,6 +695,7 @@ export const photography = [
     id: 3,
     type: 'photography',
     section: 'flowers',
+    favorite: true,
     title: 'Our Apricot Tree',
     slug: 'our-apricot-tree',
     url: '/photography/our-apricot-tree',
@@ -758,6 +791,7 @@ Even though this tree has needed a lot of maintenance, it will always be my favo
     id: 13,
     type: 'photography',
     section: 'other',
+    favorite: true,
     title: 'Oranges',
     slug: 'oranges',
     url: '/photography/oranges',
@@ -802,6 +836,7 @@ Even though this tree has needed a lot of maintenance, it will always be my favo
     id: 15,
     type: 'photography',
     section: 'flowers',
+    favorite: true,
     title: 'Rainy Day Flowers',
     slug: 'rainy-day-flowers',
     url: '/photography/rainy-day-flowers',
@@ -828,6 +863,45 @@ Even though this tree has needed a lot of maintenance, it will always be my favo
     summary: 'Raindrops and roses in the yard, from close-up petals to wider rainy-day garden views.',
     keywords: ['photography', 'flowers', 'roses', 'rain', 'nature', 'close-up'],
     fullText: `We randomly got a lot of rain this week, and it just led to the flowers looking even more stunning.`
+  },
+  {
+    id: 16,
+    type: 'photography',
+    section: 'other',
+    title: 'Photo Dump #1',
+    slug: 'photo-dump-1',
+    url: '/photography/photo-dump-1',
+    date: '2026-04-25',
+    icon: '\u{1F4F7}',
+    color: '#4F46E5',
+    image: '/IMG_0508.JPG',
+    gallery: [
+      '/IMG_0508.JPG',
+      '/IMG_0523.JPG',
+      '/IMG_0543.JPG'
+    ],
+    summary: 'A mixed set of backyard and neighborhood photos: sky, leaves, wires, fruit, and quiet details.',
+    keywords: ['photography', 'photo dump', 'nature', 'backyard', 'neighborhood', 'sky']
+  },
+  {
+    id: 17,
+    type: 'photography',
+    section: 'other',
+    title: 'Trees',
+    slug: 'trees',
+    url: '/photography/trees',
+    date: '2026-04-25',
+    icon: '\u{1F333}',
+    color: '#16A34A',
+    image: '/IMG_0509.JPG',
+    gallery: [
+      '/IMG_0509.JPG',
+      '/IMG_0529.JPG',
+      '/IMG_0531.JPG',
+      '/IMG_0552.JPG'
+    ],
+    summary: 'A small set of tree and canopy photos with leaves, branches, and bright overcast light.',
+    keywords: ['photography', 'trees', 'leaves', 'canopy', 'nature', 'backyard']
   }
 ];
 

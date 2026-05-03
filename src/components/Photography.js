@@ -5,6 +5,7 @@ import './Photography.css';
 
 const FILTERS = [
   { id: 'all', label: 'All' },
+  { id: 'favorites', label: 'Favorites' },
   { id: 'flowers', label: 'Flowers' },
   { id: 'sunsets', label: 'Sunsets' },
   { id: 'other', label: 'Other' }
@@ -18,7 +19,9 @@ const Photography = () => {
     const list =
       activeFilter === 'all'
         ? [...photography]
-        : photography.filter((item) => item.section === activeFilter);
+        : activeFilter === 'favorites'
+          ? photography.filter((item) => item.favorite)
+          : photography.filter((item) => item.section === activeFilter);
     return list.sort(byDate);
   }, [activeFilter]);
 

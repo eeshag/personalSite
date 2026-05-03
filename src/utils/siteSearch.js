@@ -7,6 +7,12 @@ const tokenize = (value) => normalize(value).split(/\s+/).filter(Boolean);
 const countTokenMatches = (haystack, tokens, weight) =>
   tokens.reduce((score, token) => (haystack.includes(token) ? score + weight : score), 0);
 
+const getDocumentTypeLabel = (type) => {
+  if (type === 'about') return 'Page';
+  if (type === 'photography') return 'Photo set';
+  return type ? type[0].toUpperCase() + type.slice(1) : 'Page';
+};
+
 const scoreDocument = (document, query, currentPath = '') => {
   const normalizedQuery = normalize(query);
   if (!normalizedQuery) return 0;
@@ -67,6 +73,7 @@ export const getSearchResultGroups = (query, options = {}) => {
     showAboutMe: results.some((item) => item.type === 'about'),
     projects: results.filter((item) => item.type === 'project'),
     blogs: results.filter((item) => item.type === 'blog'),
+    photography: results.filter((item) => item.type === 'photography'),
     currentlyConsuming: results.filter((item) => item.type === 'consuming')
   };
 };
@@ -91,7 +98,7 @@ export const getTypeaheadSuggestions = (query) => {
     type: 'page',
     label: item.title || item.name,
     value: item.title || item.name,
-    description: item.type === 'about' ? 'Page' : item.type[0].toUpperCase() + item.type.slice(1),
+    description: getDocumentTypeLabel(item.type),
     url: item.url
   }));
 
